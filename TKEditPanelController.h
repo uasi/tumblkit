@@ -33,7 +33,8 @@
 - (void)setCurrentEditViewController:(NSViewController <TKEditViewController> *)controller;
 
 - (IBAction)postWithContent:(id)sender;
-- (IBAction)cancelToPost:(id)sender;
+
+- (void)windowWillClose:(NSNotification *)notification;
 
 @property(setter=setPreviousPostPrivate:) BOOL isPreviousPostPrivate;
 

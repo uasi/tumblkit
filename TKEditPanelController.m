@@ -15,11 +15,7 @@
 
 - (void)awakeFromNib
 {
-    /*
-    [[quoteViewController view] setHidden:YES];
-    [[imageViewController view] setHidden:YES];
-    [[linkViewController view] setHidden:YES];
-     */
+    [[self window] setDelegate:self];
 }
 
 - (void)showWindow:(id)sender
@@ -60,16 +56,17 @@
 - (IBAction)postWithContent:(id)sender
 {
     [[TKPostingNotifier sharedNotifier] notifyWithPost:[currentEditViewController post]];
-    [self setPreviousPostPrivate:[[currentEditViewController post] isPrivate]];
-    [currentEditViewController setPost:nil];
-    [self close];
+    [[self window] performClose:sender];
 }
 
-- (IBAction)cancelToPost:(id)sender
+/****************
+ delegate methods
+ ****************/
+
+- (void)windowWillClose:(NSNotification *)notification
 {
     [self setPreviousPostPrivate:[[currentEditViewController post] isPrivate]];
     [currentEditViewController setPost:nil];
-    [self close];
 }
 
 @synthesize isPreviousPostPrivate;
