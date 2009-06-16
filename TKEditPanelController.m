@@ -23,15 +23,19 @@
 - (void)showWindow:(id)sender
           withPost:(TKPost *)post
 {
+    [[self window] setTitle:@"TumblKit - "];
     if ([post type] == TKPostQuoteType) {
+        [[self window] setTitle:[[[self window] title] stringByAppendingString:@"Quote"]];
         [quoteViewController setPost:post];
         [self setCurrentEditViewController:quoteViewController];
     }
     else if ([post type] == TKPostLinkType) {
+        [[self window] setTitle:[[[self window] title] stringByAppendingString:@"Link"]];
         [linkViewController setPost:post];
         [self setCurrentEditViewController:linkViewController];
     }
     else if ([post type] == TKPostImageType) {
+        [[self window] setTitle:[[[self window] title] stringByAppendingString:@"Image"]];
         [imageViewController setPost:post];
         [self setCurrentEditViewController:imageViewController];
     }
