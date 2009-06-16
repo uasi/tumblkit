@@ -20,7 +20,7 @@
 @class TKImageViewController;
 @interface TKEditPanelController : NSWindowController {
     NSViewController <TKEditViewController> *currentEditViewController;
-    IBOutlet NSView *editViewContainer;
+    IBOutlet NSTabView *tabView;
     IBOutlet TKQuoteViewController *quoteViewController;
     IBOutlet TKLinkViewController *linkViewController;
     IBOutlet TKImageViewController *imageViewController;

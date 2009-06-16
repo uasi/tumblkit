@@ -15,9 +15,11 @@
 
 - (void)awakeFromNib
 {
+    /*
     [[quoteViewController view] setHidden:YES];
     [[imageViewController view] setHidden:YES];
     [[linkViewController view] setHidden:YES];
+     */
 }
 
 - (void)showWindow:(id)sender
@@ -27,16 +29,19 @@
     [[self window] setTitle:@"TumblKit - "];
     if ([post type] == TKPostQuoteType) {
         [[self window] setTitle:[[[self window] title] stringByAppendingString:@"Quote"]];
+        [tabView selectTabViewItemWithIdentifier:@"Quote"];
         [quoteViewController setPost:post];
         [self setCurrentEditViewController:quoteViewController];
     }
     else if ([post type] == TKPostLinkType) {
         [[self window] setTitle:[[[self window] title] stringByAppendingString:@"Link"]];
+        [tabView selectTabViewItemWithIdentifier:@"Link"];
         [linkViewController setPost:post];
         [self setCurrentEditViewController:linkViewController];
     }
     else if ([post type] == TKPostImageType) {
         [[self window] setTitle:[[[self window] title] stringByAppendingString:@"Image"]];
+        [tabView selectTabViewItemWithIdentifier:@"Image"];
         [imageViewController setPost:post];
         [self setCurrentEditViewController:imageViewController];
     }
