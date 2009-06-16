@@ -10,13 +10,13 @@
 #import "TKExtractor.h"
 
 
-@interface TKGenericImageExtractor :TKExtractor <TKExtractor>  {}
+@interface TKGenericImageExtractor :TKExtractor {}
 @end
 
-@interface TKGenericQuoteExtractor : TKExtractor <TKExtractor> {}
+@interface TKGenericQuoteExtractor : TKExtractor {}
 @end
 
-@interface TKGenericLinkExtractor :TKExtractor <TKExtractor> {}
+@interface TKGenericLinkExtractor :TKExtractor {}
 @end
 
 

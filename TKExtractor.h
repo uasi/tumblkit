@@ -19,6 +19,9 @@
 - (TKPost *)postFromSource:(TKSource *)source;
 - (TKDeferredPost *)deferredPostFromSource:(TKSource *)source;
 
+- (BOOL)acceptsSource:(TKSource *)source;
+- (TKPost *)postFromSource:(TKSource *)source;
+
 - (BOOL)registerToRegistory:(id <TKRegistory>)registory
             ifAcceptsSource:(TKSource *)source;
 - (void)registerExtractorsToRegistory:(id <TKRegistory>)registory
@@ -29,13 +32,12 @@
 
 @end
 
-/* Subclass of TKExtractor should conform to TKExtractor protocol */
-@protocol TKExtractor
 
-- (NSString *)title;
-- (BOOL)acceptsSource:(TKSource *)source;
-- (TKPost *)postFromSource:(TKSource *)source;
+@interface TKExtractor (DefaultExtractor)
+
++ (TKExtractor *)defaultExtractor;
 
 @end
+
 
 

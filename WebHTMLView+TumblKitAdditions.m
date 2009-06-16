@@ -11,7 +11,6 @@
 #import "TKMenuBuilder.h"
 #import "TKPost.h"
 #import "TKExtractor.h"
-#import "TKExtractor+DefaultExtractor.h"
 #import "TKBundleController.h"
 
 #define TK_L(str) NSLocalizedStringFromTableInBundle(str, @"", TKBundle, @"")
@@ -38,7 +37,6 @@
     
     [[TKExtractor defaultExtractor] registerExtractorsToRegistory:builder
                                                   ifAcceptsSource:source];
-    
     
     return menu;
      
