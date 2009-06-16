@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1" id="9"/>
+			<integer value="15"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -43,6 +43,7 @@
 				<string key="NSWindowTitle">TumblKit</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
+				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<object class="NSView" key="NSWindowView" id="434865645">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -212,7 +213,7 @@
 																					<string>WebURLsWithTitlesPboardType</string>
 																				</object>
 																			</object>
-																			<string key="NSFrameSize">{409, 67}</string>
+																			<string key="NSFrameSize">{409, 14}</string>
 																			<reference key="NSSuperview" ref="1003333478"/>
 																			<object class="NSTextContainer" key="NSTextContainer" id="165326063">
 																				<object class="NSLayoutManager" key="NSLayoutManager">
@@ -280,19 +281,20 @@
 																							<int key="NSColorSpace">1</int>
 																							<bytes key="NSRGB">MCAwIDEAA</bytes>
 																						</object>
-																						<reference ref="9"/>
+																						<integer value="1" id="9"/>
 																					</object>
 																				</object>
 																				<nil key="NSDefaultParagraphStyle"/>
 																			</object>
 																			<int key="NSTVFlags">6</int>
-																			<string key="NSMaxSize">{470, 1e+07}</string>
-																			<string key="NSMinize">{223, 67}</string>
+																			<string key="NSMaxSize">{835, 1e+07}</string>
+																			<string key="NSMinize">{223, 0}</string>
 																			<nil key="NSDelegate"/>
 																		</object>
 																	</object>
 																	<string key="NSFrame">{{1, 1}, {409, 124}}</string>
 																	<reference key="NSSuperview" ref="385671978"/>
+																	<reference key="NSNextKeyView" ref="460341836"/>
 																	<reference key="NSDocView" ref="460341836"/>
 																	<reference key="NSBGColor" ref="807480949"/>
 																	<object class="NSCursor" key="NSCursor" id="272336817">
@@ -325,6 +327,7 @@
 															</object>
 															<string key="NSFrame">{{55, 0}, {426, 126}}</string>
 															<reference key="NSSuperview" ref="471277363"/>
+															<reference key="NSNextKeyView" ref="1003333478"/>
 															<int key="NSsFlags">18</int>
 															<reference key="NSVScroller" ref="242550133"/>
 															<reference key="NSHScroller" ref="19685075"/>
@@ -392,7 +395,7 @@
 																					<string>WebURLsWithTitlesPboardType</string>
 																				</object>
 																			</object>
-																			<string key="NSFrameSize">{409, 133}</string>
+																			<string key="NSFrameSize">{409, 14}</string>
 																			<reference key="NSSuperview" ref="660751258"/>
 																			<object class="NSTextContainer" key="NSTextContainer" id="546651057">
 																				<object class="NSLayoutManager" key="NSLayoutManager">
@@ -447,13 +450,14 @@
 																				<nil key="NSDefaultParagraphStyle"/>
 																			</object>
 																			<int key="NSTVFlags">6</int>
-																			<string key="NSMaxSize">{464, 1e+07}</string>
-																			<string key="NSMinize">{223, 133}</string>
+																			<string key="NSMaxSize">{835, 1e+07}</string>
+																			<string key="NSMinize">{223, 0}</string>
 																			<nil key="NSDelegate"/>
 																		</object>
 																	</object>
 																	<string key="NSFrame">{{1, 1}, {409, 162}}</string>
 																	<reference key="NSSuperview" ref="260885036"/>
+																	<reference key="NSNextKeyView" ref="192258307"/>
 																	<reference key="NSDocView" ref="192258307"/>
 																	<reference key="NSBGColor" ref="807480949"/>
 																	<reference key="NSCursor" ref="272336817"/>
@@ -483,6 +487,7 @@
 															</object>
 															<string key="NSFrame">{{55, 0}, {426, 164}}</string>
 															<reference key="NSSuperview" ref="316480509"/>
+															<reference key="NSNextKeyView" ref="660751258"/>
 															<int key="NSsFlags">18</int>
 															<reference key="NSVScroller" ref="397115584"/>
 															<reference key="NSHScroller" ref="35851586"/>
@@ -641,7 +646,7 @@
 																<nil key="NSDefaultParagraphStyle"/>
 															</object>
 															<int key="NSTVFlags">6</int>
-															<string key="NSMaxSize">{552, 1e+07}</string>
+															<string key="NSMaxSize">{838, 1e+07}</string>
 															<string key="NSMinize">{223, 0}</string>
 															<nil key="NSDelegate"/>
 														</object>
@@ -649,6 +654,7 @@
 													<string key="NSFrame">{{1, 1}, {408, 267}}</string>
 													<string key="NSBounds">{{3, 0}, {408, 267}}</string>
 													<reference key="NSSuperview" ref="288202271"/>
+													<reference key="NSNextKeyView" ref="703590703"/>
 													<reference key="NSDocView" ref="703590703"/>
 													<reference key="NSBGColor" ref="807480949"/>
 													<reference key="NSCursor" ref="272336817"/>
@@ -678,6 +684,7 @@
 											</object>
 											<string key="NSFrame">{{56, 0}, {425, 269}}</string>
 											<reference key="NSSuperview" ref="972111783"/>
+											<reference key="NSNextKeyView" ref="553043450"/>
 											<int key="NSsFlags">146</int>
 											<reference key="NSVScroller" ref="1024319814"/>
 											<reference key="NSHScroller" ref="545788422"/>
@@ -778,7 +785,7 @@
 																	<string>WebURLsWithTitlesPboardType</string>
 																</object>
 															</object>
-															<string key="NSFrameSize">{415, 79}</string>
+															<string key="NSFrameSize">{415, 14}</string>
 															<reference key="NSSuperview" ref="561309893"/>
 															<object class="NSTextContainer" key="NSTextContainer" id="668365318">
 																<object class="NSLayoutManager" key="NSLayoutManager">
@@ -833,13 +840,14 @@
 																<nil key="NSDefaultParagraphStyle"/>
 															</object>
 															<int key="NSTVFlags">6</int>
-															<string key="NSMaxSize">{468, 1e+07}</string>
-															<string key="NSMinize">{223, 79}</string>
+															<string key="NSMaxSize">{847, 1e+07}</string>
+															<string key="NSMinize">{223, 0}</string>
 															<nil key="NSDelegate"/>
 														</object>
 													</object>
 													<string key="NSFrame">{{1, 1}, {415, 267}}</string>
 													<reference key="NSSuperview" ref="903539432"/>
+													<reference key="NSNextKeyView" ref="882199812"/>
 													<reference key="NSDocView" ref="882199812"/>
 													<reference key="NSBGColor" ref="807480949"/>
 													<reference key="NSCursor" ref="272336817"/>
@@ -868,6 +876,7 @@
 											</object>
 											<string key="NSFrame">{{49, 0}, {432, 269}}</string>
 											<reference key="NSSuperview" ref="1006127260"/>
+											<reference key="NSNextKeyView" ref="561309893"/>
 											<int key="NSsFlags">18</int>
 											<reference key="NSVScroller" ref="217336191"/>
 											<reference key="NSHScroller" ref="984844827"/>
@@ -935,10 +944,6 @@
 				<string key="NSClassName">TKImageViewController</string>
 			</object>
 			<object class="NSUserDefaultsController" id="391963116">
-				<object class="NSMutableArray" key="NSDeclaredKeys">
-					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>post.body</string>
-				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</object>
@@ -1032,14 +1037,6 @@
 						</object>
 					</object>
 					<int key="connectionID">55</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">performClose:</string>
-						<reference key="source" ref="715557621"/>
-						<reference key="destination" ref="574997199"/>
-					</object>
-					<int key="connectionID">76</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -1168,6 +1165,14 @@
 						<reference key="destination" ref="1031371549"/>
 					</object>
 					<int key="connectionID">145</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">cancelToPost:</string>
+						<reference key="source" ref="261598333"/>
+						<reference key="destination" ref="574997199"/>
+					</object>
+					<int key="connectionID">148</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1771,7 +1776,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">147</int>
+			<int key="maxID">148</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1792,8 +1797,17 @@
 					<string key="className">TKEditPanelController</string>
 					<string key="superclassName">NSWindowController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">postWithContent:</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSMutableArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>cancelToPost:</string>
+							<string>postWithContent:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>

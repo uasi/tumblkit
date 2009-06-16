@@ -23,6 +23,7 @@
 - (void)showWindow:(id)sender
           withPost:(TKPost *)post
 {
+    [post setPrivate:[self isPreviousPostPrivate]];
     [[self window] setTitle:@"TumblKit - "];
     if ([post type] == TKPostQuoteType) {
         [[self window] setTitle:[[[self window] title] stringByAppendingString:@"Quote"]];
@@ -54,9 +55,19 @@
 - (IBAction)postWithContent:(id)sender
 {
     [[TKPostingNotifier sharedNotifier] notifyWithPost:[currentEditViewController post]];
+    [self setPreviousPostPrivate:[[currentEditViewController post] isPrivate]];
     [currentEditViewController setPost:nil];
     [self close];
 }
+
+- (IBAction)cancelToPost:(id)sender
+{
+    [self setPreviousPostPrivate:[[currentEditViewController post] isPrivate]];
+    [currentEditViewController setPost:nil];
+    [self close];
+}
+
+@synthesize isPreviousPostPrivate;
 
 @end
 

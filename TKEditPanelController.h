@@ -24,6 +24,8 @@
     IBOutlet TKQuoteViewController *quoteViewController;
     IBOutlet TKLinkViewController *linkViewController;
     IBOutlet TKImageViewController *imageViewController;
+    
+    BOOL isPreviousPostPrivate;
 }
 
 - (void)showWindow:(id)sender
@@ -31,6 +33,9 @@
 - (void)setCurrentEditViewController:(NSViewController <TKEditViewController> *)controller;
 
 - (IBAction)postWithContent:(id)sender;
+- (IBAction)cancelToPost:(id)sender;
+
+@property(setter=setPreviousPostPrivate:) BOOL isPreviousPostPrivate;
 
 @end
 
