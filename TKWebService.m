@@ -64,9 +64,22 @@ static NSURL *TKTumblrWebServiceURL;
     [[TKGrowlHelper sharedGrowlHelper] notifyWithTitle:@"Post"
                                            description:@"Post"];
 #endif
+    NSURLCredential *credential = [self credential];
+    if (! [credential hasPassword]) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"TumblKit - post aborted"
+                                         defaultButton:@"OK"
+                                       alternateButton:nil
+                                           otherButton:nil
+                             informativeTextWithFormat:@"Password is not saved in Safari."];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        [alert beginSheetModalForWindow:[NSApp mainWindow]
+                          modalDelegate:nil
+                         didEndSelector:nil
+                            contextInfo:NULL];
+        return;
+    }
     TKPost *post = (TKPost *)[[notification userInfo] objectForKey:@"post"];
     NSMutableDictionary *query = [NSMutableDictionary dictionary];
-    NSURLCredential *credential = [self credential];
     [query setObject:[credential user] forKey:@"email"];
     [query setObject:[credential password] forKey:@"password"];
     [query setObject:([post isPrivate] ? @"1" : @"0") forKey:@"private"];
