@@ -10,55 +10,18 @@
 
 
 @class TKPost;
-@protocol TKEditViewController
-@property(retain) TKPost *post;
-@end
-
-
-@class TKQuoteViewController;
-@class TKLinkViewController;
-@class TKImageViewController;
 @interface TKEditPanelController : NSWindowController {
-    NSViewController <TKEditViewController> *currentEditViewController;
     IBOutlet NSTabView *tabView;
-    IBOutlet TKQuoteViewController *quoteViewController;
-    IBOutlet TKLinkViewController *linkViewController;
-    IBOutlet TKImageViewController *imageViewController;
-    
+    TKPost *post;
     BOOL isPreviousPostPrivate;
 }
 
 - (void)showWindow:(id)sender
           withPost:(TKPost *)post;
-- (void)setCurrentEditViewController:(NSViewController <TKEditViewController> *)controller;
-
 - (IBAction)postWithContent:(id)sender;
-
 - (void)windowWillClose:(NSNotification *)notification;
 
+@property(retain) TKPost *post;
 @property(setter=setPreviousPostPrivate:) BOOL isPreviousPostPrivate;
-
-@end
-
-
-@interface TKQuoteViewController : NSViewController <TKEditViewController> {
-    TKPost *post_;
-    IBOutlet NSView *quoteTextView;
-    IBOutlet NSView *sourceTextView;
-}
-@end
-
-@interface TKLinkViewController : NSViewController <TKEditViewController> {
-    TKPost *post_;
-    IBOutlet NSTextField *linkURLField;
-    IBOutlet NSView *linkDescriptionView;
-}
-@end
-
-@interface TKImageViewController : NSViewController <TKEditViewController> {
-    TKPost *post_;
-    IBOutlet NSTextField *imageURLField;
-    IBOutlet NSView *imageCaptionView;
-}
 
 @end

@@ -916,15 +916,6 @@
 			<object class="NSCustomObject" id="261598333">
 				<string key="NSClassName">TKEditPanelController</string>
 			</object>
-			<object class="NSCustomObject" id="96480572">
-				<string key="NSClassName">TKQuoteViewController</string>
-			</object>
-			<object class="NSCustomObject" id="1062642723">
-				<string key="NSClassName">TKLinkViewController</string>
-			</object>
-			<object class="NSCustomObject" id="987891441">
-				<string key="NSClassName">TKImageViewController</string>
-			</object>
 			<object class="NSUserDefaultsController" id="391963116">
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
@@ -942,75 +933,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">view</string>
-						<reference key="source" ref="96480572"/>
-						<reference key="destination" ref="640678859"/>
-					</object>
-					<int key="connectionID">26</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">quoteTextView</string>
-						<reference key="source" ref="96480572"/>
-						<reference key="destination" ref="460341836"/>
-					</object>
-					<int key="connectionID">27</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">sourceTextView</string>
-						<reference key="source" ref="96480572"/>
-						<reference key="destination" ref="192258307"/>
-					</object>
-					<int key="connectionID">28</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">quoteViewController</string>
-						<reference key="source" ref="261598333"/>
-						<reference key="destination" ref="96480572"/>
-					</object>
-					<int key="connectionID">29</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">editPanelController</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="261598333"/>
 					</object>
 					<int key="connectionID">42</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: post.title</string>
-						<reference key="source" ref="460341836"/>
-						<reference key="destination" ref="96480572"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="460341836"/>
-							<reference key="NSDestination" ref="96480572"/>
-							<string key="NSLabel">value: post.title</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">post.title</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">54</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: post.body</string>
-						<reference key="source" ref="192258307"/>
-						<reference key="destination" ref="96480572"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="192258307"/>
-							<reference key="NSDestination" ref="96480572"/>
-							<string key="NSLabel">value: post.body</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">post.body</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">55</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -1019,118 +946,6 @@
 						<reference key="destination" ref="308550019"/>
 					</object>
 					<int key="connectionID">77</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">view</string>
-						<reference key="source" ref="1062642723"/>
-						<reference key="destination" ref="1006127260"/>
-					</object>
-					<int key="connectionID">107</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">view</string>
-						<reference key="source" ref="987891441"/>
-						<reference key="destination" ref="972111783"/>
-					</object>
-					<int key="connectionID">108</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: post.body</string>
-						<reference key="source" ref="703590703"/>
-						<reference key="destination" ref="987891441"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="703590703"/>
-							<reference key="NSDestination" ref="987891441"/>
-							<string key="NSLabel">value: post.body</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">post.body</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">112</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">imageViewController</string>
-						<reference key="source" ref="261598333"/>
-						<reference key="destination" ref="987891441"/>
-					</object>
-					<int key="connectionID">113</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">linkViewController</string>
-						<reference key="source" ref="261598333"/>
-						<reference key="destination" ref="1062642723"/>
-					</object>
-					<int key="connectionID">114</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: post.body</string>
-						<reference key="source" ref="882199812"/>
-						<reference key="destination" ref="1062642723"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="882199812"/>
-							<reference key="NSDestination" ref="1062642723"/>
-							<string key="NSLabel">value: post.body</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">post.body</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">116</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: post.URL</string>
-						<reference key="source" ref="660992296"/>
-						<reference key="destination" ref="1062642723"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="660992296"/>
-							<reference key="NSDestination" ref="1062642723"/>
-							<string key="NSLabel">value: post.URL</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">post.URL</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">119</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentEditViewController.post.isPrivate</string>
-						<reference key="source" ref="493595156"/>
-						<reference key="destination" ref="261598333"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="493595156"/>
-							<reference key="NSDestination" ref="261598333"/>
-							<string key="NSLabel">value: currentEditViewController.post.isPrivate</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentEditViewController.post.isPrivate</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">131</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: post.alternateURL</string>
-						<reference key="source" ref="593182407"/>
-						<reference key="destination" ref="987891441"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="593182407"/>
-							<reference key="NSDestination" ref="987891441"/>
-							<string key="NSLabel">value: post.alternateURL</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">post.alternateURL</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">132</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -1155,6 +970,118 @@
 						<reference key="destination" ref="574997199"/>
 					</object>
 					<int key="connectionID">186</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: post.isPrivate</string>
+						<reference key="source" ref="493595156"/>
+						<reference key="destination" ref="261598333"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="493595156"/>
+							<reference key="NSDestination" ref="261598333"/>
+							<string key="NSLabel">value: post.isPrivate</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">post.isPrivate</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">187</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: post.title</string>
+						<reference key="source" ref="460341836"/>
+						<reference key="destination" ref="261598333"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="460341836"/>
+							<reference key="NSDestination" ref="261598333"/>
+							<string key="NSLabel">value: post.title</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">post.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">188</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: post.body</string>
+						<reference key="source" ref="192258307"/>
+						<reference key="destination" ref="261598333"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="192258307"/>
+							<reference key="NSDestination" ref="261598333"/>
+							<string key="NSLabel">value: post.body</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">post.body</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">189</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: post.URL</string>
+						<reference key="source" ref="660992296"/>
+						<reference key="destination" ref="261598333"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="660992296"/>
+							<reference key="NSDestination" ref="261598333"/>
+							<string key="NSLabel">value: post.URL</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">post.URL</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">190</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: post.body</string>
+						<reference key="source" ref="882199812"/>
+						<reference key="destination" ref="261598333"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="882199812"/>
+							<reference key="NSDestination" ref="261598333"/>
+							<string key="NSLabel">value: post.body</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">post.body</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">191</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: post.alternateURL</string>
+						<reference key="source" ref="593182407"/>
+						<reference key="destination" ref="261598333"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="593182407"/>
+							<reference key="NSDestination" ref="261598333"/>
+							<string key="NSLabel">value: post.alternateURL</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">post.alternateURL</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">192</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: post.body</string>
+						<reference key="source" ref="703590703"/>
+						<reference key="destination" ref="261598333"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="703590703"/>
+							<reference key="NSDestination" ref="261598333"/>
+							<string key="NSLabel">value: post.body</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">post.body</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">193</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1253,24 +1180,6 @@
 						<int key="objectID">19</int>
 						<reference key="object" ref="244722162"/>
 						<reference key="parent" ref="574997199"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">25</int>
-						<reference key="object" ref="96480572"/>
-						<reference key="parent" ref="1002"/>
-						<string key="objectName">Quote View Controller</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">78</int>
-						<reference key="object" ref="1062642723"/>
-						<reference key="parent" ref="1002"/>
-						<string key="objectName">Link View Controller</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">79</int>
-						<reference key="object" ref="987891441"/>
-						<reference key="parent" ref="1002"/>
-						<string key="objectName">Image View Controller</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">102</int>
@@ -1695,7 +1604,6 @@
 					<string>18.IBPluginDependency</string>
 					<string>19.IBPluginDependency</string>
 					<string>2.IBPluginDependency</string>
-					<string>25.IBPluginDependency</string>
 					<string>3.IBPluginDependency</string>
 					<string>4.IBEditorWindowLastContentRect</string>
 					<string>4.IBPluginDependency</string>
@@ -1705,8 +1613,6 @@
 					<string>53.IBPluginDependency</string>
 					<string>6.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
-					<string>78.IBPluginDependency</string>
-					<string>79.IBPluginDependency</string>
 					<string>8.IBPluginDependency</string>
 					<string>80.IBEditorWindowLastContentRect</string>
 					<string>80.IBPluginDependency</string>
@@ -1766,10 +1672,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{367, 311}, {481, 299}}</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1817,7 +1720,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">186</int>
+			<int key="maxID">193</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1838,17 +1741,8 @@
 					<string key="className">TKEditPanelController</string>
 					<string key="superclassName">NSWindowController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSMutableArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>cancelToPost:</string>
-							<string>postWithContent:</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
-							<string>id</string>
-						</object>
+						<string key="NS.key.0">postWithContent:</string>
+						<string key="NS.object.0">id</string>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>

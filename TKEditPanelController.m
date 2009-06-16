@@ -19,43 +19,29 @@
 }
 
 - (void)showWindow:(id)sender
-          withPost:(TKPost *)post
+          withPost:(TKPost *)aPost
 {
-    [post setPrivate:[self isPreviousPostPrivate]];
+    [aPost setPrivate:[self isPreviousPostPrivate]];
     [[self window] setTitle:@"TumblKit - "];
-    if ([post type] == TKPostQuoteType) {
+    [self setPost:aPost];
+    if ([aPost type] == TKPostQuoteType) {
         [[self window] setTitle:[[[self window] title] stringByAppendingString:@"Quote"]];
         [tabView selectTabViewItemWithIdentifier:@"Quote"];
-        [quoteViewController setPost:post];
-        [self setCurrentEditViewController:quoteViewController];
     }
-    else if ([post type] == TKPostLinkType) {
+    else if ([aPost type] == TKPostLinkType) {
         [[self window] setTitle:[[[self window] title] stringByAppendingString:@"Link"]];
         [tabView selectTabViewItemWithIdentifier:@"Link"];
-        [linkViewController setPost:post];
-        [self setCurrentEditViewController:linkViewController];
     }
-    else if ([post type] == TKPostImageType) {
+    else if ([aPost type] == TKPostImageType) {
         [[self window] setTitle:[[[self window] title] stringByAppendingString:@"Image"]];
         [tabView selectTabViewItemWithIdentifier:@"Image"];
-        [imageViewController setPost:post];
-        [self setCurrentEditViewController:imageViewController];
     }
     [self showWindow:sender];
 }
 
-- (void)setCurrentEditViewController:(NSViewController <TKEditViewController> *)controller
-{
-    if (currentEditViewController != nil) {
-        [[currentEditViewController view] setHidden:YES];
-    }
-    [[controller view] setHidden:NO];
-    currentEditViewController = controller;
-}
-
 - (IBAction)postWithContent:(id)sender
 {
-    [[TKPostingNotifier sharedNotifier] notifyWithPost:[currentEditViewController post]];
+    [[TKPostingNotifier sharedNotifier] notifyWithPost:post];
     [[self window] performClose:sender];
 }
 
@@ -65,23 +51,10 @@
 
 - (void)windowWillClose:(NSNotification *)notification
 {
-    [self setPreviousPostPrivate:[[currentEditViewController post] isPrivate]];
-    [currentEditViewController setPost:nil];
+    [self setPreviousPostPrivate:[[self post] isPrivate]];
 }
 
 @synthesize isPreviousPostPrivate;
+@synthesize post;
 
-@end
-
-
-@implementation TKQuoteViewController
-@synthesize post = post_;
-@end
-
-@implementation TKLinkViewController
-@synthesize post = post_;
-@end
-
-@implementation TKImageViewController
-@synthesize post = post_;
 @end
