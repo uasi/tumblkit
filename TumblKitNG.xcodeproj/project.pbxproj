@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5850C35B0FE2BDC20083E931 /* TKPostingNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C35A0FE2BDC20083E931 /* TKPostingNotification.m */; };
+		5850C36B0FE2C3F40083E931 /* TKWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C36A0FE2C3F40083E931 /* TKWebService.m */; };
+		5850C66C0FE402320083E931 /* NSDictionary+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C66B0FE402320083E931 /* NSDictionary+TumblKitAdditions.m */; };
+		5850C75E0FE63B500083E931 /* TKEditPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5850C75D0FE63B500083E931 /* TKEditPanel.xib */; };
+		5850C7610FE63B650083E931 /* TKEditPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C7600FE63B650083E931 /* TKEditPanelController.m */; };
+		587F6D780FDC0D920039B359 /* TKExtractor+DefaultExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 587F6D770FDC0D920039B359 /* TKExtractor+DefaultExtractor.m */; };
+		587F6D7B0FDC0F030039B359 /* TKMenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */; };
+		58B5A22B0F7F1EA2002AB47A /* TKBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B5A22A0F7F1EA2002AB47A /* TKBundleController.m */; };
+		58B5A2630F7F28A0002AB47A /* NSURLCredentialStorage+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B5A2620F7F28A0002AB47A /* NSURLCredentialStorage+TumblKitAdditions.m */; };
+		58C941DA0FD6A01B00D2C4BE /* TKSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C941D90FD6A01B00D2C4BE /* TKSource.m */; };
+		58C942720FD6C3D300D2C4BE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C942710FD6C3D300D2C4BE /* WebKit.framework */; };
+		58C9427C0FD6C43A00D2C4BE /* TKGrowlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C9427B0FD6C43A00D2C4BE /* TKGrowlHelper.m */; };
+		58C9428E0FD6C5E100D2C4BE /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C9428D0FD6C5E100D2C4BE /* Growl.framework */; };
+		58C942990FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C942980FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m */; };
+		58C9449D0FD6F0BF00D2C4BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C9449B0FD6F0BF00D2C4BE /* Localizable.strings */; };
+		58E134D50FDBDF9C0042663C /* TKExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134D40FDBDF9C0042663C /* TKExtractor.m */; };
+		58E134FB0FDBF0F10042663C /* TKGenericExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134FA0FDBF0F10042663C /* TKGenericExtractor.m */; };
+		58E134FE0FDBF1680042663C /* TKPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134FD0FDBF1680042663C /* TKPost.m */; };
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF630370AF2F00C91783 /* TumblKitNG_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TumblKitNG_Prefix.pch; sourceTree = "<group>"; };
+		5850C3590FE2BDC20083E931 /* TKPostingNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPostingNotification.h; sourceTree = "<group>"; };
+		5850C35A0FE2BDC20083E931 /* TKPostingNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPostingNotification.m; sourceTree = "<group>"; };
+		5850C3690FE2C3F40083E931 /* TKWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWebService.h; sourceTree = "<group>"; };
+		5850C36A0FE2C3F40083E931 /* TKWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWebService.m; sourceTree = "<group>"; };
+		5850C66A0FE402320083E931 /* NSDictionary+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		5850C66B0FE402320083E931 /* NSDictionary+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		5850C75D0FE63B500083E931 /* TKEditPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKEditPanel.xib; sourceTree = "<group>"; };
+		5850C75F0FE63B650083E931 /* TKEditPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKEditPanelController.h; sourceTree = "<group>"; };
+		5850C7600FE63B650083E931 /* TKEditPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEditPanelController.m; sourceTree = "<group>"; };
+		587F6D760FDC0D920039B359 /* TKExtractor+DefaultExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TKExtractor+DefaultExtractor.h"; sourceTree = "<group>"; };
+		587F6D770FDC0D920039B359 /* TKExtractor+DefaultExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TKExtractor+DefaultExtractor.m"; sourceTree = "<group>"; };
+		587F6D790FDC0F030039B359 /* TKMenuBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMenuBuilder.h; sourceTree = "<group>"; };
+		587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMenuBuilder.m; sourceTree = "<group>"; };
+		58B5A2290F7F1EA2002AB47A /* TKBundleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBundleController.h; sourceTree = "<group>"; };
+		58B5A22A0F7F1EA2002AB47A /* TKBundleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBundleController.m; sourceTree = "<group>"; };
+		58B5A2610F7F28A0002AB47A /* NSURLCredentialStorage+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLCredentialStorage+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		58B5A2620F7F28A0002AB47A /* NSURLCredentialStorage+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLCredentialStorage+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		58C941D80FD6A01B00D2C4BE /* TKSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSource.h; sourceTree = "<group>"; };
+		58C941D90FD6A01B00D2C4BE /* TKSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSource.m; sourceTree = "<group>"; };
+		58C942710FD6C3D300D2C4BE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		58C9427A0FD6C43A00D2C4BE /* TKGrowlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGrowlHelper.h; sourceTree = "<group>"; };
+		58C9427B0FD6C43A00D2C4BE /* TKGrowlHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGrowlHelper.m; sourceTree = "<group>"; };
+		58C9428D0FD6C5E100D2C4BE /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
+		58C942970FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebHTMLView+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		58C942980FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebHTMLView+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		58C9449C0FD6F0BF00D2C4BE /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58C9449E0FD6F0D500D2C4BE /* ja_JP */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja_JP; path = ja_JP.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58E134D30FDBDF9C0042663C /* TKExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKExtractor.h; sourceTree = "<group>"; };
+		58E134D40FDBDF9C0042663C /* TKExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKExtractor.m; sourceTree = "<group>"; };
+		58E134F90FDBF0F10042663C /* TKGenericExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGenericExtractor.h; sourceTree = "<group>"; };
+		58E134FA0FDBF0F10042663C /* TKGenericExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGenericExtractor.m; sourceTree = "<group>"; };
+		58E134FC0FDBF1680042663C /* TKPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPost.h; sourceTree = "<group>"; };
+		58E134FD0FDBF1680042663C /* TKPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPost.m; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* TumblKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TumblKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				58C942720FD6C3D300D2C4BE /* WebKit.framework in Frameworks */,
+				58C9428E0FD6C5E100D2C4BE /* Growl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* TumblKitNG */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = TumblKitNG;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				58C9449B0FD6F0BF00D2C4BE /* Localizable.strings */,
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+				5850C75D0FE63B500083E931 /* TKEditPanel.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5850C7530FE639150083E931 /* UI Controllers */,
+				5850C6690FE401F40083E931 /* Additions */,
+				5850C6680FE401B90083E931 /* WebServices */,
+				58E134FC0FDBF1680042663C /* TKPost.h */,
+				58E134FD0FDBF1680042663C /* TKPost.m */,
+				5850C3590FE2BDC20083E931 /* TKPostingNotification.h */,
+				5850C35A0FE2BDC20083E931 /* TKPostingNotification.m */,
+				58E134D60FDBDFA30042663C /* Extractors */,
+				58B5A2290F7F1EA2002AB47A /* TKBundleController.h */,
+				58B5A22A0F7F1EA2002AB47A /* TKBundleController.m */,
+				58C941D80FD6A01B00D2C4BE /* TKSource.h */,
+				58C941D90FD6A01B00D2C4BE /* TKSource.m */,
+				58C9427A0FD6C43A00D2C4BE /* TKGrowlHelper.h */,
+				58C9427B0FD6C43A00D2C4BE /* TKGrowlHelper.m */,
+				58C942970FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.h */,
+				58C942980FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m */,
+				587F6D790FDC0F030039B359 /* TKMenuBuilder.h */,
+				587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58C942710FD6C3D300D2C4BE /* WebKit.framework */,
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58C9428D0FD6C5E100D2C4BE /* Growl.framework */,
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* TumblKit.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF630370AF2F00C91783 /* TumblKitNG_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		5850C6680FE401B90083E931 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				5850C3690FE2C3F40083E931 /* TKWebService.h */,
+				5850C36A0FE2C3F40083E931 /* TKWebService.m */,
+			);
+			name = WebServices;
+			sourceTree = "<group>";
+		};
+		5850C6690FE401F40083E931 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				58B5A2610F7F28A0002AB47A /* NSURLCredentialStorage+TumblKitAdditions.h */,
+				58B5A2620F7F28A0002AB47A /* NSURLCredentialStorage+TumblKitAdditions.m */,
+				5850C66A0FE402320083E931 /* NSDictionary+TumblKitAdditions.h */,
+				5850C66B0FE402320083E931 /* NSDictionary+TumblKitAdditions.m */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
+		5850C7530FE639150083E931 /* UI Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5850C75F0FE63B650083E931 /* TKEditPanelController.h */,
+				5850C7600FE63B650083E931 /* TKEditPanelController.m */,
+			);
+			name = "UI Controllers";
+			sourceTree = "<group>";
+		};
+		58E134D60FDBDFA30042663C /* Extractors */ = {
+			isa = PBXGroup;
+			children = (
+				58E134D30FDBDF9C0042663C /* TKExtractor.h */,
+				58E134D40FDBDF9C0042663C /* TKExtractor.m */,
+				587F6D760FDC0D920039B359 /* TKExtractor+DefaultExtractor.h */,
+				587F6D770FDC0D920039B359 /* TKExtractor+DefaultExtractor.m */,
+				58E134F90FDBF0F10042663C /* TKGenericExtractor.h */,
+				58E134FA0FDBF0F10042663C /* TKGenericExtractor.m */,
+			);
+			name = Extractors;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* TumblKitNG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "TumblKitNG" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TumblKitNG;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = TumblKitNG;
+			productReference = 8D5B49B6048680CD000E48DA /* TumblKit.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "TumblKitNG" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				ja_JP,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* TumblKitNG */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* TumblKitNG */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				58C9449D0FD6F0BF00D2C4BE /* Localizable.strings in Resources */,
+				5850C75E0FE63B500083E931 /* TKEditPanel.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58B5A22B0F7F1EA2002AB47A /* TKBundleController.m in Sources */,
+				58B5A2630F7F28A0002AB47A /* NSURLCredentialStorage+TumblKitAdditions.m in Sources */,
+				58C941DA0FD6A01B00D2C4BE /* TKSource.m in Sources */,
+				58C9427C0FD6C43A00D2C4BE /* TKGrowlHelper.m in Sources */,
+				58C942990FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m in Sources */,
+				58E134D50FDBDF9C0042663C /* TKExtractor.m in Sources */,
+				58E134FB0FDBF0F10042663C /* TKGenericExtractor.m in Sources */,
+				58E134FE0FDBF1680042663C /* TKPost.m in Sources */,
+				587F6D780FDC0D920039B359 /* TKExtractor+DefaultExtractor.m in Sources */,
+				587F6D7B0FDC0F030039B359 /* TKMenuBuilder.m in Sources */,
+				5850C35B0FE2BDC20083E931 /* TKPostingNotification.m in Sources */,
+				5850C36B0FE2C3F40083E931 /* TKWebService.m in Sources */,
+				5850C66C0FE402320083E931 /* NSDictionary+TumblKitAdditions.m in Sources */,
+				5850C7610FE63B650083E931 /* TKEditPanelController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		58C9449B0FD6F0BF00D2C4BE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58C9449C0FD6F0BF00D2C4BE /* English */,
+				58C9449E0FD6F0D500D2C4BE /* ja_JP */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TumblKitNG_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = TumblKit;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		1DEB913C08733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TumblKitNG_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = TumblKit;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "TumblKitNG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+				1DEB913C08733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "TumblKitNG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
