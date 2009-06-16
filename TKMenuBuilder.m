@@ -47,6 +47,8 @@
         [submenuItem setSubmenu:submenu_];
         [menu_ insertItem:[submenuItem autorelease] atIndex:2];
         
+        [menu_ insertItem:[NSMenuItem separatorItem] atIndex:3];
+        
         // DOING EVEL THING...
         NSMenuItem *item__ = [[NSMenuItem alloc] initWithTitle:@"Open Edit Window"
                                                         action:@selector(openEditWindow:)
