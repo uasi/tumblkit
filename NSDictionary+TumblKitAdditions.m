@@ -8,6 +8,10 @@
 
 #import "NSDictionary+TumblKitAdditions.h"
 
+@interface NSDictionary (TumblKitPrivateMethods)
+- (NSString *)tk_stringByEscapingString:(NSString *)string;
+@end
+
 
 @implementation NSDictionary (TumblKitAdditions)
 
@@ -22,12 +26,20 @@
         stringValue = [value isKindOfClass:[NSString class]] ? (NSString *)value : [value description];
         [queryString appendFormat:
          @"%@=%@&",
-         [key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-         [stringValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+         [self tk_stringByEscapingString:key],
+         [self tk_stringByEscapingString:stringValue]];
     }
     [queryString deleteCharactersInRange:
      NSMakeRange([queryString length] - 1, 1)];
     return [NSString stringWithString:queryString];
+}
+
+
+- (NSString *)tk_stringByEscapingString:(NSString *)string
+{
+    CFStringRef preprocessedString = CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault, (CFStringRef)string, CFSTR(""), kCFStringEncodingUTF8);
+    CFStringRef escapedString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, preprocessedString, NULL, CFSTR("&"), kCFStringEncodingUTF8);
+    return (NSString *)escapedString;
 }
 
 @end

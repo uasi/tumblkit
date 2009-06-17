@@ -68,7 +68,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5883539E0FE7406500D4952D /* Create Disk Image */;
+			remoteGlobalIDString = 5883539E0FE7406500D4952D;
 			remoteInfo = "Create Disk Image";
 		};
 /* End PBXContainerItemProxy section */
