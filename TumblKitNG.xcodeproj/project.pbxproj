@@ -7,17 +7,29 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		5883539E0FE7406500D4952D /* dmg */ = {
+		5883539E0FE7406500D4952D /* Create Disk Image */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 588353A50FE740BC00D4952D /* Build configuration list for PBXAggregateTarget "dmg" */;
+			buildConfigurationList = 588353A50FE740BC00D4952D /* Build configuration list for PBXAggregateTarget "Create Disk Image" */;
 			buildPhases = (
 				5883539D0FE7406500D4952D /* ShellScript */,
 			);
 			dependencies = (
 				588353A20FE7407300D4952D /* PBXTargetDependency */,
 			);
-			name = dmg;
+			name = "Create Disk Image";
 			productName = dmg;
+		};
+		58859D220FE810E60075F237 /* Upload Snapshot */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 58859D420FE811150075F237 /* Build configuration list for PBXAggregateTarget "Upload Snapshot" */;
+			buildPhases = (
+				58859D210FE810E60075F237 /* ShellScript */,
+			);
+			dependencies = (
+				58859D280FE810F40075F237 /* PBXTargetDependency */,
+			);
+			name = "Upload Snapshot";
+			productName = "Upload Snapshot";
 		};
 /* End PBXAggregateTarget section */
 
@@ -51,6 +63,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = TumblKitNG;
+		};
+		58859D270FE810F40075F237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5883539E0FE7406500D4952D /* Create Disk Image */;
+			remoteInfo = "Create Disk Image";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -286,7 +305,8 @@
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* TumblKitNG */,
-				5883539E0FE7406500D4952D /* dmg */,
+				5883539E0FE7406500D4952D /* Create Disk Image */,
+				58859D220FE810E60075F237 /* Upload Snapshot */,
 			);
 		};
 /* End PBXProject section */
@@ -317,6 +337,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -ex\n\nBUNDLE_NAME=TumblKit\n\n[ \"$ACTION\" = build ] || exit 0\n[ \"$BUILD_VARIANTS\" = \"normal\" ] || exit 0\n\ndir=\"$TEMP_FILES_DIR/disk\"\ndmg=\"$BUILT_PRODUCTS_DIR/$BUNDLE_NAME.dmg\"\n\nrm -rf \"$dir\"\nmkdir \"$dir\"\ncp -R \"$BUILT_PRODUCTS_DIR/$BUNDLE_NAME.bundle\" \"$dir\"\nrm -f \"$dmg\"\nhdiutil create -srcfolder \"$dir\" -volname \"$BUNDLE_NAME\" \"$dmg\"\nhdiutil internet-enable -yes \"$dmg\"\nrm -rf \"$dir\"";
+		};
+		58859D210FE810E60075F237 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -ex\n\nBUNDLE_NAME=TumblKit\n\n[ \"$ACTION\" = build ] || exit 0\n[ \"$BUILD_VARIANTS\" = \"normal\" ] || exit 0\n\ndmg=\"$BUILT_PRODUCTS_DIR/$BUNDLE_NAME.dmg\"\n\nftp -u \"ftp://uasi@99cm.org/public_html/apps/$BUNDLE_NAME-snapshot.dmg\" \"$dmg\" || exit 1";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -349,6 +382,11 @@
 			isa = PBXTargetDependency;
 			target = 8D5B49AC048680CD000E48DA /* TumblKitNG */;
 			targetProxy = 588353A10FE7407300D4952D /* PBXContainerItemProxy */;
+		};
+		58859D280FE810F40075F237 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5883539E0FE7406500D4952D /* Create Disk Image */;
+			targetProxy = 58859D270FE810F40075F237 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -461,6 +499,27 @@
 			};
 			name = Release;
 		};
+		58859D230FE810E60075F237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Upload Snapshot";
+			};
+			name = Debug;
+		};
+		58859D240FE810E60075F237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Upload Snapshot";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -482,11 +541,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		588353A50FE740BC00D4952D /* Build configuration list for PBXAggregateTarget "dmg" */ = {
+		588353A50FE740BC00D4952D /* Build configuration list for PBXAggregateTarget "Create Disk Image" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5883539F0FE7406600D4952D /* Debug */,
 				588353A00FE7406600D4952D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58859D420FE811150075F237 /* Build configuration list for PBXAggregateTarget "Upload Snapshot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58859D230FE810E60075F237 /* Debug */,
+				58859D240FE810E60075F237 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
