@@ -76,7 +76,7 @@
             [post setTitle:[[source linkURL] absoluteString]];
         }
         [post setURL:[source linkURL]];
-        /* Let's not setBody: */
+        [post setBody:[source linkLabel]];
     }
     else {
         [post setTitle:[source title]];
