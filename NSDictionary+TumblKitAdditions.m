@@ -9,6 +9,7 @@
 #import "NSDictionary+TumblKitAdditions.h"
 
 @interface NSDictionary (TumblKitPrivateMethods)
+- (NSString *)tk_stringByUnescapingString:(NSString *)string;
 - (NSString *)tk_stringByEscapingString:(NSString *)string;
 @end
 
@@ -23,7 +24,15 @@
     NSString *stringValue;
     for (key in [self keyEnumerator]) {
         value = [self objectForKey:key];
-        stringValue = [value isKindOfClass:[NSString class]] ? (NSString *)value : [value description];
+        if ([value isKindOfClass:[NSString class]]) {
+            stringValue = (NSString *)value;
+        }
+        else if ([value isKindOfClass:[NSURL class]]) {
+            stringValue = [self tk_stringByUnescapingString:[(NSURL *)value absoluteString]];
+        }
+        else {
+            stringValue = [value description];
+        }
         [queryString appendFormat:
          @"%@=%@&",
          [self tk_stringByEscapingString:key],
@@ -34,12 +43,16 @@
     return [NSString stringWithString:queryString];
 }
 
+- (NSString *)tk_stringByUnescapingString:(NSString *)string
+{
+    CFStringRef newString = CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault, (CFStringRef)string, CFSTR(""), kCFStringEncodingUTF8);
+    return (NSString *)newString;
+}
 
 - (NSString *)tk_stringByEscapingString:(NSString *)string
 {
-    CFStringRef preprocessedString = CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault, (CFStringRef)string, CFSTR(""), kCFStringEncodingUTF8);
-    CFStringRef escapedString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, preprocessedString, NULL, CFSTR("&"), kCFStringEncodingUTF8);
-    return (NSString *)escapedString;
+    CFStringRef newString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)string, NULL, CFSTR("&"), kCFStringEncodingUTF8);
+    return (NSString *)newString;
 }
 
 @end
