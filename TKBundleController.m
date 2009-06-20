@@ -9,6 +9,7 @@
 #import "TKBundleController.h"
 #import "WebHTMLView+TumblKitAdditions.h"
 #import "TKWebService.h"
+#import <Sparkle/Sparkle.h>
 #import <objc/runtime.h>
 
 NSBundle *TKBundle; /* Shared bundle instance */
@@ -21,6 +22,8 @@ NSBundle *TKBundle; /* Shared bundle instance */
     [TKBundleController swizzleInstanceMethod:@selector(menuForEvent:)
                                    withMethod:@selector(tk_menuForEvent:)
                                       ofClass:[WebHTMLView class]];
+    
+    [SUUpdater updaterForBundle:TKBundle];
     
     [TKTumblrWebService registerAsObserver];
     
