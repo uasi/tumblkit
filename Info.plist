@@ -35,6 +35,8 @@
 	<string>0.9.7</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
+	<key>SUFeedURL</key>
+	<string>http://99cm.org/apps/TumblKit.rss</string>
 	<key>NSPrincipalClass</key>
 	<string>TKBundleController</string>
 </dict>
