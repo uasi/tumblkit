@@ -33,6 +33,8 @@
 	<string>0.9.7</string>
 	<key>CFBundleShortVersionString</key>
 	<string>0.9.7</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 	<key>NSPrincipalClass</key>
 	<string>TKBundleController</string>
 </dict>
