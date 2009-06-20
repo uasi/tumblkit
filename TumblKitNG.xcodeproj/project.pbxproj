@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5805EE750FED6C4900F7FAEA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5805EE740FED6C4900F7FAEA /* Sparkle.framework */; };
+		5805EE870FED6C6900F7FAEA /* Sparkle.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 5805EE740FED6C4900F7FAEA /* Sparkle.framework */; };
 		5850C35B0FE2BDC20083E931 /* TKPostingNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C35A0FE2BDC20083E931 /* TKPostingNotification.m */; };
 		5850C36B0FE2C3F40083E931 /* TKWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C36A0FE2C3F40083E931 /* TKWebService.m */; };
 		5850C66C0FE402320083E931 /* NSDictionary+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C66B0FE402320083E931 /* NSDictionary+TumblKitAdditions.m */; };
@@ -51,6 +53,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5805EE870FED6C6900F7FAEA /* Sparkle.framework in フレームワークをコピー */,
 				587BEB5F0FE8E1EE00DDC3A1 /* Growl.framework in フレームワークをコピー */,
 			);
 			name = "フレームワークをコピー";
@@ -64,6 +67,7 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF630370AF2F00C91783 /* TumblKitNG_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TumblKitNG_Prefix.pch; sourceTree = "<group>"; };
+		5805EE740FED6C4900F7FAEA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		5850C3590FE2BDC20083E931 /* TKPostingNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPostingNotification.h; sourceTree = "<group>"; };
 		5850C35A0FE2BDC20083E931 /* TKPostingNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPostingNotification.m; sourceTree = "<group>"; };
 		5850C3690FE2C3F40083E931 /* TKWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWebService.h; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				58C942720FD6C3D300D2C4BE /* WebKit.framework in Frameworks */,
 				58C9428E0FD6C5E100D2C4BE /* Growl.framework in Frameworks */,
+				5805EE750FED6C4900F7FAEA /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +180,7 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5805EE740FED6C4900F7FAEA /* Sparkle.framework */,
 				58C9428D0FD6C5E100D2C4BE /* Growl.framework */,
 				58C942710FD6C3D300D2C4BE /* WebKit.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
@@ -408,6 +414,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -430,6 +437,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
