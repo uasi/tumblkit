@@ -24,6 +24,7 @@
 		5805EE750FED6C4900F7FAEA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5805EE740FED6C4900F7FAEA /* Sparkle.framework */; };
 		5805EE870FED6C6900F7FAEA /* Sparkle.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 5805EE740FED6C4900F7FAEA /* Sparkle.framework */; };
 		5805EEA80FED6EAB00F7FAEA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5805EEA70FED6EAB00F7FAEA /* dsa_pub.pem */; };
+		5805EF4C0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805EF4B0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.m */; };
 		5850C35B0FE2BDC20083E931 /* TKPostingNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C35A0FE2BDC20083E931 /* TKPostingNotification.m */; };
 		5850C36B0FE2C3F40083E931 /* TKWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C36A0FE2C3F40083E931 /* TKWebService.m */; };
 		5850C66C0FE402320083E931 /* NSDictionary+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C66B0FE402320083E931 /* NSDictionary+TumblKitAdditions.m */; };
@@ -70,6 +71,8 @@
 		32DBCF630370AF2F00C91783 /* TumblKitNG_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TumblKitNG_Prefix.pch; sourceTree = "<group>"; };
 		5805EE740FED6C4900F7FAEA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		5805EEA70FED6EAB00F7FAEA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		5805EF4A0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUUpdateAlert+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		5805EF4B0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SUUpdateAlert+TumblKitAdditions.m"; sourceTree = "<group>"; };
 		5850C3590FE2BDC20083E931 /* TKPostingNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPostingNotification.h; sourceTree = "<group>"; };
 		5850C35A0FE2BDC20083E931 /* TKPostingNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPostingNotification.m; sourceTree = "<group>"; };
 		5850C3690FE2C3F40083E931 /* TKWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWebService.h; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 				58B5A2620F7F28A0002AB47A /* NSURLCredentialStorage+TumblKitAdditions.m */,
 				5850C66A0FE402320083E931 /* NSDictionary+TumblKitAdditions.h */,
 				5850C66B0FE402320083E931 /* NSDictionary+TumblKitAdditions.m */,
+				5805EF4A0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.h */,
+				5805EF4B0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.m */,
 			);
 			name = Additions;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 				5850C66C0FE402320083E931 /* NSDictionary+TumblKitAdditions.m in Sources */,
 				5850C7610FE63B650083E931 /* TKEditPanelController.m in Sources */,
 				58859CE00FE80DC60075F237 /* TKExtractor+DefaultExtractor.m in Sources */,
+				5805EF4C0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
