@@ -51,7 +51,7 @@
 
 - (NSString *)tk_stringByEscapingString:(NSString *)string
 {
-    CFStringRef newString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)string, NULL, CFSTR("&"), kCFStringEncodingUTF8);
+    CFStringRef newString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)string, NULL, CFSTR (";,/?:@&=+$#"), kCFStringEncodingUTF8);
     return (NSString *)newString;
 }
 
