@@ -38,8 +38,10 @@
          [self tk_stringByEscapingString:key],
          [self tk_stringByEscapingString:stringValue]];
     }
-    [queryString deleteCharactersInRange:
-     NSMakeRange([queryString length] - 1, 1)];
+    if ([queryString length]) {
+        [queryString deleteCharactersInRange:
+         NSMakeRange([queryString length] - 1, 1)];
+    }
     return [NSString stringWithString:queryString];
 }
 
