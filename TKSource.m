@@ -77,12 +77,12 @@
     self = [super init];
     if (self != nil) {
         type_ = type;
-        text_ = text;
-        title_ = title;
-        linkLabel_ = linkLabel;
-        linkURL_ = linkURL;
-        sourceURL_ = sourceURL;
-        URL_ = URL;
+        text_ = [text retain];
+        title_ = [title retain];
+        linkLabel_ = [linkLabel retain];
+        linkURL_ = [linkURL retain];
+        sourceURL_ = [sourceURL retain];
+        URL_ = [URL retain];
     }
     return self;
 }
@@ -90,7 +90,11 @@
 - (void)dealloc
 {
     [text_ release];
-    //XXX To release
+    [title_ release];
+    [linkLabel_ release];
+    [linkURL_ release];
+    [sourceURL_ release];
+    [URL_ release];
     [super dealloc];
 }
     

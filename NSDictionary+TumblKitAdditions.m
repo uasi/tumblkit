@@ -48,13 +48,13 @@
 - (NSString *)tk_stringByUnescapingString:(NSString *)string
 {
     CFStringRef newString = CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault, (CFStringRef)string, CFSTR(""), kCFStringEncodingUTF8);
-    return (NSString *)newString;
+    return [(NSString *)newString autorelease];
 }
 
 - (NSString *)tk_stringByEscapingString:(NSString *)string
 {
     CFStringRef newString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)string, NULL, CFSTR (";,/?:@&=+$#"), kCFStringEncodingUTF8);
-    return (NSString *)newString;
+    return [(NSString *)newString autorelease];
 }
 
 @end

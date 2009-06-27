@@ -26,14 +26,14 @@
                                            keyEquivalent:@""];
     [item setTarget:[TKPostingNotifier sharedNotifier]];
     [item setRepresentedObject:[extractor deferredPostFromSource:source_]];
-    NSMenuItem *alternateItem = [item copy];
+    NSMenuItem *alternateItem = [[item copy] autorelease];
     [alternateItem setTitle:[[alternateItem title] stringByAppendingString:@"..."]]; // XXX ...
     [alternateItem setTarget:self];
     [alternateItem setAction:@selector(openEditWindow:)];
     [alternateItem setKeyEquivalentModifierMask:NSAlternateKeyMask];
     [alternateItem setAlternate:YES];
     if (preferredItem_ == nil) {
-        preferredItem_ = [item copy]; // Should I retain it?
+        preferredItem_ = [[item copy] autorelease];
         [preferredItem_ setTitle:[NSString stringWithFormat:TK_L(@"Share %@"), [preferredItem_ title]]];
         [menu_ insertItem:preferredItem_ atIndex:0];
         
