@@ -14,6 +14,7 @@
     
 }
 
++ (void)loadGrowlForBundle:(NSBundle *)bundle;
 + (TKGrowlHelper *)sharedGrowlHelper;
 - (void)notifyWithTitle:(NSString *)title
             description:(NSString *)description;

@@ -10,6 +10,7 @@
 #import "WebHTMLView+TumblKitAdditions.h"
 #import "SUUpdateAlert+TumblKitAdditions.h"
 #import "TKWebService.h"
+#import "TKGrowlHelper.h"
 #import <Sparkle/Sparkle.h>
 #import <objc/runtime.h>
 
@@ -27,6 +28,7 @@ NSBundle *TKBundle; /* Shared bundle instance */
                                    withMethod:@selector(tk_displayReleaseNotes)
                                       ofClass:[SUUpdateAlert class]];
     
+    [TKGrowlHelper loadGrowlForBundle:TKBundle];
     [SUUpdater updaterForBundle:TKBundle];
     
     [TKTumblrWebService registerAsObserver];

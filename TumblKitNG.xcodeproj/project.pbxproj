@@ -38,9 +38,9 @@
 		58C941DA0FD6A01B00D2C4BE /* TKSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C941D90FD6A01B00D2C4BE /* TKSource.m */; };
 		58C942720FD6C3D300D2C4BE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C942710FD6C3D300D2C4BE /* WebKit.framework */; };
 		58C9427C0FD6C43A00D2C4BE /* TKGrowlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C9427B0FD6C43A00D2C4BE /* TKGrowlHelper.m */; };
-		58C9428E0FD6C5E100D2C4BE /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C9428D0FD6C5E100D2C4BE /* Growl.framework */; };
 		58C942990FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C942980FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m */; };
 		58C9449D0FD6F0BF00D2C4BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C9449B0FD6F0BF00D2C4BE /* Localizable.strings */; };
+		58CC69070FF681570088D4BC /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C9428D0FD6C5E100D2C4BE /* Growl.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		58E134D50FDBDF9C0042663C /* TKExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134D40FDBDF9C0042663C /* TKExtractor.m */; };
 		58E134FB0FDBF0F10042663C /* TKGenericExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134FA0FDBF0F10042663C /* TKGenericExtractor.m */; };
 		58E134FE0FDBF1680042663C /* TKPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134FD0FDBF1680042663C /* TKPost.m */; };
@@ -115,9 +115,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58CC69070FF681570088D4BC /* Growl.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				58C942720FD6C3D300D2C4BE /* WebKit.framework in Frameworks */,
-				58C9428E0FD6C5E100D2C4BE /* Growl.framework in Frameworks */,
 				5805EE750FED6C4900F7FAEA /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,7 +431,6 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = TumblKitNG_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = TumblKit;
@@ -451,7 +450,6 @@
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = TumblKitNG_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = TumblKit;

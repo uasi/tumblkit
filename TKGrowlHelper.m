@@ -13,6 +13,19 @@
 
 @implementation TKGrowlHelper
 
++ (void)loadGrowlForBundle:(NSBundle *)bundle
+{
+    NSString *growlPath = [[bundle privateFrameworksPath]
+                           stringByAppendingPathComponent:@"Growl.framework"];
+    NSBundle *growlBundle = [NSBundle bundleWithPath:growlPath];
+    if (growlBundle) {
+        [growlBundle load];
+    }
+    else {
+        NSLog(@"Could not load Growl.framework");
+    }
+}
+
 + (TKGrowlHelper *)sharedGrowlHelper
 {
     static TKGrowlHelper *sharedGrowlHelper;
