@@ -39,6 +39,12 @@
     [self showWindow:sender];
 }
 
+- (void)showWindowWithMenuItem:(NSMenuItem *)item
+{
+    TKPost *post = [(TKDeferredPost *)[item representedObject] post];
+    [self showWindow:self withPost:post];   
+}
+
 - (IBAction)postWithContent:(id)sender
 {
     [[TKPostingNotifier sharedNotifier] notifyWithPost:post];

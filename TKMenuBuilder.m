@@ -28,8 +28,8 @@
     [item setRepresentedObject:[extractor deferredPostFromSource:source_]];
     NSMenuItem *alternateItem = [[item copy] autorelease];
     [alternateItem setTitle:[[alternateItem title] stringByAppendingString:@"..."]]; // XXX ...
-    [alternateItem setTarget:self];
-    [alternateItem setAction:@selector(openEditWindow:)];
+    [alternateItem setTarget:[[TKBundleController sharedBundleController] editPanelController]];
+    [alternateItem setAction:@selector(showWindowWithMenuItem:)];
     [alternateItem setKeyEquivalentModifierMask:NSAlternateKeyMask];
     [alternateItem setAlternate:YES];
     if (preferredItem_ == nil) {
@@ -48,14 +48,6 @@
         [menu_ insertItem:[submenuItem autorelease] atIndex:2];
         
         [menu_ insertItem:[NSMenuItem separatorItem] atIndex:3];
-        
-        // DOING EVEL THING...
-        NSMenuItem *item__ = [[NSMenuItem alloc] initWithTitle:@"Open Edit Window"
-                                                        action:@selector(openEditWindow:)
-                                                 keyEquivalent:@""];
-        [item__ setTarget:self];
-        [item__ setRepresentedObject:[extractor deferredPostFromSource:source_]];
-        [menu_ addItem:[item__ autorelease]];
     }
     [submenu_ addItem:[item autorelease]];
     [submenu_ addItem:[alternateItem autorelease]];
@@ -75,13 +67,6 @@
     [menu_ release];
     [source_ release];
     [super dealloc];
-}
-
-// DOING EVEL THING...
-- (void)openEditWindow:(id)sender
-{
-    TKPost *post = [(TKDeferredPost *)[(NSMenuItem *)sender representedObject] post];
-    [[[TKBundleController sharedBundleController] editPanelController] showWindow:self withPost:post];
 }
 
 @end

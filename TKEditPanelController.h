@@ -18,6 +18,7 @@
 
 - (void)showWindow:(id)sender
           withPost:(TKPost *)post;
+- (void)showWindowWithMenuItem:(NSMenuItem *)item;
 - (IBAction)postWithContent:(id)sender;
 - (void)windowWillClose:(NSNotification *)notification;
 

@@ -54,7 +54,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* TumblKitNG */;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = TumblKitNG;
 		};
 /* End PBXContainerItemProxy section */
@@ -186,8 +186,6 @@
 				58C941D90FD6A01B00D2C4BE /* TKSource.m */,
 				58C9427A0FD6C43A00D2C4BE /* TKGrowlHelper.h */,
 				58C9427B0FD6C43A00D2C4BE /* TKGrowlHelper.m */,
-				58C942970FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.h */,
-				58C942980FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m */,
 				587F6D790FDC0F030039B359 /* TKMenuBuilder.h */,
 				587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */,
 			);
@@ -243,6 +241,8 @@
 		5850C6690FE401F40083E931 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				58C942970FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.h */,
+				58C942980FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m */,
 				58B5A2610F7F28A0002AB47A /* NSURLCredentialStorage+TumblKitAdditions.h */,
 				58B5A2620F7F28A0002AB47A /* NSURLCredentialStorage+TumblKitAdditions.m */,
 				5850C66A0FE402320083E931 /* NSDictionary+TumblKitAdditions.h */,
