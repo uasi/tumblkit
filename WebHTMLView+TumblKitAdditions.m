@@ -17,31 +17,12 @@
 //#define TK_L(str) (str)
 
 
-@interface WebHTMLView (TubmlKitPrivateMethods)
-
-- (NSMenuItem *)tk_menuItemForSource:(TKSource *)source
-                          sourceType:(TKSourceType)type;
+@interface WebHTMLView (TumblKitPrivateMethods)
 - (TKSource *)tk_sourceForEvent:(NSEvent *)event;
 @end
 
 
-
-@implementation WebHTMLView (TumblKitAdditions)
-
-- (NSMenu *)tk_menuForEvent:(NSEvent *)event
-{
-    TKSource *source = [self tk_sourceForEvent:event];
-    
-    NSMenu *menu = [self tk_menuForEvent:event];
-    TKMenuBuilder *builder = [[TKMenuBuilder alloc] initWithMenu:menu source:source];
-    
-    [[TKExtractor defaultExtractor] registerExtractorsToRegistory:builder
-                                                  ifAcceptsSource:source];
-    
-    return menu;
-     
-}
-
+@implementation WebHTMLView (TumblKitPrivateMethods)
 - (TKSource *)tk_sourceForEvent:(NSEvent *)event
 {
     NSPoint point = [event locationInWindow];
@@ -53,5 +34,20 @@
                                             element:element];
     return source;
 }
+@end
 
+
+@implementation WebHTMLView (TumblKitAdditions)
+- (NSMenu *)tk_menuForEvent:(NSEvent *)event
+{
+    TKSource *source = [self tk_sourceForEvent:event];
+    
+    NSMenu *menu = [self tk_menuForEvent:event];
+    TKMenuBuilder *builder = [[TKMenuBuilder alloc] initWithMenu:menu source:source];
+    
+    [[TKExtractor defaultExtractor] registerExtractorsToRegistory:builder
+                                                  ifAcceptsSource:source];
+    
+    return menu;
+}
 @end
