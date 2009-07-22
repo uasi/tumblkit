@@ -101,7 +101,7 @@
 		58B5A2610F7F28A0002AB47A /* NSURLCredentialStorage+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLCredentialStorage+TumblKitAdditions.h"; sourceTree = "<group>"; };
 		58B5A2620F7F28A0002AB47A /* NSURLCredentialStorage+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLCredentialStorage+TumblKitAdditions.m"; sourceTree = "<group>"; };
 		58C941D80FD6A01B00D2C4BE /* TKSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSource.h; sourceTree = "<group>"; };
-		58C941D90FD6A01B00D2C4BE /* TKSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSource.m; sourceTree = "<group>"; };
+		58C941D90FD6A01B00D2C4BE /* TKSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSource.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		58C942710FD6C3D300D2C4BE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		58C9427A0FD6C43A00D2C4BE /* TKGrowlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGrowlHelper.h; sourceTree = "<group>"; };
 		58C9427B0FD6C43A00D2C4BE /* TKGrowlHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGrowlHelper.m; sourceTree = "<group>"; };

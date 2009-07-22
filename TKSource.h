@@ -8,37 +8,23 @@
 
 #import <Cocoa/Cocoa.h>
 
+
 @class WebHTMLView;
 
-
-typedef enum TKSourceType {
-    TKSourceTypeNil   = 0,
-    TKSourceTypeImage = 1,
-    TKSourceTypeLink  = 2,
-    TKSourceTypeQuote = 4,
-    TKSourceTypeVideo = 8,
-    TKSourceTypePage  = 16,
-    // TKSourceTypeAudio = 32,
-    // TKSourceTypeConversation = 64
-} TKSourceType;
-
-
 @interface TKSource : NSObject {
-    TKSourceType type_;
     WebHTMLView *view_;   
     NSDictionary *element_;
-    NSString *text_;
-    NSString *title_;
-    NSString *linkLabel_;
-    NSURL *linkURL_;
-    NSURL *sourceURL_;
-    NSURL *URL_;
+    NSString *text;
+    NSString *title;
+    NSString *linkLabel;
+    NSURL *linkURL;
+    NSURL *sourceURL;
+    NSURL *URL;
 }
 
 + (TKSource *)sourceWithHTMLView:(WebHTMLView *)view
                          element:(NSDictionary *)element;
 
-@property(readonly) TKSourceType type;
 @property(readonly) NSString *text;
 @property(readonly) NSString *title;
 @property(readonly) NSString *linkLabel;
