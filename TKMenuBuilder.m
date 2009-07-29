@@ -78,6 +78,14 @@
     return [item autorelease];
 }
 
+- (id)post:(id)sender
+{
+    NSString *formKey = @"";
+    NSMutableDictionary *d = [NSMutableDictionary dictionary];
+    [d setObject:@"post_one" forKey:@"post[one]"];
+    [d setObject:@"post_two" forKey:@"post[two]"];
+}
+
 - (id)initWithMenu:(NSMenu *)menu
             source:(TKSource *)source
 {
