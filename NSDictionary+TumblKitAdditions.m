@@ -19,24 +19,31 @@
 - (NSString *)tk_queryString
 {
     NSMutableString *queryString = [NSMutableString string];
-    NSString *key;
-    NSObject *value;
-    NSString *stringValue;
-    for (key in [self keyEnumerator]) {
-        value = [self objectForKey:key];
-        if ([value isKindOfClass:[NSString class]]) {
-            stringValue = (NSString *)value;
-        }
-        else if ([value isKindOfClass:[NSURL class]]) {
-            stringValue = [self tk_stringByUnescapingString:[(NSURL *)value absoluteString]];
+    for (NSString *key in [self keyEnumerator]) {
+        NSArray *values;
+        if ([[self objectForKey:key] isKindOfClass:[NSArray class]]) {
+            values = [self objectForKey:key];
         }
         else {
-            stringValue = [value description];
+            values = [NSArray arrayWithObject:[self objectForKey:key]];
         }
-        [queryString appendFormat:
-         @"%@=%@&",
-         [self tk_stringByEscapingString:key],
-         [self tk_stringByEscapingString:stringValue]];
+        
+        for (NSObject *value in values) {
+            NSString *stringValue;
+            if ([value isKindOfClass:[NSString class]]) {
+                stringValue = (NSString *)value;
+            }
+            else if ([value isKindOfClass:[NSURL class]]) {
+                stringValue = [self tk_stringByUnescapingString:[(NSURL *)value absoluteString]];
+            }
+            else {
+                stringValue = [value description];
+            }
+            [queryString appendFormat:
+             @"%@=%@&",
+             [self tk_stringByEscapingString:key],
+             [self tk_stringByEscapingString:stringValue]];
+        }
     }
     if ([queryString length]) {
         [queryString deleteCharactersInRange:
