@@ -42,6 +42,7 @@
 		58C942990FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C942980FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m */; };
 		58C9449D0FD6F0BF00D2C4BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C9449B0FD6F0BF00D2C4BE /* Localizable.strings */; };
 		58CC69070FF681570088D4BC /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C9428D0FD6C5E100D2C4BE /* Growl.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		58DE591010207268003212F8 /* TKDOMUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DE590F10207268003212F8 /* TKDOMUtil.m */; };
 		58E134D50FDBDF9C0042663C /* TKExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134D40FDBDF9C0042663C /* TKExtractor.m */; };
 		58E134FB0FDBF0F10042663C /* TKGenericExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134FA0FDBF0F10042663C /* TKGenericExtractor.m */; };
 		58E134FE0FDBF1680042663C /* TKPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134FD0FDBF1680042663C /* TKPost.m */; };
@@ -110,6 +111,8 @@
 		58C942980FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebHTMLView+TumblKitAdditions.m"; sourceTree = "<group>"; };
 		58C9449C0FD6F0BF00D2C4BE /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58C9449E0FD6F0D500D2C4BE /* ja_JP */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja_JP; path = ja_JP.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58DE590E10207268003212F8 /* TKDOMUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDOMUtil.h; sourceTree = "<group>"; };
+		58DE590F10207268003212F8 /* TKDOMUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDOMUtil.m; sourceTree = "<group>"; };
 		58E134D30FDBDF9C0042663C /* TKExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKExtractor.h; sourceTree = "<group>"; };
 		58E134D40FDBDF9C0042663C /* TKExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKExtractor.m; sourceTree = "<group>"; };
 		58E134F90FDBF0F10042663C /* TKGenericExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGenericExtractor.h; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				58C9427B0FD6C43A00D2C4BE /* TKGrowlHelper.m */,
 				587F6D790FDC0F030039B359 /* TKMenuBuilder.h */,
 				587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */,
+				58DE590E10207268003212F8 /* TKDOMUtil.h */,
+				58DE590F10207268003212F8 /* TKDOMUtil.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 				5850C7610FE63B650083E931 /* TKEditPanelController.m in Sources */,
 				58859CE00FE80DC60075F237 /* TKExtractor+DefaultExtractor.m in Sources */,
 				5805EF4C0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.m in Sources */,
+				58DE591010207268003212F8 /* TKDOMUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
