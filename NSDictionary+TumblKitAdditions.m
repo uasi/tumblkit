@@ -34,7 +34,7 @@
                 stringValue = (NSString *)value;
             }
             else if ([value isKindOfClass:[NSURL class]]) {
-                stringValue = [self tk_stringByUnescapingString:[(NSURL *)value absoluteString]];
+                stringValue = [(NSURL *)value absoluteString];
             }
             else {
                 stringValue = [value description];
