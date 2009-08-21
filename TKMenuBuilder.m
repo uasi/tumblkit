@@ -6,6 +6,7 @@
 //  Copyright 2009 99cm.org. All rights reserved.
 //
 
+#import <WebKit/WebKit.h>
 #import "TKMenuBuilder.h"
 #import "TKBundleController.h"
 #import "TKEditPanelController.h"
@@ -13,6 +14,9 @@
 #import "TKSource.h"
 #import "TKPost.h"
 #import "TKPostingNotification.h"
+#import "TKDOMUtil.h"
+#import "NSDictionary+TumblKitAdditions.h"
+#import "TKGrowlHelper.h"
 
 #define TK_L(str) NSLocalizedStringFromTableInBundle(str, @"", TKBundle, @"")
 
@@ -78,12 +82,80 @@
     return [item autorelease];
 }
 
-- (id)post:(id)sender
+- (void)post:(id)sender
 {
-    NSString *formKey = @"";
-    NSMutableDictionary *d = [NSMutableDictionary dictionary];
-    [d setObject:@"post_one" forKey:@"post[one]"];
-    [d setObject:@"post_two" forKey:@"post[two]"];
+    NSString *source = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://www.tumblr.com/new/quote"]
+                                                encoding:NSUTF8StringEncoding
+                                                   error:NULL];
+
+    WebView *webView = [[WebView alloc] initWithFrame:NSMakeRect(0, 0, 0, 0)
+                                            frameName:nil
+                                            groupName:nil];
+    [[webView mainFrame] loadHTMLString:source baseURL:[NSURL URLWithString:@"http://www.tumblr.com/"]];
+    BOOL isRunning;
+    do {
+		NSDate* next = [NSDate dateWithTimeIntervalSinceNow:0.25];
+		isRunning = [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+											 beforeDate:next];
+	} while (isRunning && [webView isLoading]);
+    DOMDocument *doc = [webView mainFrameDocument];
+    NSLog(@"Document loaded %@", doc);
+    DOMXPathResult *res = [doc evaluate:@"//form[@id='edit_post']"
+                            contextNode:doc
+                               resolver:nil
+                                   type:DOM_FIRST_ORDERED_NODE_TYPE
+                               inResult:nil];
+    NSLog(@"Got res %@", res);
+    DOMElement *formElem = (DOMElement *)[res singleNodeValue];
+    NSMutableDictionary *content = (NSMutableDictionary *)TKCreateDictionaryWithForm(formElem);
+    
+    
+    
+#if 0
+    WebView *webView = [[WebView alloc] initWithFrame:NSMakeRect(0, 0, 0, 0)
+                                            frameName:nil
+                                            groupName:nil];
+    [webView setMainFrameURL:@"http://www.tumblr.com/new/text"];
+    BOOL isRunning;
+    do {
+		NSDate* next = [NSDate dateWithTimeIntervalSinceNow:0.25];
+		isRunning = [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+											 beforeDate:next];
+	} while (isRunning && [webView isLoading]);
+    DOMDocument *doc = [webView mainFrameDocument];
+    DOMXPathResult *res = [doc evaluate:@"//form[@id='edit_post']"
+                            contextNode:doc
+                               resolver:nil
+                                   type:DOM_FIRST_ORDERED_NODE_TYPE
+                               inResult:nil];
+    DOMElement *formElem = (DOMElement *)[res singleNodeValue];
+    NSMutableDictionary *dict = (NSMutableDictionary *)TKCreateDictionaryWithForm(formElem);
+    [dict setObject:@"Title" forKey:@"post[one]"];
+    [dict setObject:@"Body" forKey:@"post[two]"];
+    [dict removeObjectForKey:@"preview_post"]; // REQUIRED!
+    [dict setObject:@"private" forKey:@"post[state]"];
+    NSLog(@"%@", dict);
+    NSLog(@"%@", [dict tk_queryString]);
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.tumblr.com/new/text"]];
+    [request setHTTPBody:[[dict tk_queryString] dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPMethod:@"POST"];
+    [NSURLConnection connectionWithRequest:request delegate:self];
+#endif
+}
+
+- (void)connection:(NSURLConnection *)connection
+didReceiveResponse:(NSHTTPURLResponse *)response
+{
+    [[TKGrowlHelper sharedGrowlHelper] notifyWithTitle:@"POST Test"
+                                           description:[NSString stringWithFormat:@"Code %d", 
+                                                        [response statusCode]]];
+}
+
+- (void)connection:(NSURLConnection *)connection
+  didFailWithError:(NSError *)error
+{
+    [[TKGrowlHelper sharedGrowlHelper] notifyWithTitle:@"POST Test"
+                                           description:@"POST failed"];
 }
 
 - (id)initWithMenu:(NSMenu *)menu
