@@ -7,11 +7,10 @@
 //
 
 #import "TKTumblrWebService.h"
+#import "TKCommonAdditions.h"
 #import "TKPost.h"
 #import "TKPostingNotification.h"
-#import "NSURLCredentialStorage+TumblKitAdditions.h"
 #import "TKGrowlHelper.h"
-#import "NSDictionary+TumblKitAdditions.h"
 #import "TKDOMUtil.h"
 
 
@@ -144,16 +143,10 @@ didReceiveResponse:(NSHTTPURLResponse *)response
     [query setObject:[self postTypeStringForPost:post] forKey:@"post[type]"];
     
     if ([post type] == TKPostQuoteType) {
-        NSString *body = [[post body] stringByReplacingOccurrencesOfString:@"<"
-                                                                withString:@"&lt;"];
-        body = [body stringByReplacingOccurrencesOfString:@">"
-                                               withString:@"&gt;"];
+        NSString *body = [[post body] tk_stringByEscapingAngleBrackets];
         [query setObject:body forKey:@"post[one]"];
-        NSString *title = [[post title] stringByReplacingOccurrencesOfString:@"<"
-                                                                  withString:@"&lt;"];
-        title = [title stringByReplacingOccurrencesOfString:@">"
-                                                 withString:@"&gt;"];
-        NSString *source = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>", [post URL], title];
+        NSString *title = [[post title] tk_stringByEscapingAngleBrackets];
+        NSString *source = [[post URL] tk_anchorStringWithText:title];
         [query setObject:source forKey:@"post[two]"];
     }
     else if ([post type] == TKPostLinkType) {
@@ -163,11 +156,8 @@ didReceiveResponse:(NSHTTPURLResponse *)response
     }
     else if ([post type] == TKPostImageType) {
         [query setObject:[post alternateURL] forKey:@"photo_src"];
-        NSString *title = [[post title] stringByReplacingOccurrencesOfString:@"<"
-                                                                  withString:@"&lt;"];
-        title = [title stringByReplacingOccurrencesOfString:@">"
-                                                 withString:@"&gt;"];
-        NSString *caption = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>", [post URL], title];
+        NSString *title = [[post title] tk_stringByEscapingAngleBrackets];
+        NSString *caption = [[post URL] tk_anchorStringWithText:title];
         if ([post body] != nil && ! [[post body] isEqualToString:@""]) {
             caption = [[post body] stringByAppendingFormat:@" (via %@)", caption];
         }
