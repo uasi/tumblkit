@@ -44,10 +44,8 @@
     
     NSMenu *menu = [self tk_menuForEvent:event];
     TKMenuBuilder *builder = [[TKMenuBuilder alloc] initWithMenu:menu source:source];
+    [builder insertItemsToMenu];
     
-    [[TKExtractor defaultExtractor] registerExtractorsToRegistory:builder
-                                                  ifAcceptsSource:source];
-    
-    return menu;
+    return [builder menu];
 }
 @end

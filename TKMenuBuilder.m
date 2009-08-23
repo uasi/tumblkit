@@ -16,47 +16,72 @@
 
 #define TK_L(str) NSLocalizedStringFromTableInBundle(str, @"", TKBundle, @"")
 
+@interface TKMenuBuilder () // Private Methods
+- (NSMenuItem *)itemForExtractor:(TKExtractor *)extractactor;
+- (NSMenuItem *)alternateItemForExtractor:(TKExtractor *)extractactor;
+@end
+
+
 @implementation TKMenuBuilder
 
-- (void)registerObject:(id)object
+@synthesize menu = menu_;
+
+- (void)insertItemsToMenu
 {
-    TKExtractor *extractor = (TKExtractor *)object;
+    NSArray *extractors = [TKExtractor extractorsForSource:source_];
+    if ([extractors lastObject] == nil) {
+        return;
+    }
+    TKExtractor *firstExtractor = [extractors objectAtIndex:0];
+    
+    NSMenuItem *firstItem = [self itemForExtractor:firstExtractor];
+    [firstItem setTitle:[NSString stringWithFormat:TK_L(@"Share %@"), [firstItem title]]];
+    [menu_ insertItem:firstItem atIndex:0];
+    
+    NSMenuItem *firstAltItem = [self alternateItemForExtractor:firstExtractor];
+    [firstAltItem setTitle:[[firstItem title] stringByAppendingString:@"..."]];
+    [menu_ insertItem:firstAltItem atIndex:1];
+    
+    NSMenu *submenu = [[NSMenu alloc] init];
+    NSMenuItem *submenuItem = [[NSMenuItem alloc] init];
+    [submenuItem setTitle:TK_L(@"Share As...")];
+    [submenuItem setSubmenu:submenu];
+    [menu_ insertItem:[submenuItem autorelease] atIndex:2];
+    [menu_ insertItem:[NSMenuItem separatorItem] atIndex:3];
+    
+    for (TKExtractor *extractor in extractors) {
+        [submenu addItem:[self itemForExtractor:extractor]];
+        [submenu addItem:[self alternateItemForExtractor:extractor]];
+    }
+}
+
+- (NSMenuItem *)itemForExtractor:(TKExtractor *)extractor
+{
     NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:TK_L([extractor title])
                                                   action:@selector(notify:)
                                            keyEquivalent:@""];
     [item setTarget:[TKPostingNotifier sharedNotifier]];
     [item setRepresentedObject:[extractor deferredPostFromSource:source_]];
-    NSMenuItem *alternateItem = [[item copy] autorelease];
-    [alternateItem setTitle:[[alternateItem title] stringByAppendingString:@"..."]]; // XXX ...
-    [alternateItem setTarget:[[TKBundleController sharedBundleController] editPanelController]];
-    [alternateItem setAction:@selector(showWindowWithMenuItem:)];
-    [alternateItem setKeyEquivalentModifierMask:NSAlternateKeyMask];
-    [alternateItem setAlternate:YES];
-    if (preferredItem_ == nil) {
-        preferredItem_ = [[item copy] autorelease];
-        [preferredItem_ setTitle:[NSString stringWithFormat:TK_L(@"Share %@"), [preferredItem_ title]]];
-        [menu_ insertItem:preferredItem_ atIndex:0];
-        
-        NSMenuItem *altPreferredItem = [alternateItem copy];
-        [altPreferredItem setTitle:[[preferredItem_ title] stringByAppendingString:@"..."]];
-        [menu_ insertItem:altPreferredItem atIndex:1];
-        
-        NSMenuItem *submenuItem = [[NSMenuItem alloc] init];
-        [submenuItem setTitle:TK_L(@"Share As...")];
-        submenu_ = [[NSMenu alloc] init];
-        [submenuItem setSubmenu:submenu_];
-        [menu_ insertItem:[submenuItem autorelease] atIndex:2];
-        
-        [menu_ insertItem:[NSMenuItem separatorItem] atIndex:3];
-    }
-    [submenu_ addItem:[item autorelease]];
-    [submenu_ addItem:[alternateItem autorelease]];
+    return [item autorelease];
+}
+
+- (NSMenuItem *)alternateItemForExtractor:(TKExtractor *)extractor
+{
+    NSString *title = [TK_L([extractor title]) stringByAppendingString:@"..."];
+    NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:title
+                                                  action:@selector(notify:)
+                                           keyEquivalent:@""];
+    [item setTarget:[[TKBundleController sharedBundleController] editPanelController]];
+    [item setAction:@selector(showWindowWithMenuItem:)];
+    [item setKeyEquivalentModifierMask:NSAlternateKeyMask];
+    [item setAlternate:YES];
+    return [item autorelease];
 }
 
 - (id)initWithMenu:(NSMenu *)menu
             source:(TKSource *)source
 {
-    [self init];
+    [super init];
     menu_ = [menu retain];
     source_ = [source retain];
     return self;

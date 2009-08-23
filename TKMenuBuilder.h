@@ -8,19 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
-@protocol TKRegistory
-- (void)registerObject:(id)object;
-@end
-
 @class TKSource;
-@interface TKMenuBuilder : NSObject <TKRegistory> {
+@interface TKMenuBuilder : NSObject {
     NSMenu *menu_;
-    NSMenu *submenu_;
-    NSMenuItem *preferredItem_;
     TKSource *source_;
 }
 
+@property(readonly) NSMenu *menu;
+
 - (id)initWithMenu:(NSMenu *)menu
             source:(TKSource *)source;
+- (void)insertItemsToMenu;
 
 @end

@@ -7,25 +7,42 @@
 //
 
 #import "TKExtractor.h"
+#import "TKGenericExtractor.h"
 
 
 @implementation TKExtractor
 
-@synthesize nextExtractor = nextExtractor_;
-
-- (NSString *)title { return @"TITLE"; }
-
-- (id)initWithNextExtractor:(TKExtractor *)nextExtractor
++ (NSArray *)extractors
 {
-    [self init];
-    nextExtractor_ = [nextExtractor retain];
-    return self;
+    static NSArray *extractorClasses;
+    if (extractorClasses == nil) {
+        extractorClasses = [[NSArray alloc] initWithObjects:
+                            [TKGenericQuoteExtractor class],
+                            [TKGenericImageExtractor class],
+                            [TKGenericLinkExtractor class],
+                            nil];
+    }
+    NSMutableArray *extractors = [NSMutableArray array];
+    for (Class klass in extractorClasses) {
+        [extractors addObject:[[(TKExtractor *)[klass alloc] init] autorelease]];
+    }
+    return extractors;
 }
 
-- (void)dealloc
++ (NSArray *)extractorsForSource:(TKSource *)source
 {
-    [nextExtractor_ release];
-    [super dealloc];
+    NSMutableArray *extractors = [NSMutableArray array];
+    for (TKExtractor *extractor in [[self class] extractors]) {
+        if ([extractor acceptsSource:source]) {
+            [extractors addObject:extractor];
+        }
+    }
+    return extractors;
+}
+
+- (NSString *)title
+{
+    return @"TITLE";
 }
 
 - (BOOL)acceptsSource:(TKSource *)source
@@ -42,25 +59,5 @@
 {
     return [TKDeferredPost deferredPostWithSource:source extractor:self];
 }
-
-- (BOOL)registerToRegistory:(id <TKRegistory>)registory
-            ifAcceptsSource:(TKSource *)source
-{
-    if ([self acceptsSource:source]) {
-        [registory registerObject:self];
-        return YES;
-    }
-    return NO;
-}
-
-- (void)registerExtractorsToRegistory:(id <TKRegistory>)registory
-                      ifAcceptsSource:(TKSource *)source
-{
-    [self registerToRegistory:registory ifAcceptsSource:source];
-    if ([self nextExtractor] != nil) {
-        [[self nextExtractor] registerExtractorsToRegistory:registory ifAcceptsSource:source];
-    }
-}
-
 
 @end
