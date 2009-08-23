@@ -8,15 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+
 @interface TKWebService : NSObject {}
 + (void)registerAsObserver;
 + (void)postWithNotification:(NSNotification *)notification;
-@end
-
-@class TKPost;
-@class WebView;
-@interface TKTumblrWebService : TKWebService {
-    TKPost *post_;
-    WebView* webView_;
-}
 @end
