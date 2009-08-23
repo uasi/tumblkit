@@ -33,7 +33,7 @@
 @end
 
 
-@interface TKTumblrWebService () // Priavte methods
+@interface TKTumblrWebService () // Priavte Methods
 - (void)postWithPost:(TKPost *)post;
 - (void)abortPosting;
 - (void)finishPosting;
