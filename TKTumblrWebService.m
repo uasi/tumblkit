@@ -143,9 +143,9 @@ didReceiveResponse:(NSHTTPURLResponse *)response
     [query setObject:[self postTypeStringForPost:post] forKey:@"post[type]"];
     
     if ([post type] == TKPostQuoteType) {
-        NSString *body = [[post body] tk_stringByEscapingAngleBrackets];
+        NSString *body = [[post body] tk_stringByEscapingTagsAndAmpersands];
         [query setObject:body forKey:@"post[one]"];
-        NSString *title = [[post title] tk_stringByEscapingAngleBrackets];
+        NSString *title = [[post title] tk_stringByEscapingTagsAndAmpersands];
         NSString *source = [[post URL] tk_anchorStringWithText:title];
         [query setObject:source forKey:@"post[two]"];
     }
@@ -156,7 +156,7 @@ didReceiveResponse:(NSHTTPURLResponse *)response
     }
     else if ([post type] == TKPostImageType) {
         [query setObject:[post alternateURL] forKey:@"photo_src"];
-        NSString *title = [[post title] tk_stringByEscapingAngleBrackets];
+        NSString *title = [[post title] tk_stringByEscapingTagsAndAmpersands];
         NSString *caption = [[post URL] tk_anchorStringWithText:title];
         if ([post body] != nil && ! [[post body] isEqualToString:@""]) {
             caption = [[post body] stringByAppendingFormat:@" (via %@)", caption];

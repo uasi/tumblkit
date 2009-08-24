@@ -11,10 +11,13 @@
 
 @implementation NSString (TumblKitAdditions)
 
-- (NSString *)tk_stringByEscapingAngleBrackets
+- (NSString *)tk_stringByEscapingTagsAndAmpersands
 {
-    NSString *string = [self stringByReplacingOccurrencesOfString:@"<"
-                                                       withString:@"&lt;"];
+    
+    NSString *string = [self stringByReplacingOccurrencesOfString:@"&"
+                                                       withString:@"&amp;"];
+    string= [string stringByReplacingOccurrencesOfString:@"<"
+                                            withString:@"&lt;"];
     string = [string stringByReplacingOccurrencesOfString:@">"
                                                withString:@"&gt;"];
     return string;

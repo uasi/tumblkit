@@ -10,5 +10,5 @@
 
 
 @interface NSString (TumblKitAdditions)
-- (NSString *)tk_stringByEscapingAngleBrackets;
+- (NSString *)tk_stringByEscapingTagsAndAmpersands;
 @end
