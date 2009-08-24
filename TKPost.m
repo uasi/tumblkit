@@ -13,6 +13,14 @@
 
 @implementation TKPost
 
+@synthesize type = type_;
+@synthesize title = title_;
+@synthesize body = body_;
+@synthesize URL = URL_;
+@synthesize alternateURL = alternateURL_;
+@synthesize linkURL = linkURL_;
+@synthesize isPrivate = isPrivate_;
+
 - (id)initWithType:(TKPostType)type
 {
     [self init];
@@ -23,16 +31,12 @@
 - (void)dealloc
 {
     [title_ release];
+    [body_ release];
+    [URL_ release];
+    [alternateURL_ release];
+    [linkURL_ release];
     [super dealloc];
 }
-
-@synthesize type = type_;
-@synthesize title = title_;
-@synthesize body = body_;
-@synthesize URL = URL_;
-@synthesize alternateURL = alternateURL_;
-@synthesize linkURL = linkURL_;
-@synthesize isPrivate;
 
 @end
 

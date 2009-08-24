@@ -26,10 +26,8 @@ typedef enum TKPostType {
     NSURL *URL_;
     NSURL *alternateURL_;
     NSURL *linkURL_;
-    BOOL isPrivate;
+    BOOL isPrivate_;
 }
-
-- (id)initWithType:(TKPostType)type;
 
 @property TKPostType type;
 @property(retain) NSString *title;
@@ -38,6 +36,8 @@ typedef enum TKPostType {
 @property(retain) NSURL *alternateURL;
 @property(retain) NSURL *linkURL;
 @property(setter=setPrivate:) BOOL isPrivate;
+
+- (id)initWithType:(TKPostType)type;
 
 @end
 
@@ -50,11 +50,11 @@ typedef enum TKPostType {
     TKExtractor *extractor_;
 }
 
+@property(readonly) TKPost *post;
+
 - (id)initWithSource:(TKSource *)source
            extractor:(TKExtractor *)extractor;
 + (id)deferredPostWithSource:(TKSource *)source
                    extractor:(TKExtractor *)extractor;
-
-@property(readonly) TKPost *post;
 
 @end

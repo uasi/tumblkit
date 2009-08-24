@@ -14,16 +14,13 @@
 @interface TKSource : NSObject {
     WebHTMLView *view_;   
     NSDictionary *element_;
-    NSString *text;
-    NSString *title;
-    NSString *linkLabel;
-    NSURL *linkURL;
-    NSURL *sourceURL;
-    NSURL *URL;
+    NSString *text_;
+    NSString *title_;
+    NSString *linkLabel_;
+    NSURL *linkURL_;
+    NSURL *sourceURL_;
+    NSURL *URL_;
 }
-
-+ (TKSource *)sourceWithHTMLView:(WebHTMLView *)view
-                         element:(NSDictionary *)element;
 
 @property(readonly) NSString *text;
 @property(readonly) NSString *title;
@@ -32,6 +29,7 @@
 @property(readonly) NSURL *sourceURL;
 @property(readonly) NSURL *URL;
 
-
++ (TKSource *)sourceWithHTMLView:(WebHTMLView *)view
+                         element:(NSDictionary *)element;
 
 @end

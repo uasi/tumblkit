@@ -13,6 +13,9 @@
 
 @implementation TKEditPanelController
 
+@synthesize isPreviousPostPrivate = isPreviousPostPrivate_;
+@synthesize post = post_;
+
 - (void)awakeFromNib
 {
     [[self window] setDelegate:self];
@@ -47,7 +50,7 @@
 
 - (IBAction)postWithContent:(id)sender
 {
-    [[TKPostingNotifier sharedNotifier] notifyWithPost:post];
+    [[TKPostingNotifier sharedNotifier] notifyWithPost:post_];
     [[self window] performClose:sender];
 }
 
@@ -59,8 +62,5 @@
 {
     [self setPreviousPostPrivate:[[self post] isPrivate]];
 }
-
-@synthesize isPreviousPostPrivate;
-@synthesize post;
 
 @end

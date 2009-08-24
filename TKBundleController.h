@@ -15,12 +15,12 @@ extern NSBundle *TKBundle; /* Shared bundle instance */
     IBOutlet TKEditPanelController *editPanelController;
 }
 
+@property(readonly) TKEditPanelController *editPanelController;
+
 + (NSBundle *)bundle;
 + (id)sharedBundleController;
 + (void)swizzleInstanceMethod:(SEL)aMethod
                    withMethod:(SEL)otherMethod
                       ofClass:(Class)theClass;
-
-@property(readonly) TKEditPanelController *editPanelController;
 
 @end

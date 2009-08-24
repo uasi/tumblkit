@@ -11,19 +11,26 @@
 #import "WebHTMLView+TumblKitAdditions.h"
 
 
-@interface TKSource (PrivateMethods)
+@interface TKSource () // Private Methods
 
-- (id)initWithText:(NSString *)aText
-             title:(NSString *)aTitle
-         linkLabel:(NSString *)aLinkLabel
-           linkURL:(NSURL *)aLinkURL
-         sourceURL:(NSURL *)aSourceURL
-               URL:(NSURL *)anURL;
+- (id)initWithText:(NSString *)text
+             title:(NSString *)title
+         linkLabel:(NSString *)linkLabel
+           linkURL:(NSURL *)linkURL
+         sourceURL:(NSURL *)sourceURL
+               URL:(NSURL *)URL;
 
 @end
 
 
 @implementation TKSource
+
+@synthesize text = text_;
+@synthesize title = title_;
+@synthesize linkLabel = linkLabel_;
+@synthesize linkURL = linkURL_;
+@synthesize sourceURL = sourceURL_;
+@synthesize URL = URL_;
 
 + (TKSource *)sourceWithHTMLView:(WebHTMLView *)view
                          element:(NSDictionary *)element
@@ -53,41 +60,32 @@
     return [source autorelease];
 }
 
-- (id)initWithText:(NSString *)aText
-             title:(NSString *)aTitle
-         linkLabel:(NSString *)aLinkLabel
-           linkURL:(NSURL *)aLinkURL
-         sourceURL:(NSURL *)aSourceURL
-               URL:(NSURL *)anURL;
+- (id)initWithText:(NSString *)text
+             title:(NSString *)title
+         linkLabel:(NSString *)linkLabel
+           linkURL:(NSURL *)linkURL
+         sourceURL:(NSURL *)sourceURL
+               URL:(NSURL *)URL
 {
     self = [super init];
-    if (self != nil) {
-        text = [aText retain];
-        title = [aTitle retain];
-        linkLabel = [aLinkLabel retain];
-        linkURL = [aLinkURL retain];
-        sourceURL = [aSourceURL retain];
-        URL = [anURL retain];
-    }
+    text_ = [text retain];
+    title_ = [title retain];
+    linkLabel_ = [linkLabel retain];
+    linkURL_ = [linkURL retain];
+    sourceURL_ = [sourceURL retain];
+    URL_ = [URL retain];
     return self;
 }
 
 - (void)dealloc
 {
-    [text release];
-    [title release];
-    [linkLabel release];
-    [linkURL release];
-    [sourceURL release];
-    [URL release];
+    [text_ release];
+    [title_ release];
+    [linkLabel_ release];
+    [linkURL_ release];
+    [sourceURL_ release];
+    [URL_ release];
     [super dealloc];
 }
-
-@synthesize text;
-@synthesize title;
-@synthesize linkLabel;
-@synthesize linkURL;
-@synthesize sourceURL;
-@synthesize URL;
 
 @end

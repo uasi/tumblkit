@@ -19,6 +19,8 @@ NSBundle *TKBundle; /* Shared bundle instance */
 
 @implementation TKBundleController
 
+@synthesize editPanelController;
+
 + (void)load
 {
     TKBundle = [TKBundleController bundle];
@@ -64,7 +66,5 @@ NSBundle *TKBundle; /* Shared bundle instance */
     Method alt = class_getInstanceMethod(theClass, otherSelector);
     method_exchangeImplementations(orig, alt);
 }
-
-@synthesize editPanelController;
 
 @end
