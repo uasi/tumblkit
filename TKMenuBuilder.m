@@ -79,6 +79,7 @@
     [item setAction:@selector(showWindowWithMenuItem:)];
     [item setKeyEquivalentModifierMask:NSAlternateKeyMask];
     [item setAlternate:YES];
+    [item setRepresentedObject:[extractor deferredPostFromSource:source_]];
     return [item autorelease];
 }
 
