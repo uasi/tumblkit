@@ -139,7 +139,7 @@ didReceiveResponse:(NSHTTPURLResponse *)response
 - (void)updateQuery:(NSMutableDictionary *)query
            withPost:(TKPost *)post
 {
-    if (![post isPrivate]) {
+    if ([post isPrivate]) {
         [query setObject:@"private" forKey:@"post[state]"];
     }
     [query removeObjectForKey:@"preview_post"];    
@@ -171,9 +171,6 @@ didReceiveResponse:(NSHTTPURLResponse *)response
         //     (title ? link(title) : "") + (author ? link(author) : "") + (desc ? "\n\n" + desc : "")
         [query setObject:[post linkURL] forKey:@"post[three]"];
     }
-#ifdef DEBUG
-    [query setObject:@"private" forKey:@"post[state]"];
-#endif
 }
 
 - (NSString *)postTypeStringForPost:(TKPost *)post
