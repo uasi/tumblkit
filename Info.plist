@@ -38,7 +38,7 @@
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 	<key>SUFeedURL</key>
-	<string>http://99cm.org/apps/TumblKit.appcast.xml</string>
+	<string>http://99cm.org/apps/tumblkit/appcast.xml</string>
 	<key>NSPrincipalClass</key>
 	<string>TKBundleController</string>
 </dict>
