@@ -138,8 +138,9 @@ didReceiveResponse:(NSHTTPURLResponse *)response
            withPost:(TKPost *)post
 {
     if (![post isPrivate]) {
-        [query removeObjectForKey:@"preview_post"];
+        [query setObject:@"private" forKey:@"post[state]"];
     }
+    [query removeObjectForKey:@"preview_post"];    
     [query setObject:[self postTypeStringForPost:post] forKey:@"post[type]"];
     
     if ([post type] == TKPostQuoteType) {
@@ -169,7 +170,7 @@ didReceiveResponse:(NSHTTPURLResponse *)response
         [query setObject:[post linkURL] forKey:@"post[three]"];
     }
 #ifdef DEBUG
-    [query setObject:@"private" forKey:@"post[state]"]; //XXX
+    [query setObject:@"private" forKey:@"post[state]"];
 #endif
 }
 
