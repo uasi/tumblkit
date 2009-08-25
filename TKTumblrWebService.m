@@ -152,14 +152,16 @@ didReceiveResponse:(NSHTTPURLResponse *)response
     else if ([post type] == TKPostLinkType) {
         [query setObject:[post title] forKey:@"post[one]"];
         [query setObject:[post URL] forKey:@"post[two]"];
-        [query setObject:[post body] forKey:@"post[three]"];
+        NSString *description = [[post body] tk_stringByEscapingTagsAndAmpersands];
+        [query setObject:description forKey:@"post[three]"];
     }
     else if ([post type] == TKPostImageType) {
         [query setObject:[post alternateURL] forKey:@"photo_src"];
         NSString *title = [[post title] tk_stringByEscapingTagsAndAmpersands];
         NSString *caption = [[post URL] tk_anchorStringWithText:title];
         if ([post body] != nil && ! [[post body] isEqualToString:@""]) {
-            caption = [[post body] stringByAppendingFormat:@" (via %@)", caption];
+            NSString *body = [[post body] tk_stringByEscapingTagsAndAmpersands];
+            caption = [body stringByAppendingFormat:@" (via %@)", caption];
         }
         [query setObject:caption forKey:@"post[two]"];
         // Note: post[two] might be
