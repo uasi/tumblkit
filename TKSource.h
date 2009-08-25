@@ -9,11 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 
+@class DOMNode;
+@class WebView;
 @class WebHTMLView;
 
 @interface TKSource : NSObject {
-    WebHTMLView *view_;   
-    NSDictionary *element_;
+    DOMNode *node_;
     NSString *text_;
     NSString *title_;
     NSString *linkLabel_;
@@ -22,6 +23,7 @@
     NSURL *URL_;
 }
 
+@property(readonly) DOMNode *node;
 @property(readonly) NSString *text;
 @property(readonly) NSString *title;
 @property(readonly) NSString *linkLabel;

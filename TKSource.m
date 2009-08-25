@@ -13,18 +13,20 @@
 
 @interface TKSource () // Private Methods
 
-- (id)initWithText:(NSString *)text
-             title:(NSString *)title
-         linkLabel:(NSString *)linkLabel
-           linkURL:(NSURL *)linkURL
-         sourceURL:(NSURL *)sourceURL
-               URL:(NSURL *)URL;
+- (id)initWithDOMNode:(DOMNode *)node
+                 text:(NSString *)text
+                title:(NSString *)title
+            linkLabel:(NSString *)linkLabel
+              linkURL:(NSURL *)linkURL
+            sourceURL:(NSURL *)sourceURL
+                  URL:(NSURL *)URL;
 
 @end
 
 
 @implementation TKSource
 
+@synthesize node = node_;
 @synthesize text = text_;
 @synthesize title = title_;
 @synthesize linkLabel = linkLabel_;
@@ -51,23 +53,27 @@
     
     sourceURL = [element objectForKey:WebElementImageURLKey];
 
-    TKSource *source = [[TKSource alloc] initWithText:text
-                                                title:title
-                                            linkLabel:linkLabel
-                                              linkURL:linkURL 
-                                            sourceURL:sourceURL
-                                                  URL:URL];
+    DOMNode *node = [element objectForKey:WebElementDOMNodeKey];
+    TKSource *source = [[TKSource alloc] initWithDOMNode:node
+                                                    text:text
+                                                   title:title
+                                               linkLabel:linkLabel
+                                                 linkURL:linkURL 
+                                               sourceURL:sourceURL
+                                                     URL:URL];
     return [source autorelease];
 }
 
-- (id)initWithText:(NSString *)text
-             title:(NSString *)title
-         linkLabel:(NSString *)linkLabel
-           linkURL:(NSURL *)linkURL
-         sourceURL:(NSURL *)sourceURL
-               URL:(NSURL *)URL
+- (id)initWithDOMNode:(DOMNode *)node
+                 text:(NSString *)text
+                title:(NSString *)title
+            linkLabel:(NSString *)linkLabel
+              linkURL:(NSURL *)linkURL
+            sourceURL:(NSURL *)sourceURL
+                  URL:(NSURL *)URL
 {
     self = [super init];
+    node_ = [node retain];
     text_ = [text retain];
     title_ = [title retain];
     linkLabel_ = [linkLabel retain];
@@ -79,6 +85,7 @@
 
 - (void)dealloc
 {
+    [node_ release];
     [text_ release];
     [title_ release];
     [linkLabel_ release];
