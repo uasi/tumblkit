@@ -17,7 +17,7 @@
     NSString *anchor = [NSString stringWithFormat:
                         @"<a href=\"%@\">%@</a>",
                         [self absoluteString],
-                        [text tk_stringByEscapingTagsAndAmpersands]];
+                        text];
     return anchor;
 }
 
