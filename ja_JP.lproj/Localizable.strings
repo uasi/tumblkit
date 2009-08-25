@@ -10,3 +10,5 @@
 "Share %@" = "%@を投稿";
 
 "Share As..." = "この形式で投稿…";
+
+"Your post was not sent. Check your Internet connection and make sure you are logged in to Tumblr." = "送信に失敗しました。インターネットに接続されているか、また Tumblr にログインしているか確認してください。\n（注意：version 0.9.10 から送信処理が変わりました。必ず Tumblr にログインした状態で送信してください。KeyChain に保存されたアカウントは無視されます）";

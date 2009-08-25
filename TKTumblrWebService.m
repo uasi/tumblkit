@@ -7,6 +7,7 @@
 //
 
 #import "TKTumblrWebService.h"
+#import "TKBundleController.h"
 #import "TKCommonAdditions.h"
 #import "TKPost.h"
 #import "TKPostingNotification.h"
@@ -114,11 +115,12 @@ didReceiveResponse:(NSHTTPURLResponse *)response
 
 - (void)abortPosting
 {
+    
     NSAlert *alert = [NSAlert alertWithMessageText:@"TumblKit - connection failed"
                                      defaultButton:@"OK"
                                    alternateButton:nil
                                        otherButton:nil
-                         informativeTextWithFormat:@"Your post was not sent. Check your Internet connection and try again."];
+                         informativeTextWithFormat:NSLocalizedStringFromTableInBundle(@"Your post was not sent. Check your Internet connection and make sure you are logged in to Tumblr.", @"", TKBundle, @"")];
     [alert setAlertStyle:NSWarningAlertStyle];
     [alert beginSheetModalForWindow:[NSApp mainWindow]
                       modalDelegate:nil
