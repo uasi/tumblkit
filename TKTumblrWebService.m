@@ -168,8 +168,9 @@ didReceiveResponse:(NSHTTPURLResponse *)response
         //     (title ? link(title) : "") + (author ? link(author) : "") + (desc ? "\n\n" + desc : "")
         [query setObject:[post linkURL] forKey:@"post[three]"];
     }
-    
+#ifdef DEBUG
     [query setObject:@"private" forKey:@"post[state]"]; //XXX
+#endif
 }
 
 - (NSString *)postTypeStringForPost:(TKPost *)post
