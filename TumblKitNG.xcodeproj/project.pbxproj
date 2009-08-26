@@ -34,6 +34,7 @@
 		58620CA41041BA6B0056FFD1 /* TKTumblrWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58620CA31041BA6B0056FFD1 /* TKTumblrWebService.m */; };
 		58620CD31041C9880056FFD1 /* NSString+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58620CD21041C9880056FFD1 /* NSString+TumblKitAdditions.m */; };
 		58620CD81041CBCC0056FFD1 /* NSURL+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58620CD71041CBCC0056FFD1 /* NSURL+TumblKitAdditions.m */; };
+		586214FF104510760056FFD1 /* TKTagTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 586214FE104510760056FFD1 /* TKTagTokenField.m */; };
 		587BEB5F0FE8E1EE00DDC3A1 /* Growl.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 58C9428D0FD6C5E100D2C4BE /* Growl.framework */; };
 		587F6D7B0FDC0F030039B359 /* TKMenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */; };
 		58B5A22B0F7F1EA2002AB47A /* TKBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B5A22A0F7F1EA2002AB47A /* TKBundleController.m */; };
@@ -103,6 +104,8 @@
 		58620CD51041CB780056FFD1 /* TKCommonAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCommonAdditions.h; sourceTree = "<group>"; };
 		58620CD61041CBCC0056FFD1 /* NSURL+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+TumblKitAdditions.h"; sourceTree = "<group>"; };
 		58620CD71041CBCC0056FFD1 /* NSURL+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		586214FD104510760056FFD1 /* TKTagTokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTagTokenField.h; sourceTree = "<group>"; };
+		586214FE104510760056FFD1 /* TKTagTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTagTokenField.m; sourceTree = "<group>"; };
 		587F6D790FDC0F030039B359 /* TKMenuBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMenuBuilder.h; sourceTree = "<group>"; };
 		587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMenuBuilder.m; sourceTree = "<group>"; };
 		58B5A2290F7F1EA2002AB47A /* TKBundleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBundleController.h; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 			children = (
 				5850C75F0FE63B650083E931 /* TKEditPanelController.h */,
 				5850C7600FE63B650083E931 /* TKEditPanelController.m */,
+				586214FD104510760056FFD1 /* TKTagTokenField.h */,
+				586214FE104510760056FFD1 /* TKTagTokenField.m */,
 			);
 			name = "UI Controllers";
 			sourceTree = "<group>";
@@ -431,6 +436,7 @@
 				58620CA41041BA6B0056FFD1 /* TKTumblrWebService.m in Sources */,
 				58620CD31041C9880056FFD1 /* NSString+TumblKitAdditions.m in Sources */,
 				58620CD81041CBCC0056FFD1 /* NSURL+TumblKitAdditions.m in Sources */,
+				586214FF104510760056FFD1 /* TKTagTokenField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

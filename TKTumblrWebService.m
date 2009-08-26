@@ -144,6 +144,10 @@ didReceiveResponse:(NSHTTPURLResponse *)response
     }
     [query removeObjectForKey:@"preview_post"];    
     [query setObject:[self postTypeStringForPost:post] forKey:@"post[type]"];
+    if ([post tags] != nil && [[post tags] lastObject] != nil) {
+        NSString *tags = [[post tags] componentsJoinedByString:@","];
+        [query setObject:tags forKey:@"post[tags]"];
+    }
     
     if ([post type] == TKPostQuoteType) {
         NSString *body = [[post body] tk_stringByEscapingTagsAndAmpersands];

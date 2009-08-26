@@ -19,6 +19,7 @@
 @synthesize URL = URL_;
 @synthesize alternateURL = alternateURL_;
 @synthesize linkURL = linkURL_;
+@synthesize tags = tags_;
 @synthesize isPrivate = isPrivate_;
 
 - (id)initWithType:(TKPostType)type
@@ -35,6 +36,7 @@
     [URL_ release];
     [alternateURL_ release];
     [linkURL_ release];
+    [tags_ release];
     [super dealloc];
 }
 
