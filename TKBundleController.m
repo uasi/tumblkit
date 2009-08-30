@@ -27,9 +27,6 @@ NSBundle *TKBundle; /* Shared bundle instance */
     [TKBundleController swizzleInstanceMethod:@selector(menuForEvent:)
                                    withMethod:@selector(tk_menuForEvent:)
                                       ofClass:[WebHTMLView class]];
-    [TKBundleController swizzleInstanceMethod:@selector(displayReleaseNotes)
-                                   withMethod:@selector(tk_displayReleaseNotes)
-                                      ofClass:[SUUpdateAlert class]];
     
     [TKGrowlHelper loadGrowlForBundle:TKBundle];
     [SUUpdater updaterForBundle:TKBundle];
