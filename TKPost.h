@@ -21,13 +21,21 @@ typedef enum TKPostType {
 
 @interface TKPost : NSObject {
     TKPostType type_;
+    BOOL isPrivate_;    
+    NSArray *tags_; 
+    
+    NSString *pageTitle_;
+    NSURL *pageURL_; 
+    
+    NSString *authorName_;
+    NSURL *authorURL_;
+    
     NSString *title_;
     NSString *body_;
-    NSURL *pageURL_;
     NSURL *URL_;
     NSURL *linkURL_;
-    NSArray *tags_;
-    BOOL isPrivate_;
+
+
 }
 
 /*
@@ -46,13 +54,19 @@ typedef enum TKPostType {
  */
 
 @property TKPostType type;
-@property(retain) NSString *title;
-@property(retain) NSString *body;
-@property(retain) NSURL *pageURL;
-@property(retain) NSURL *URL;
-@property(retain) NSURL *linkURL;
-@property(copy) NSArray *tags;
 @property(setter=setPrivate:) BOOL isPrivate;
+@property(copy) NSArray *tags;
+
+@property(copy) NSString *pageTitle;
+@property(copy) NSURL *pageURL;
+
+@property(copy) NSString *authorName;
+@property(copy) NSURL *authorURL;
+
+@property(copy) NSString *title;
+@property(copy) NSString *body;
+@property(copy) NSURL *URL;
+@property(copy) NSURL *linkURL;
 
 - (id)initWithType:(TKPostType)type;
 

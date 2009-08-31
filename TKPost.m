@@ -14,13 +14,19 @@
 @implementation TKPost
 
 @synthesize type = type_;
+@synthesize isPrivate = isPrivate_;
+@synthesize tags = tags_;
+
+@synthesize pageTitle = pageTitle_;
+@synthesize pageURL = pageURL_;
+
+@synthesize authorName = authorName_;
+@synthesize authorURL = authorURL_;
+
 @synthesize title = title_;
 @synthesize body = body_;
-@synthesize pageURL = pageURL_;
 @synthesize URL = URL_;
 @synthesize linkURL = linkURL_;
-@synthesize tags = tags_;
-@synthesize isPrivate = isPrivate_;
 
 - (id)initWithType:(TKPostType)type
 {
@@ -31,12 +37,19 @@
 
 - (void)dealloc
 {
+    [tags_ release];
+
+    [pageTitle_ release];
+    [pageURL_ release];
+    
+    [authorName_ release];
+    [authorURL_ release];
+    
     [title_ release];
     [body_ release];
-    [pageURL_ release];
     [URL_ release];
     [linkURL_ release];
-    [tags_ release];
+
     [super dealloc];
 }
 
