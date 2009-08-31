@@ -17,6 +17,7 @@
     static NSArray *extractorClasses;
     if (extractorClasses == nil) {
         extractorClasses = [[NSArray alloc] initWithObjects:
+                            [TKGenericVideoExtractor class],
                             [TKGenericQuoteExtractor class],
                             [TKGenericImageExtractor class],
                             [TKGenericLinkExtractor class],

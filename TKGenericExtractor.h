@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "TKExtractor.h"
 
+@interface TKGenericVideoExtractor :TKExtractor {}
+@end
 
 @interface TKGenericImageExtractor :TKExtractor {}
 @end

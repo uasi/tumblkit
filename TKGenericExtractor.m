@@ -6,8 +6,43 @@
 //  Copyright 2009 99cm.org. All rights reserved.
 //
 
+#import <WebKit/WebKit.h>
 #import "TKGenericExtractor.h"
 #import "TKPost.h"
+
+
+@implementation TKGenericVideoExtractor
+
+- (NSString *)title { return @"Video"; }
+
+- (BOOL)acceptsSource:(TKSource *)source
+{
+    return ([[[source URL] host] hasSuffix:@".youtube.com"] &&
+            [[[source URL] path] isEqualTo:@"/watch"]);
+}
+
+- (TKPost *)postFromSource:(TKSource *)source
+{
+    TKPost *post = [[TKPost alloc] initWithType:TKPostVideoType];
+    [post setPageURL:[source URL]];
+    [post setPageTitle:[source title]];
+    [post setURL:[source URL]];
+    [post setBody:[source text]];
+    
+    DOMDocument *doc =[[source node] ownerDocument];
+    DOMXPathResult *res = [doc evaluate:@"//h1/text()"
+                            contextNode:doc
+                               resolver:nil
+                                   type:DOM_FIRST_ORDERED_NODE_TYPE
+                               inResult:NULL];
+    NSString *title = [(DOMText *)[res singleNodeValue] nodeValue];
+    [post setTitle:title];
+    
+    return [post autorelease];
+}
+
+@end
+
 
 @implementation TKGenericImageExtractor
 

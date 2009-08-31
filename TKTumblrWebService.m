@@ -175,11 +175,23 @@ didReceiveResponse:(NSHTTPURLResponse *)response
         //     (title ? link(title) : "") + (author ? link(author) : "") + (desc ? "\n\n" + desc : "")
         [query setObject:[post linkURL] forKey:@"post[three]"];
     }
+    else if ([post type] == TKPostVideoType) {
+        [query setObject:[post URL] forKey:@"post[one]"];
+        NSString *title = [[post title] tk_stringByEscapingTagsAndAmpersands];
+        NSString *caption = [[post pageURL] tk_anchorStringWithText:title];
+        if ([post body] != nil && ! [[post body] isEqualToString:@""]) {
+            NSString *body = [[post body] tk_stringByEscapingTagsAndAmpersands];
+            caption = [body stringByAppendingFormat:@" (via %@)", caption];
+        }
+        [query setObject:caption forKey:@"post[two]"];
+    }
 }
 
 - (NSString *)postTypeStringForPost:(TKPost *)post
 {
     switch ([post type]) {
+        case TKPostVideoType:
+            return @"video";
         case TKPostQuoteType:
             return @"quote";
         case TKPostLinkType:
