@@ -16,8 +16,8 @@
 @synthesize type = type_;
 @synthesize title = title_;
 @synthesize body = body_;
+@synthesize pageURL = pageURL_;
 @synthesize URL = URL_;
-@synthesize alternateURL = alternateURL_;
 @synthesize linkURL = linkURL_;
 @synthesize tags = tags_;
 @synthesize isPrivate = isPrivate_;
@@ -33,8 +33,8 @@
 {
     [title_ release];
     [body_ release];
+    [pageURL_ release];
     [URL_ release];
-    [alternateURL_ release];
     [linkURL_ release];
     [tags_ release];
     [super dealloc];

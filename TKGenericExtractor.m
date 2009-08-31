@@ -23,9 +23,9 @@
     TKPost *post = [[TKPost alloc] initWithType:TKPostImageType];
     [post setTitle:[source title]];
     [post setBody:[source text]];
-    [post setURL:[source URL]];
+    [post setPageURL:[source URL]];
     [post setLinkURL:[source linkURL]];
-    [post setAlternateURL:[source sourceURL]];
+    [post setURL:[source sourceURL]];
     return [post autorelease];
 }
 
@@ -46,7 +46,7 @@
     TKPost *post = [[TKPost alloc] initWithType:TKPostQuoteType];
     [post setTitle:[source title]];
     [post setBody:[source text]];
-    [post setURL:[source URL]];
+    [post setPageURL:[source URL]];
     return [post autorelease];
 }
 
@@ -75,12 +75,12 @@
         else {
             [post setTitle:[[source linkURL] absoluteString]];
         }
-        [post setURL:[source linkURL]];
+        [post setPageURL:[source linkURL]];
         [post setBody:[source linkLabel]];
     }
     else {
         [post setTitle:[source title]];
-        [post setURL:[source URL]];
+        [post setPageURL:[source URL]];
         [post setBody:[source text]];
     }
     return [post autorelease];

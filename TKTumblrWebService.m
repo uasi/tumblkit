@@ -153,19 +153,19 @@ didReceiveResponse:(NSHTTPURLResponse *)response
         NSString *body = [[post body] tk_stringByEscapingTagsAndAmpersands];
         [query setObject:body forKey:@"post[one]"];
         NSString *title = [[post title] tk_stringByEscapingTagsAndAmpersands];
-        NSString *source = [[post URL] tk_anchorStringWithText:title];
+        NSString *source = [[post pageURL] tk_anchorStringWithText:title];
         [query setObject:source forKey:@"post[two]"];
     }
     else if ([post type] == TKPostLinkType) {
         [query setObject:[post title] forKey:@"post[one]"];
-        [query setObject:[post URL] forKey:@"post[two]"];
+        [query setObject:[post pageURL] forKey:@"post[two]"];
         NSString *description = [[post body] tk_stringByEscapingTagsAndAmpersands];
         [query setObject:description forKey:@"post[three]"];
     }
     else if ([post type] == TKPostImageType) {
-        [query setObject:[post alternateURL] forKey:@"photo_src"];
+        [query setObject:[post URL] forKey:@"photo_src"];
         NSString *title = [[post title] tk_stringByEscapingTagsAndAmpersands];
-        NSString *caption = [[post URL] tk_anchorStringWithText:title];
+        NSString *caption = [[post pageURL] tk_anchorStringWithText:title];
         if ([post body] != nil && ! [[post body] isEqualToString:@""]) {
             NSString *body = [[post body] tk_stringByEscapingTagsAndAmpersands];
             caption = [body stringByAppendingFormat:@" (via %@)", caption];
