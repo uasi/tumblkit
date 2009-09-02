@@ -173,7 +173,9 @@ didReceiveResponse:(NSHTTPURLResponse *)response
         [query setObject:caption forKey:@"post[two]"];
         // Note: post[two] might be
         //     (title ? link(title) : "") + (author ? link(author) : "") + (desc ? "\n\n" + desc : "")
-        [query setObject:[post linkURL] forKey:@"post[three]"];
+        if ([post linkURL] != nil) {
+            [query setObject:[post linkURL] forKey:@"post[three]"];
+        }
     }
     else if ([post type] == TKPostVideoType) {
         [query setObject:[post URL] forKey:@"post[one]"];
