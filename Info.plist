@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>SUShowReleaseNotes</key>
-	<false/>
+	<true/>
 	<key>SIMBLTargetApplications</key>
 	<array>
 		<dict>
