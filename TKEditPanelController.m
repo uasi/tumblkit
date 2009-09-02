@@ -27,6 +27,10 @@
     [aPost setPrivate:[self isPreviousPostPrivate]];
     [[self window] setTitle:@"TumblKit - "];
     [self setPost:aPost];
+    if ([aPost type] == TKPostVideoType) {
+        [[self window] setTitle:[[[self window] title] stringByAppendingString:@"Video"]];
+        [tabView selectTabViewItemWithIdentifier:@"Video"];
+    }
     if ([aPost type] == TKPostQuoteType) {
         [[self window] setTitle:[[[self window] title] stringByAppendingString:@"Quote"]];
         [tabView selectTabViewItemWithIdentifier:@"Quote"];

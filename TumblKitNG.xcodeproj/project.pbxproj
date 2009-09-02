@@ -35,6 +35,7 @@
 		58620CD31041C9880056FFD1 /* NSString+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58620CD21041C9880056FFD1 /* NSString+TumblKitAdditions.m */; };
 		58620CD81041CBCC0056FFD1 /* NSURL+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58620CD71041CBCC0056FFD1 /* NSURL+TumblKitAdditions.m */; };
 		586214FF104510760056FFD1 /* TKTagTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 586214FE104510760056FFD1 /* TKTagTokenField.m */; };
+		586219E8104E5D8F0056FFD1 /* TKURLTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 586219E7104E5D8F0056FFD1 /* TKURLTransformer.m */; };
 		587BEB5F0FE8E1EE00DDC3A1 /* Growl.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 58C9428D0FD6C5E100D2C4BE /* Growl.framework */; };
 		587F6D7B0FDC0F030039B359 /* TKMenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */; };
 		58B5A22B0F7F1EA2002AB47A /* TKBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B5A22A0F7F1EA2002AB47A /* TKBundleController.m */; };
@@ -106,6 +107,8 @@
 		58620CD71041CBCC0056FFD1 /* NSURL+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+TumblKitAdditions.m"; sourceTree = "<group>"; };
 		586214FD104510760056FFD1 /* TKTagTokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTagTokenField.h; sourceTree = "<group>"; };
 		586214FE104510760056FFD1 /* TKTagTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTagTokenField.m; sourceTree = "<group>"; };
+		586219E6104E5D8F0056FFD1 /* TKURLTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKURLTransformer.h; sourceTree = "<group>"; };
+		586219E7104E5D8F0056FFD1 /* TKURLTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKURLTransformer.m; sourceTree = "<group>"; };
 		587F6D790FDC0F030039B359 /* TKMenuBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMenuBuilder.h; sourceTree = "<group>"; };
 		587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMenuBuilder.m; sourceTree = "<group>"; };
 		58B5A2290F7F1EA2002AB47A /* TKBundleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBundleController.h; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 				5850C7600FE63B650083E931 /* TKEditPanelController.m */,
 				586214FD104510760056FFD1 /* TKTagTokenField.h */,
 				586214FE104510760056FFD1 /* TKTagTokenField.m */,
+				586219E6104E5D8F0056FFD1 /* TKURLTransformer.h */,
+				586219E7104E5D8F0056FFD1 /* TKURLTransformer.m */,
 			);
 			name = "UI Controllers";
 			sourceTree = "<group>";
@@ -437,6 +442,7 @@
 				58620CD31041C9880056FFD1 /* NSString+TumblKitAdditions.m in Sources */,
 				58620CD81041CBCC0056FFD1 /* NSURL+TumblKitAdditions.m in Sources */,
 				586214FF104510760056FFD1 /* TKTagTokenField.m in Sources */,
+				586219E8104E5D8F0056FFD1 /* TKURLTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -488,6 +495,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = TumblKit;
 				WRAPPER_EXTENSION = bundle;
 			};

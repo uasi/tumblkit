@@ -178,7 +178,7 @@ didReceiveResponse:(NSHTTPURLResponse *)response
         }
     }
     else if ([post type] == TKPostVideoType) {
-        [query setObject:[post URL] forKey:@"post[one]"];
+        [query setObject:[post pageURL] forKey:@"post[one]"];
         NSString *title = [[post title] tk_stringByEscapingTagsAndAmpersands];
         NSString *caption = [[post pageURL] tk_anchorStringWithText:title];
         if ([post body] != nil && ! [[post body] isEqualToString:@""]) {
