@@ -44,7 +44,7 @@
 
 - (void)dealloc
 {
-    [GrowlApplicationBridge setGrowlDelegate:@""];
+    [GrowlApplicationBridge setGrowlDelegate:(NSString <GrowlApplicationBridgeDelegate>*)@""];
     [super dealloc];
 }
 
