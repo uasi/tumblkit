@@ -124,7 +124,7 @@
 		58C942970FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebHTMLView+TumblKitAdditions.h"; sourceTree = "<group>"; };
 		58C942980FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebHTMLView+TumblKitAdditions.m"; sourceTree = "<group>"; };
 		58C9449C0FD6F0BF00D2C4BE /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		58C9449E0FD6F0D500D2C4BE /* ja_JP */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja_JP; path = ja_JP.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58C9449E0FD6F0D500D2C4BE /* ja_JP */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ja_JP; path = ja_JP.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58DE590E10207268003212F8 /* TKDOMUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDOMUtil.h; sourceTree = "<group>"; };
 		58DE590F10207268003212F8 /* TKDOMUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDOMUtil.m; sourceTree = "<group>"; };
 		58E134D30FDBDF9C0042663C /* TKExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKExtractor.h; sourceTree = "<group>"; };
