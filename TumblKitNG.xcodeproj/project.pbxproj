@@ -26,6 +26,7 @@
 		5805EE870FED6C6900F7FAEA /* Sparkle.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 5805EE740FED6C4900F7FAEA /* Sparkle.framework */; };
 		5805EEA80FED6EAB00F7FAEA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5805EEA70FED6EAB00F7FAEA /* dsa_pub.pem */; };
 		5805EF4C0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805EF4B0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.m */; };
+		584FBB091094CE6300007E1B /* TKNicoVideoExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 584FBB081094CE6300007E1B /* TKNicoVideoExtractor.m */; };
 		5850C35B0FE2BDC20083E931 /* TKPostingNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C35A0FE2BDC20083E931 /* TKPostingNotification.m */; };
 		5850C36B0FE2C3F40083E931 /* TKWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C36A0FE2C3F40083E931 /* TKWebService.m */; };
 		5850C66C0FE402320083E931 /* NSDictionary+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850C66B0FE402320083E931 /* NSDictionary+TumblKitAdditions.m */; };
@@ -89,17 +90,19 @@
 		5805EEA70FED6EAB00F7FAEA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		5805EF4A0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUUpdateAlert+TumblKitAdditions.h"; sourceTree = "<group>"; };
 		5805EF4B0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SUUpdateAlert+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		584FBB071094CE6300007E1B /* TKNicoVideoExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKNicoVideoExtractor.h; path = Extractors/TKNicoVideoExtractor.h; sourceTree = "<group>"; };
+		584FBB081094CE6300007E1B /* TKNicoVideoExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKNicoVideoExtractor.m; path = Extractors/TKNicoVideoExtractor.m; sourceTree = "<group>"; };
 		5850C3590FE2BDC20083E931 /* TKPostingNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPostingNotification.h; sourceTree = "<group>"; };
 		5850C35A0FE2BDC20083E931 /* TKPostingNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPostingNotification.m; sourceTree = "<group>"; };
-		5850C3690FE2C3F40083E931 /* TKWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWebService.h; sourceTree = "<group>"; };
-		5850C36A0FE2C3F40083E931 /* TKWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWebService.m; sourceTree = "<group>"; };
+		5850C3690FE2C3F40083E931 /* TKWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKWebService.h; path = WebServices/TKWebService.h; sourceTree = "<group>"; };
+		5850C36A0FE2C3F40083E931 /* TKWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKWebService.m; path = WebServices/TKWebService.m; sourceTree = "<group>"; };
 		5850C66A0FE402320083E931 /* NSDictionary+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TumblKitAdditions.h"; sourceTree = "<group>"; };
 		5850C66B0FE402320083E931 /* NSDictionary+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TumblKitAdditions.m"; sourceTree = "<group>"; };
 		5850C75D0FE63B500083E931 /* TKEditPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKEditPanel.xib; sourceTree = "<group>"; };
 		5850C75F0FE63B650083E931 /* TKEditPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKEditPanelController.h; sourceTree = "<group>"; };
 		5850C7600FE63B650083E931 /* TKEditPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEditPanelController.m; sourceTree = "<group>"; };
-		58620CA21041BA6B0056FFD1 /* TKTumblrWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTumblrWebService.h; sourceTree = "<group>"; };
-		58620CA31041BA6B0056FFD1 /* TKTumblrWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTumblrWebService.m; sourceTree = "<group>"; };
+		58620CA21041BA6B0056FFD1 /* TKTumblrWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKTumblrWebService.h; path = WebServices/TKTumblrWebService.h; sourceTree = "<group>"; };
+		58620CA31041BA6B0056FFD1 /* TKTumblrWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKTumblrWebService.m; path = WebServices/TKTumblrWebService.m; sourceTree = "<group>"; };
 		58620CD11041C9880056FFD1 /* NSString+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TumblKitAdditions.h"; sourceTree = "<group>"; };
 		58620CD21041C9880056FFD1 /* NSString+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TumblKitAdditions.m"; sourceTree = "<group>"; };
 		58620CD51041CB780056FFD1 /* TKCommonAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCommonAdditions.h; sourceTree = "<group>"; };
@@ -127,10 +130,10 @@
 		58C9449E0FD6F0D500D2C4BE /* ja_JP */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ja_JP; path = ja_JP.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58DE590E10207268003212F8 /* TKDOMUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDOMUtil.h; sourceTree = "<group>"; };
 		58DE590F10207268003212F8 /* TKDOMUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDOMUtil.m; sourceTree = "<group>"; };
-		58E134D30FDBDF9C0042663C /* TKExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKExtractor.h; sourceTree = "<group>"; };
-		58E134D40FDBDF9C0042663C /* TKExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKExtractor.m; sourceTree = "<group>"; };
-		58E134F90FDBF0F10042663C /* TKGenericExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGenericExtractor.h; sourceTree = "<group>"; };
-		58E134FA0FDBF0F10042663C /* TKGenericExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGenericExtractor.m; sourceTree = "<group>"; };
+		58E134D30FDBDF9C0042663C /* TKExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKExtractor.h; path = Extractors/TKExtractor.h; sourceTree = "<group>"; };
+		58E134D40FDBDF9C0042663C /* TKExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKExtractor.m; path = Extractors/TKExtractor.m; sourceTree = "<group>"; };
+		58E134F90FDBF0F10042663C /* TKGenericExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKGenericExtractor.h; path = Extractors/TKGenericExtractor.h; sourceTree = "<group>"; };
+		58E134FA0FDBF0F10042663C /* TKGenericExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKGenericExtractor.m; path = Extractors/TKGenericExtractor.m; sourceTree = "<group>"; };
 		58E134FC0FDBF1680042663C /* TKPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPost.h; sourceTree = "<group>"; };
 		58E134FD0FDBF1680042663C /* TKPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPost.m; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* TumblKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TumblKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +310,8 @@
 				58E134D40FDBDF9C0042663C /* TKExtractor.m */,
 				58E134F90FDBF0F10042663C /* TKGenericExtractor.h */,
 				58E134FA0FDBF0F10042663C /* TKGenericExtractor.m */,
+				584FBB071094CE6300007E1B /* TKNicoVideoExtractor.h */,
+				584FBB081094CE6300007E1B /* TKNicoVideoExtractor.m */,
 			);
 			name = Extractors;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				58620CD81041CBCC0056FFD1 /* NSURL+TumblKitAdditions.m in Sources */,
 				586214FF104510760056FFD1 /* TKTagTokenField.m in Sources */,
 				586219E8104E5D8F0056FFD1 /* TKURLTransformer.m in Sources */,
+				584FBB091094CE6300007E1B /* TKNicoVideoExtractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
