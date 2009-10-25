@@ -26,6 +26,7 @@
     TKPost *post = [[TKPost alloc] initWithType:TKPostVideoType];
     [post setPageURL:[source URL]];
     [post setPageTitle:[source title]];
+    [post setTitle:[source title]];
     [post setURL:[source URL]];
     [post setBody:[source text]];
     
