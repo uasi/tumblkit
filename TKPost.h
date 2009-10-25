@@ -32,6 +32,7 @@ typedef enum TKPostType {
     
     NSString *title_;
     NSString *body_;
+    id object_;
     NSURL *URL_;
     NSURL *linkURL_;
 
@@ -65,6 +66,7 @@ typedef enum TKPostType {
 
 @property(copy) NSString *title;
 @property(copy) NSString *body;
+@property(retain) id object;
 @property(copy) NSURL *URL;
 @property(copy) NSURL *linkURL;
 

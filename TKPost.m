@@ -25,6 +25,7 @@
 
 @synthesize title = title_;
 @synthesize body = body_;
+@synthesize object = object_;
 @synthesize URL = URL_;
 @synthesize linkURL = linkURL_;
 
@@ -47,6 +48,7 @@
     
     [title_ release];
     [body_ release];
+    [object_ release];
     [URL_ release];
     [linkURL_ release];
 

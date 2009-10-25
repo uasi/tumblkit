@@ -178,7 +178,16 @@ didReceiveResponse:(NSHTTPURLResponse *)response
         }
     }
     else if ([post type] == TKPostVideoType) {
-        [query setObject:[post pageURL] forKey:@"post[one]"];
+        //[query setObject:[post pageURL] forKey:@"post[one]"];
+        if ([post URL]) {
+            [query setObject:[post URL] forKey:@"post[one]"];
+        }
+        else if ([post object]) {
+            [query setObject:[post object] forKey:@"post[one]"];
+        }
+        else {
+            NSLog(@"TumblKit: WebService: Video: both URL and object are nil");
+        }
         NSString *title = [[post title] tk_stringByEscapingTagsAndAmpersands];
         NSString *caption = [[post pageURL] tk_anchorStringWithText:title];
         if ([post body] != nil && ! [[post body] isEqualToString:@""]) {
