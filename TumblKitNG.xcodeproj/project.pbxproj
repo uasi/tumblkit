@@ -189,18 +189,18 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5850C7530FE639150083E931 /* UI Controllers */,
+				5850C7530FE639150083E931 /* User Interface */,
 				5850C6690FE401F40083E931 /* Additions */,
 				5850C6680FE401B90083E931 /* WebServices */,
+				58E134D60FDBDFA30042663C /* Extractors */,
 				58E134FC0FDBF1680042663C /* TKPost.h */,
 				58E134FD0FDBF1680042663C /* TKPost.m */,
 				5850C3590FE2BDC20083E931 /* TKPostingNotification.h */,
 				5850C35A0FE2BDC20083E931 /* TKPostingNotification.m */,
-				58E134D60FDBDFA30042663C /* Extractors */,
-				58B5A2290F7F1EA2002AB47A /* TKBundleController.h */,
-				58B5A22A0F7F1EA2002AB47A /* TKBundleController.m */,
 				58C941D80FD6A01B00D2C4BE /* TKSource.h */,
 				58C941D90FD6A01B00D2C4BE /* TKSource.m */,
+				58B5A2290F7F1EA2002AB47A /* TKBundleController.h */,
+				58B5A22A0F7F1EA2002AB47A /* TKBundleController.m */,
 				58C9427A0FD6C43A00D2C4BE /* TKGrowlHelper.h */,
 				58C9427B0FD6C43A00D2C4BE /* TKGrowlHelper.m */,
 				587F6D790FDC0F030039B359 /* TKMenuBuilder.h */,
@@ -271,7 +271,7 @@
 			name = Additions;
 			sourceTree = "<group>";
 		};
-		5850C7530FE639150083E931 /* UI Controllers */ = {
+		5850C7530FE639150083E931 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
 				5850C75F0FE63B650083E931 /* TKEditPanelController.h */,
@@ -281,7 +281,7 @@
 				586219E6104E5D8F0056FFD1 /* TKURLTransformer.h */,
 				586219E7104E5D8F0056FFD1 /* TKURLTransformer.m */,
 			);
-			name = "UI Controllers";
+			name = "User Interface";
 			sourceTree = "<group>";
 		};
 		58620CD41041CB580056FFD1 /* Common */ = {
