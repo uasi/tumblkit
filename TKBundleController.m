@@ -11,6 +11,7 @@
 #import "SUUpdateAlert+TumblKitAdditions.h"
 #import "TKWebService.h"
 #import "TKTumblrWebService.h"
+#import "TKTumblrWebService.h"
 #import "TKGrowlHelper.h"
 #import <Sparkle/Sparkle.h>
 #import <objc/runtime.h>

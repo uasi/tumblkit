@@ -1,10 +1,13 @@
 //
-//  TKTumblrWebService.m
+//  TKTumblrWebServiceActor.m
 //  TumblKitNG
 //
-//  Created by uasi on 09/08/24.
+//  Created by uasi on 09/10/31.
 //  Copyright 2009 99cm.org. All rights reserved.
 //
+
+#import <WebKit/WebKit.h>
+#import <ActorKit/ActorKit.h>
 
 #import "TKTumblrWebService.h"
 #import "TKBundleController.h"
@@ -12,7 +15,7 @@
 #import "TKPost.h"
 #import "TKPostingNotification.h"
 #import "TKGrowlHelper.h"
-#import "TKDOMUtil.h"
+#import "DOM.h"
 
 
 @interface TKTumblrWebService () // Priavte Methods
@@ -22,100 +25,60 @@
 - (void)updateQuery:(NSMutableDictionary *)query
            withPost:(TKPost *)post;
 - (NSString *)postTypeStringForPost:(TKPost *)post;
+static void *queryFromDOMNode(DOMNode *node);
 @end
 
 
 @implementation TKTumblrWebService
 
-static NSURL *TKTumblrWebServiceURL;
-
-+ (void)load
-{
-    TKTumblrWebServiceURL = [[NSURL alloc] initWithString:@"http://www.tumblr.com/new/"];
-}
-
 + (void)postWithNotification:(NSNotification *)notification
 {
     TKPost *post = [[notification userInfo] objectForKey:@"post"];
-    [[[[[self class] alloc] init] autorelease] postWithPost:post];
-}
-
-- (id)init
-{
-    self = [super init];
-    webView_ = [[WebView alloc] initWithFrame:NSMakeRect(0, 0, 0, 0)
-                                    frameName:nil
-                                    groupName:nil];
-    [webView_ setFrameLoadDelegate:self];
-    return self;
-}
-
-- (void)dealloc
-{
-    [post_ release];
-    [webView_ release];
-    [super dealloc];
+    [PLActorKit spawnWithTarget:[[[[self class] alloc] init] autorelease]
+                       selector:@selector(postWithPost:)
+                         object:post];
 }
 
 - (void)postWithPost:(TKPost *)post
 {
-    [post_ autorelease];
-    post_ = [post retain];
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSString *postTypeString = [self postTypeStringForPost:post];
     NSString *endpoint = @"http://www.tumblr.com/new/";
     endpoint = [endpoint stringByAppendingString:postTypeString];
-    [webView_ setMainFrameURL:endpoint];
-    [self retain];
-}
-
-- (void)webView:(WebView *)sender 
-didFinishLoadForFrame:(WebFrame *)frame
-{
-    if (frame != [webView_ mainFrame]) {
-        return;
-    }
-    DOMDocument *doc = [frame DOMDocument];
-    DOMXPathResult *res = [doc evaluate:@"//form[@id='edit_post']"
-                            contextNode:doc
-                               resolver:nil
-                                   type:DOM_FIRST_ORDERED_NODE_TYPE
-                               inResult:nil];
-    DOMElement *formElem = (DOMElement *)[res singleNodeValue];
-    if (formElem == nil) {
+    DOMDocument *doc = [[TKDOMMaker defaultDOMMaker]
+                        newDOMDocumentWithURLString:endpoint];
+    if (doc == nil) {
         [self abortPosting];
         return;
     }
-    NSMutableDictionary *query = (NSMutableDictionary *)TKCreateDictionaryWithForm(formElem);
-    [self updateQuery:query withPost:post_];
-    NSURL *requestURL = [NSURL URLWithString:[webView_ mainFrameURL]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requestURL];
+    
+    NSMutableDictionary *query;
+    query = [TKDOMManipulator manipulateDOMNode:doc
+                                  usingFunction:queryFromDOMNode];
+    
+    [self updateQuery:query withPost:post];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:endpoint]];
     [request setHTTPBody:[[query tk_queryString] dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPMethod:@"POST"];
-    [NSURLConnection connectionWithRequest:request delegate:self];
-}
-
-- (void)webView:(WebView *)sender
-didFailLoadWithError:(NSError *)error
-       forFrame:(WebFrame *)frame
-{
-    [self abortPosting];
-}
-
-- (void)connection:(NSURLConnection *)connection
-didReceiveResponse:(NSHTTPURLResponse *)response
-{
-    [self finishPosting];
-}
-
-- (void)connection:(NSURLConnection *)connection
-  didFailWithError:(NSError *)error
-{
-    [self abortPosting];
+    NSURLResponse *response;
+    NSError *error;
+    [NSURLConnection sendSynchronousRequest:request
+                          returningResponse:&response
+                                      error:&error];
+    
+    if (error != nil) {
+        [self abortPosting];
+    }
+    else {
+        [self finishPosting];
+    }
+    
+    [[TKDOMMaker defaultDOMMaker] releaseDOM:doc];
+    [pool drain];
 }
 
 - (void)abortPosting
 {
-    
     NSAlert *alert = [NSAlert alertWithMessageText:@"TumblKit - connection failed"
                                      defaultButton:@"OK"
                                    alternateButton:nil
@@ -126,14 +89,12 @@ didReceiveResponse:(NSHTTPURLResponse *)response
                       modalDelegate:nil
                      didEndSelector:nil
                         contextInfo:NULL];
-    [self release];
 }
 
 - (void)finishPosting
 {
     [[TKGrowlHelper sharedGrowlHelper] notifyWithTitle:@"Post Successful"
                                            description:@"A post was created"];
-    [self release];
 }
 
 - (void)updateQuery:(NSMutableDictionary *)query
@@ -213,4 +174,20 @@ didReceiveResponse:(NSHTTPURLResponse *)response
             return @"";
     }
 }
+
+static void *queryFromDOMNode(DOMNode *node)
+{
+    DOMDocument *doc = (DOMDocument *)node;
+    DOMXPathResult *res = [doc evaluate:@"//form[@id='edit_post']"
+                            contextNode:doc
+                               resolver:nil
+                                   type:DOM_FIRST_ORDERED_NODE_TYPE
+                               inResult:nil];
+    DOMElement *formElem = (DOMElement *)[res singleNodeValue];
+    if (formElem == nil) {
+        return NULL;
+    }
+    return (void *)TKCreateDictionaryWithForm(formElem);
+}
+
 @end

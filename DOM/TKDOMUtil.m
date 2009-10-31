@@ -6,8 +6,8 @@
 //  Copyright 2009 99cm.org. All rights reserved.
 //
 
-#import <WebKit/WebKit.h>
 #import "TKDOMUtil.h"
+
 
 NSArray *TKCreateDictionaryWithForm_visitor(DOMNode *node, void *info);
 
