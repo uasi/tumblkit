@@ -27,21 +27,26 @@
 - (TKPost *)postFromSource:(TKSource *)source
 {
     TKPost *post = [[TKPost alloc] initWithType:TKPostVideoType];
+    [post autorelease];
     [post setPageURL:[source URL]];
     [post setPageTitle:[source title]];
     [post setTitle:[source title]];
     [post setBody:[source text]];
     
-    DOMDocument *doc =[[source node] ownerDocument];
-    DOMXPathResult *res = [doc evaluate:@"//form[@name='form_iframe']/input/@value"
-                            contextNode:doc
-                               resolver:nil
-                                   type:DOM_FIRST_ORDERED_NODE_TYPE
-                               inResult:NULL];
-    NSString *iframe = [(DOMText *)[res singleNodeValue] nodeValue];
-    [post setObject:iframe];
+    NSString *videoID = [[[[source URL] path] componentsSeparatedByString:@"/"] lastObject];
+    // Embed code for Nicovideo version 9.
+    NSString *snippet = [NSString stringWithFormat:
+                         @"<iframe width='312' height='176'"
+                         @" src='http://ext.nicovideo.jp/thumb/%@'"
+                         @" scrolling='no' style='border:solid 1px #CCC;'"
+                         @" frameborder='0'>"
+                         @"<a href='%@'>%@</a></iframe>",
+                         videoID,
+                         [source URL],
+                         [source title]];
+    [post setObject:snippet];
     
-    return [post autorelease];
+    return post;
 }
 
 @end
