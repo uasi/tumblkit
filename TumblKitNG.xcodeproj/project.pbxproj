@@ -41,6 +41,7 @@
 		586219E8104E5D8F0056FFD1 /* TKURLTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 586219E7104E5D8F0056FFD1 /* TKURLTransformer.m */; };
 		58747E91109C5E5400F61554 /* ActorKit.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 58332939109C3A5500005271 /* ActorKit.framework */; };
 		58747FED109C935900F61554 /* TKDOMManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 58747FEC109C935900F61554 /* TKDOMManipulator.m */; };
+		58748241109DD87B00F61554 /* DOMDocument+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58748240109DD87B00F61554 /* DOMDocument+TumblKitAdditions.m */; };
 		587BEB5F0FE8E1EE00DDC3A1 /* Growl.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 58C9428D0FD6C5E100D2C4BE /* Growl.framework */; };
 		587F6D7B0FDC0F030039B359 /* TKMenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */; };
 		58B5A22B0F7F1EA2002AB47A /* TKBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B5A22A0F7F1EA2002AB47A /* TKBundleController.m */; };
@@ -123,6 +124,8 @@
 		58747FEB109C935900F61554 /* TKDOMManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDOMManipulator.h; sourceTree = "<group>"; };
 		58747FEC109C935900F61554 /* TKDOMManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDOMManipulator.m; sourceTree = "<group>"; };
 		587480C0109CA79C00F61554 /* DOM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOM.h; sourceTree = "<group>"; };
+		5874823F109DD87B00F61554 /* DOMDocument+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DOMDocument+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		58748240109DD87B00F61554 /* DOMDocument+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DOMDocument+TumblKitAdditions.m"; sourceTree = "<group>"; };
 		587F6D790FDC0F030039B359 /* TKMenuBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMenuBuilder.h; sourceTree = "<group>"; };
 		587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMenuBuilder.m; sourceTree = "<group>"; };
 		58B5A2290F7F1EA2002AB47A /* TKBundleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBundleController.h; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 				58C942980FD6C67900D2C4BE /* WebHTMLView+TumblKitAdditions.m */,
 				5805EF4A0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.h */,
 				5805EF4B0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.m */,
+				5874823F109DD87B00F61554 /* DOMDocument+TumblKitAdditions.h */,
+				58748240109DD87B00F61554 /* DOMDocument+TumblKitAdditions.m */,
 			);
 			name = Additions;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				5833294E109C3C7500005271 /* TKTumblrWebService.m in Sources */,
 				58332953109C405C00005271 /* TKDOMMaker.m in Sources */,
 				58747FED109C935900F61554 /* TKDOMManipulator.m in Sources */,
+				58748241109DD87B00F61554 /* DOMDocument+TumblKitAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
