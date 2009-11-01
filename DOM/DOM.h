@@ -9,3 +9,5 @@
 #import "TKDOMManipulator.h"
 #import "TKDOMMaker.h"
 #import "TKDOMUtil.h"
+
+#import "DOMDocument+TumblKitAdditions.h"
