@@ -12,7 +12,7 @@
 
 // TKDOMManipulator
 //
-// Manipulate a DOM object on the main thread
+// Manipulate a DOMNode on the main thread
 //
 @interface TKDOMManipulator : NSObject {
     DOMNode *node_;

@@ -22,7 +22,8 @@
 + (id)defaultDOMMaker;
 
 // NOTE:
-// Returned DOMDocument MUST be released with releaseDOM:
+// - Do NOT perform newDOMDocumentWithURLString on the main thread
+// - Returned DOMDocument MUST be released with releaseDOM:
 // 
 - (DOMDocument *)newDOMDocumentWithURLString:(NSString *)URLString;
 - (void)sendMessageContainingDOMDocumentToReceiver:(id <PLActorProcess>)receiver
