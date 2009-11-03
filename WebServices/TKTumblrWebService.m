@@ -48,6 +48,7 @@ static void *queryFromDOMNode(DOMNode *node);
     DOMDocument *doc = [[TKDOMMaker defaultDOMMaker]
                         newDOMDocumentWithURLString:endpoint];
     if (doc == nil) {
+        NSLog(@"TumblKit: post failed: failed to load post form");
         [self abortPosting];
         return;
     }
@@ -61,12 +62,13 @@ static void *queryFromDOMNode(DOMNode *node);
     [request setHTTPBody:[[query tk_queryString] dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPMethod:@"POST"];
     NSURLResponse *response;
-    NSError *error;
-    [NSURLConnection sendSynchronousRequest:request
-                          returningResponse:&response
-                                      error:&error];
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                         returningResponse:&response
+                                                     error:&error];
     
-    if (error != nil) {
+    if (data == nil) {
+        NSLog(@"TumblKit: post failed: %@", error);
         [self abortPosting];
     }
     else {
