@@ -28,6 +28,8 @@
 		58747FED109C935900F61554 /* TKDOMManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 58747FEC109C935900F61554 /* TKDOMManipulator.m */; };
 		587485DF10A1C50300F61554 /* DOMNode+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 587485DE10A1C50300F61554 /* DOMNode+TumblKitAdditions.m */; };
 		5874860B10A1C8AD00F61554 /* TKDailymotionExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874860A10A1C8AD00F61554 /* TKDailymotionExtractor.m */; };
+		587483FB10A18B8E00F61554 /* TKPreferencesModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 587483FA10A18B8E00F61554 /* TKPreferencesModule.m */; };
+		587483FF10A18DD500F61554 /* TKPreferencesModule.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587483FE10A18DD500F61554 /* TKPreferencesModule.xib */; };
 		587BEB5F0FE8E1EE00DDC3A1 /* Growl.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 58C9428D0FD6C5E100D2C4BE /* Growl.framework */; };
 		587F6D7B0FDC0F030039B359 /* TKMenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */; };
 		58B5A22B0F7F1EA2002AB47A /* TKBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B5A22A0F7F1EA2002AB47A /* TKBundleController.m */; };
@@ -104,6 +106,10 @@
 		587485DE10A1C50300F61554 /* DOMNode+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DOMNode+TumblKitAdditions.m"; sourceTree = "<group>"; };
 		5874860910A1C8AD00F61554 /* TKDailymotionExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKDailymotionExtractor.h; path = Extractors/TKDailymotionExtractor.h; sourceTree = "<group>"; };
 		5874860A10A1C8AD00F61554 /* TKDailymotionExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKDailymotionExtractor.m; path = Extractors/TKDailymotionExtractor.m; sourceTree = "<group>"; };
+		587483F810A188AA00F61554 /* NSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferences.h; sourceTree = "<group>"; };
+		587483F910A18B8E00F61554 /* TKPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPreferencesModule.h; sourceTree = "<group>"; };
+		587483FA10A18B8E00F61554 /* TKPreferencesModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPreferencesModule.m; sourceTree = "<group>"; };
+		587483FE10A18DD500F61554 /* TKPreferencesModule.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKPreferencesModule.xib; sourceTree = "<group>"; };
 		587F6D790FDC0F030039B359 /* TKMenuBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMenuBuilder.h; sourceTree = "<group>"; };
 		587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMenuBuilder.m; sourceTree = "<group>"; };
 		58B5A2290F7F1EA2002AB47A /* TKBundleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBundleController.h; sourceTree = "<group>"; };
@@ -178,6 +184,7 @@
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 				5850C75D0FE63B500083E931 /* TKEditPanel.xib */,
+				587483FE10A18DD500F61554 /* TKPreferencesModule.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -190,6 +197,7 @@
 				58747FE4109C926300F61554 /* DOM */,
 				58E134D60FDBDFA30042663C /* Extractors */,
 				5850C6680FE401B90083E931 /* WebServices */,
+				587483F810A188AA00F61554 /* NSPreferences.h */,
 				58E134FC0FDBF1680042663C /* TKPost.h */,
 				58E134FD0FDBF1680042663C /* TKPost.m */,
 				5850C3590FE2BDC20083E931 /* TKPostingNotification.h */,
@@ -202,6 +210,8 @@
 				58C9427B0FD6C43A00D2C4BE /* TKGrowlHelper.m */,
 				587F6D790FDC0F030039B359 /* TKMenuBuilder.h */,
 				587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */,
+				587483F910A18B8E00F61554 /* TKPreferencesModule.h */,
+				587483FA10A18B8E00F61554 /* TKPreferencesModule.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -382,6 +392,7 @@
 				58C9449D0FD6F0BF00D2C4BE /* Localizable.strings in Resources */,
 				5850C75E0FE63B500083E931 /* TKEditPanel.xib in Resources */,
 				5805EEA80FED6EAB00F7FAEA /* dsa_pub.pem in Resources */,
+				587483FF10A18DD500F61554 /* TKPreferencesModule.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +428,7 @@
 				58747FED109C935900F61554 /* TKDOMManipulator.m in Sources */,
 				587485DF10A1C50300F61554 /* DOMNode+TumblKitAdditions.m in Sources */,
 				5874860B10A1C8AD00F61554 /* TKDailymotionExtractor.m in Sources */,
+				587483FB10A18B8E00F61554 /* TKPreferencesModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
