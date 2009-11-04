@@ -7,6 +7,7 @@
 //
 
 #import "TKDailymotionExtractor.h"
+#import "DOM.h"
 
 
 @implementation TKDailymotionExtractor
@@ -32,8 +33,7 @@
     [post setBody:[source text]];
     
     NSString *xpath = @"//input[@id=\"video_player_embed_code_text\"]/@value";
-    DOMNode *node = [[[source node] ownerDocument] tk_firstNodeByEvaluatingXPath:xpath];
-    NSString* embedCode = [node value];
+    NSString *embedCode = [[[source node] tk_nodeForXPath:xpath] value];
     [post setObject:embedCode];
     
     return post;

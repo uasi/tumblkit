@@ -11,3 +11,4 @@
 #import "TKDOMUtil.h"
 
 #import "DOMDocument+TumblKitAdditions.h"
+#import "DOMNode+TumblKitAdditions.h"

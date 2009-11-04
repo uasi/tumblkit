@@ -42,6 +42,8 @@
 		58747E91109C5E5400F61554 /* ActorKit.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 58332939109C3A5500005271 /* ActorKit.framework */; };
 		58747FED109C935900F61554 /* TKDOMManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 58747FEC109C935900F61554 /* TKDOMManipulator.m */; };
 		58748241109DD87B00F61554 /* DOMDocument+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58748240109DD87B00F61554 /* DOMDocument+TumblKitAdditions.m */; };
+		587485DF10A1C50300F61554 /* DOMNode+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 587485DE10A1C50300F61554 /* DOMNode+TumblKitAdditions.m */; };
+		5874860B10A1C8AD00F61554 /* TKDailymotionExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874860A10A1C8AD00F61554 /* TKDailymotionExtractor.m */; };
 		587BEB5F0FE8E1EE00DDC3A1 /* Growl.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 58C9428D0FD6C5E100D2C4BE /* Growl.framework */; };
 		587F6D7B0FDC0F030039B359 /* TKMenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */; };
 		58B5A22B0F7F1EA2002AB47A /* TKBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B5A22A0F7F1EA2002AB47A /* TKBundleController.m */; };
@@ -126,6 +128,10 @@
 		587480C0109CA79C00F61554 /* DOM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOM.h; sourceTree = "<group>"; };
 		5874823F109DD87B00F61554 /* DOMDocument+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DOMDocument+TumblKitAdditions.h"; sourceTree = "<group>"; };
 		58748240109DD87B00F61554 /* DOMDocument+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DOMDocument+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		587485DD10A1C50300F61554 /* DOMNode+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DOMNode+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		587485DE10A1C50300F61554 /* DOMNode+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DOMNode+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		5874860910A1C8AD00F61554 /* TKDailymotionExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKDailymotionExtractor.h; path = Extractors/TKDailymotionExtractor.h; sourceTree = "<group>"; };
+		5874860A10A1C8AD00F61554 /* TKDailymotionExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKDailymotionExtractor.m; path = Extractors/TKDailymotionExtractor.m; sourceTree = "<group>"; };
 		587F6D790FDC0F030039B359 /* TKMenuBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMenuBuilder.h; sourceTree = "<group>"; };
 		587F6D7A0FDC0F030039B359 /* TKMenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMenuBuilder.m; sourceTree = "<group>"; };
 		58B5A2290F7F1EA2002AB47A /* TKBundleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBundleController.h; sourceTree = "<group>"; };
@@ -287,6 +293,8 @@
 				5805EF4B0FEE158800F7FAEA /* SUUpdateAlert+TumblKitAdditions.m */,
 				5874823F109DD87B00F61554 /* DOMDocument+TumblKitAdditions.h */,
 				58748240109DD87B00F61554 /* DOMDocument+TumblKitAdditions.m */,
+				587485DD10A1C50300F61554 /* DOMNode+TumblKitAdditions.h */,
+				587485DE10A1C50300F61554 /* DOMNode+TumblKitAdditions.m */,
 			);
 			name = Additions;
 			sourceTree = "<group>";
@@ -341,6 +349,8 @@
 				58E134D40FDBDF9C0042663C /* TKExtractor.m */,
 				58E134F90FDBF0F10042663C /* TKGenericExtractor.h */,
 				58E134FA0FDBF0F10042663C /* TKGenericExtractor.m */,
+				5874860910A1C8AD00F61554 /* TKDailymotionExtractor.h */,
+				5874860A10A1C8AD00F61554 /* TKDailymotionExtractor.m */,
 				584FBB071094CE6300007E1B /* TKNicoVideoExtractor.h */,
 				584FBB081094CE6300007E1B /* TKNicoVideoExtractor.m */,
 			);
@@ -483,6 +493,8 @@
 				58332953109C405C00005271 /* TKDOMMaker.m in Sources */,
 				58747FED109C935900F61554 /* TKDOMManipulator.m in Sources */,
 				58748241109DD87B00F61554 /* DOMDocument+TumblKitAdditions.m in Sources */,
+				587485DF10A1C50300F61554 /* DOMNode+TumblKitAdditions.m in Sources */,
+				5874860B10A1C8AD00F61554 /* TKDailymotionExtractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

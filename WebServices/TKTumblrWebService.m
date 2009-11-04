@@ -179,13 +179,8 @@ static void *queryFromDOMNode(DOMNode *node);
 
 static void *queryFromDOMNode(DOMNode *node)
 {
-    DOMDocument *doc = (DOMDocument *)node;
-    DOMXPathResult *res = [doc evaluate:@"//form[@id='edit_post']"
-                            contextNode:doc
-                               resolver:nil
-                                   type:DOM_FIRST_ORDERED_NODE_TYPE
-                               inResult:nil];
-    DOMElement *formElem = (DOMElement *)[res singleNodeValue];
+    NSString *xpath = @"//form[@id='edit_post']";
+    DOMElement *formElem = (DOMElement *)[node tk_nodeForXPath:xpath];
     if (formElem == nil) {
         return NULL;
     }
