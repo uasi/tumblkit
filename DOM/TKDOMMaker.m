@@ -82,11 +82,6 @@ didFailLoadWithError:(NSError *)error
     return [[[[self class] alloc] init] autorelease];
 }
 
-+ (id)defaultDOMMaker
-{
-    return [[self class] DOMMaker];
-}
-
 - (DOMDocument *)newDOMDocumentWithURLString:(NSString *)URLString
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];

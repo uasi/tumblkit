@@ -45,7 +45,7 @@ static void *queryFromDOMNode(DOMNode *node);
     NSString *postTypeString = [self postTypeStringForPost:post];
     NSString *endpoint = @"http://www.tumblr.com/new/";
     endpoint = [endpoint stringByAppendingString:postTypeString];
-    DOMDocument *doc = [[TKDOMMaker defaultDOMMaker]
+    DOMDocument *doc = [[TKDOMMaker DOMMaker]
                         newDOMDocumentWithURLString:endpoint];
     if (doc == nil) {
         NSLog(@"TumblKit: post failed: failed to load post form");
@@ -75,7 +75,7 @@ static void *queryFromDOMNode(DOMNode *node);
         [self finishPosting];
     }
     
-    [[TKDOMMaker defaultDOMMaker] releaseDOM:doc];
+    [[TKDOMMaker DOMMaker] releaseDOM:doc];
     [pool drain];
 }
 

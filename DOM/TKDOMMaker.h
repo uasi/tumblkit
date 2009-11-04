@@ -20,7 +20,6 @@
 }
 
 + (id)DOMMaker;
-+ (id)defaultDOMMaker;
 
 // NOTE:
 // - Do NOT perform newDOMDocumentWithURLString on the main thread
