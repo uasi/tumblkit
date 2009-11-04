@@ -16,7 +16,6 @@
 // Make a DOMDocument from given URL synchronously
 //
 @interface TKDOMMaker : NSObject {
-    NSMutableSet *workerPool_;
 }
 
 + (id)DOMMaker;
