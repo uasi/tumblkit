@@ -13,13 +13,12 @@
 {
     NSString *URLString_;
     id <PLActorProcess> receiver_;
-    NSMutableSet *workerPool_;
     WebView *webView_;
 }
 
 - (id)initWithURLString:(NSString *)URLString
-               receiver:(id)receiver
-             workerPool:(NSMutableSet *)workerPool;
+               receiver:(id)receiver;
+- (void)run;
 
 @end
 
@@ -28,12 +27,10 @@
 
 - (id)initWithURLString:(NSString *)URLString
                receiver:(id <PLActorProcess>)receiver
-             workerPool:(NSMutableSet *)workerPool;
 {
     self = [super init];
     URLString_ = [URLString retain];
     receiver_ = [receiver retain];
-    workerPool_ = [workerPool retain];
     return self;
 }
 
@@ -41,30 +38,14 @@
 {
     [URLString_ release];
     [receiver_ release];
-    [workerPool_ release];
     if (webView_ != nil) {
         [webView_ release];
     }
     [super dealloc];
 }
 
-- (void)enterToPool
-{
-    @synchronized (workerPool_) {
-        [workerPool_ addObject:self];
-    }
-}
-
-- (void)leaveFromPool
-{
-    @synchronized (workerPool_) {
-        [workerPool_ removeObject:self];
-    }
-}
-
 - (void)run
 {
-    [self enterToPool];
     webView_ = [[WebView alloc] initWithFrame:NSMakeRect(0, 0, 0, 0)
                                     frameName:nil
                                     groupName:nil];
@@ -82,7 +63,6 @@ didFinishLoadForFrame:(WebFrame *)frame
     DOMDocument *doc = [frame DOMDocument];
     PLActorMessage *message = [PLActorMessage messageWithObject:doc];
     [receiver_ send:message];
-    [self leaveFromPool];
 }
 
 - (void)webView:(WebView *)sender
@@ -90,7 +70,6 @@ didFailLoadWithError:(NSError *)error
        forFrame:(WebFrame *)frame
 {
     [receiver_ send:[PLActorMessage message]];
-    [self leaveFromPool];
 }
 
 @end
@@ -98,52 +77,30 @@ didFailLoadWithError:(NSError *)error
 
 @implementation TKDOMMaker
 
++ (id)DOMMaker
+{
+    return [[[[self class] alloc] init] autorelease];
+}
+
 + (id)defaultDOMMaker
 {
-    static id instance = nil;
-    if (instance == nil) {
-        instance = [[TKDOMMaker alloc] init];
-    }
-    return instance;
-}
-
-- (id)init
-{
-    self = [super init];
-    workerPool_ = [NSMutableSet set];
-    return self;
-}
-
-- (void)dealloc
-{
-    [workerPool_ release];
-    [super dealloc];
+    return [[self class] DOMMaker];
 }
 
 - (DOMDocument *)newDOMDocumentWithURLString:(NSString *)URLString
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    [self sendMessageContainingDOMDocumentToReceiver:[PLActorKit process]
-                                       withURLString:URLString];
-    PLActorMessage *message = [PLActorKit receive];
-    DOMDocument *doc = [[message object] retain];
-    [pool drain];
-    return doc;
-}
-
-- (void)sendMessageContainingDOMDocumentToReceiver:(id <PLActorProcess>)receiver
-                                     withURLString:(NSString *)URLString
-{
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     TKDOMMaker_Worker *worker;
     worker = [[TKDOMMaker_Worker alloc] initWithURLString:URLString
-                                                      receiver:receiver
-                                                    workerPool:workerPool_];
+                                                 receiver:[PLActorKit process]];
     [worker autorelease];
     [worker performSelectorOnMainThread:@selector(run)
                              withObject:nil
                           waitUntilDone:NO];
+    PLActorMessage *message = [PLActorKit receive];
+    DOMDocument *doc = [[message object] retain];
     [pool drain];
+    return doc;
 }
 
 // DOMDocument MUST be released with relsaseDOM:,
@@ -152,7 +109,7 @@ didFailLoadWithError:(NSError *)error
 {
     [object performSelectorOnMainThread:@selector(release)
                              withObject:nil
-                          waitUntilDone:NO];
+                          waitUntilDone:YES];
 }
 
 

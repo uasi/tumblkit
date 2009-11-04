@@ -19,6 +19,7 @@
     NSMutableSet *workerPool_;
 }
 
++ (id)DOMMaker;
 + (id)defaultDOMMaker;
 
 // NOTE:
@@ -26,8 +27,6 @@
 // - Returned DOMDocument MUST be released with releaseDOM:
 // 
 - (DOMDocument *)newDOMDocumentWithURLString:(NSString *)URLString;
-- (void)sendMessageContainingDOMDocumentToReceiver:(id <PLActorProcess>)receiver
-                                     withURLString:(NSString *)URLString;
 - (void)releaseDOM:(id)object;
 
 @end
