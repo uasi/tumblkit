@@ -8,10 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SUUpdateAlert : NSObject {}
+
+@interface SUUpdateAlert : NSObject {
+}
+
 - (void)displayReleaseNotes;
+
 @end
 
+
 @interface SUUpdateAlert (TumblKitAdditions)
+
 - (void)tk_displayReleaseNotes;
+
 @end

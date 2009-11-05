@@ -7,12 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <ActorKit/ActorKit.h>
 
 #import "TKWebService.h"
 
-@interface TKTumblrWebService : TKWebService {
 
+@interface TKTumblrWebService : TKWebService {
 }
 
 @end

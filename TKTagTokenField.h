@@ -10,7 +10,6 @@
 
 
 @interface TKTagTokenField : NSTokenField {
-
 }
 
 @end

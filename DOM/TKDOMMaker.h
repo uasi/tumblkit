@@ -25,6 +25,12 @@
 // - Returned DOMDocument MUST be released with releaseDOM:
 // 
 - (DOMDocument *)newDOMDocumentWithURLString:(NSString *)URLString;
+
+
+// NOTE:
+// DOMDocument MUST be released with relsaseDOM:,
+// since releasing a DOMDocument on a secondary thread causes SIGABRT.
+//
 - (void)releaseDOM:(id)object;
 
 @end

@@ -8,12 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "TKPost.h"
 
-@class TKPost;
+
 @interface TKEditPanelController : NSWindowController {
+    
     IBOutlet NSTabView *tabView;
     TKPost *post_;
     BOOL isPreviousPostPrivate_;
+    
 }
 
 @property(retain) TKPost *post;

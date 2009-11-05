@@ -11,7 +11,8 @@
 @class WebView;
 
 
-@interface WebHTMLView : NSControl { }
+@interface WebHTMLView : NSControl {
+}
 
 - (WebView *)_webView;
 - (NSString *)selectedString;

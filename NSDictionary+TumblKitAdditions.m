@@ -8,9 +8,12 @@
 
 #import "NSDictionary+TumblKitAdditions.h"
 
+
 @interface NSDictionary (TumblKitPrivateMethods)
+
 - (NSString *)tk_stringByUnescapingString:(NSString *)string;
 - (NSString *)tk_stringByEscapingString:(NSString *)string;
+
 @end
 
 

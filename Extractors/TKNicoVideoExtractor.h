@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+
 #import "TKExtractor.h"
 
 
-@interface TKNicoVideoExtractor : TKExtractor {}
+@interface TKNicoVideoExtractor : TKExtractor {
+}
 
 @end

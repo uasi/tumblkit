@@ -7,18 +7,28 @@
 //
 
 #import <Cocoa/Cocoa.h>
+
 #import "TKExtractor.h"
 
-@interface TKGenericVideoExtractor :TKExtractor {}
+
+@interface TKGenericVideoExtractor :TKExtractor {
+}
+
 @end
 
-@interface TKGenericImageExtractor :TKExtractor {}
+@interface TKGenericImageExtractor :TKExtractor {
+}
+
 @end
 
-@interface TKGenericQuoteExtractor : TKExtractor {}
+@interface TKGenericQuoteExtractor : TKExtractor {
+}
+
 @end
 
-@interface TKGenericLinkExtractor :TKExtractor {}
+@interface TKGenericLinkExtractor :TKExtractor {
+}
+
 @end
 
 

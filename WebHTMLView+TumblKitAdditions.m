@@ -13,16 +13,18 @@
 #import "TKExtractor.h"
 #import "TKBundleController.h"
 
-#define TK_L(str) NSLocalizedStringFromTableInBundle(str, @"", TKBundle, @"")
-//#define TK_L(str) (str)
 
+#define TK_L(str) NSLocalizedStringFromTableInBundle(str, @"", TKBundle, @"")
 
 @interface WebHTMLView (TumblKitPrivateMethods)
+
 - (TKSource *)tk_sourceForEvent:(NSEvent *)event;
+
 @end
 
 
 @implementation WebHTMLView (TumblKitPrivateMethods)
+
 - (TKSource *)tk_sourceForEvent:(NSEvent *)event
 {
     NSPoint point = [event locationInWindow];
@@ -34,10 +36,12 @@
                                             element:element];
     return source;
 }
+
 @end
 
 
 @implementation WebHTMLView (TumblKitAdditions)
+
 - (NSMenu *)tk_menuForEvent:(NSEvent *)event
 {
     TKSource *source = [self tk_sourceForEvent:event];
@@ -48,4 +52,5 @@
     
     return [builder menu];
 }
+
 @end

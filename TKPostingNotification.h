@@ -8,11 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+
 #define TKPostingNotification @"TKPostingNotification"
 
 @class TKPost;
 @interface TKPostingNotifier : NSObject {
-
 }
 
 + (id)sharedNotifier;

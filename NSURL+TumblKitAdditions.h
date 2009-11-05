@@ -10,5 +10,7 @@
 
 
 @interface NSURL (TumblKitAdditions)
+
 - (NSString *)tk_anchorStringWithText:(NSString *)text;
+
 @end

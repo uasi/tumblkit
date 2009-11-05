@@ -7,11 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+
 #import "TKExtractor.h"
 
 
 @interface TKDailymotionExtractor : TKExtractor {
-
 }
 
 @end

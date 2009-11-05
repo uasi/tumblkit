@@ -10,5 +10,7 @@
 
 
 @interface NSString (TumblKitAdditions)
+
 - (NSString *)tk_stringByEscapingTagsAndAmpersands;
+
 @end

@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+
 extern NSBundle *TKBundle; /* Shared bundle instance */
 
 @class TKEditPanelController;

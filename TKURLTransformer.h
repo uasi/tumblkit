@@ -10,7 +10,6 @@
 
 
 @interface TKURLTransformer : NSValueTransformer {
-
 }
 
 @end

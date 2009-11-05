@@ -39,21 +39,6 @@ typedef enum TKPostType {
 
 }
 
-/*
-@property TKPostType type;
-@property(copy) NSString *pageTitle;
-@property(copy) NSURL *pageURL;
-@property(copy) NSString *title; // Content title
-@property(copy) NSString *body;  // Content body
-@property(copy) NSString *authorName; // Author of content
-@property(copy) NSString *selectedText; // Selection
-@property(copy) NSURL *URL;      // Content URL
-@property(copy) NSURL *linkURL;  // Link URL
-@property(copy) NSURL *authorURL; // URL for author
-@property(copy) NSArray *tags;
-@property(setter=setPrivate:) BOOL isPrivate;
- */
-
 @property TKPostType type;
 @property(setter=setPrivate:) BOOL isPrivate;
 @property(copy) NSArray *tags;

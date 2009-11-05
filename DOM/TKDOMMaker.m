@@ -9,8 +9,7 @@
 #import "TKDOMMaker.h"
 
 
-@interface TKDOMMaker_Worker : NSObject
-{
+@interface TKDOMMaker_Worker : NSObject {
     NSString *URLString_;
     id <PLActorProcess> receiver_;
     WebView *webView_;
@@ -98,8 +97,6 @@ didFailLoadWithError:(NSError *)error
     return doc;
 }
 
-// DOMDocument MUST be released with relsaseDOM:,
-// since releasing a DOMDocument in a secondary thread causes SIGABRT.
 - (void)releaseDOM:(id)object
 {
     [object performSelectorOnMainThread:@selector(release)

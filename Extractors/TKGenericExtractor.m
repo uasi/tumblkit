@@ -7,13 +7,15 @@
 //
 
 #import <WebKit/WebKit.h>
+
 #import "TKGenericExtractor.h"
-#import "TKPost.h"
 
 
 @implementation TKGenericVideoExtractor
 
-- (NSString *)title { return @"Video"; }
+- (NSString *)title {
+    return @"Video";
+}
 
 - (BOOL)acceptsSource:(TKSource *)source
 {
@@ -47,7 +49,9 @@
 
 @implementation TKGenericImageExtractor
 
-- (NSString *)title { return @"Image"; }
+- (NSString *)title {
+    return @"Image";
+}
 
 - (BOOL)acceptsSource:(TKSource *)source
 {
@@ -70,7 +74,9 @@
 
 @implementation TKGenericQuoteExtractor
 
-- (NSString *)title { return @"Text"; }
+- (NSString *)title {
+    return @"Text";
+}
 
 - (BOOL)acceptsSource:(TKSource *)source
 {
@@ -91,7 +97,9 @@
 
 @implementation TKGenericLinkExtractor
 
-- (NSString *)title { return @"Link"; }
+- (NSString *)title {
+    return @"Link";
+}
 
 - (BOOL)acceptsSource:(TKSource *)source
 {

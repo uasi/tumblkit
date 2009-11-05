@@ -7,7 +7,6 @@
 //
 
 #import "TKEditPanelController.h"
-#import "TKPost.h"
 #import "TKPostingNotification.h"
 
 

@@ -6,7 +6,6 @@
 //  Copyright 2009 99cm.org. All rights reserved.
 //
 
-#import <WebKit/WebKit.h>
 #import "TKSource.h"
 #import "WebHTMLView+TumblKitAdditions.h"
 

@@ -7,6 +7,7 @@
 //
 
 #import <WebKit/WebKit.h>
+
 #import "TKMenuBuilder.h"
 #import "TKBundleController.h"
 #import "TKEditPanelController.h"
@@ -14,9 +15,10 @@
 #import "TKSource.h"
 #import "TKPost.h"
 #import "TKPostingNotification.h"
-#import "TKDOMUtil.h"
+#import "DOM.h"
 #import "NSDictionary+TumblKitAdditions.h"
 #import "TKGrowlHelper.h"
+
 
 #define TK_L(str) NSLocalizedStringFromTableInBundle(str, @"", TKBundle, @"")
 

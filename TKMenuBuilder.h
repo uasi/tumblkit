@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+
 @class TKSource;
 @interface TKMenuBuilder : NSObject {
     NSMenu *menu_;
