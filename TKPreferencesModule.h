@@ -11,6 +11,11 @@
 
 
 @interface TKPreferencesModule : NSPreferencesModule {
+    NSMutableDictionary *preferences_;
 }
+
+@property(readonly) NSMutableDictionary *preferences;
+
+- (void)discardChanges;
 
 @end
