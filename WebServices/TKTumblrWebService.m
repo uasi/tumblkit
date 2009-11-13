@@ -11,9 +11,10 @@
 
 #import "TKTumblrWebService.h"
 #import "TKBundleController.h"
-#import "TKCommonAdditions.h"
 #import "TKPost.h"
 #import "TKGrowlHelper.h"
+
+#import "CommonAdditions.h"
 #import "DOM.h"
 
 

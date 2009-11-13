@@ -88,7 +88,7 @@
 		5850C7600FE63B650083E931 /* TKEditPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEditPanelController.m; sourceTree = "<group>"; };
 		58620CD11041C9880056FFD1 /* NSString+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TumblKitAdditions.h"; sourceTree = "<group>"; };
 		58620CD21041C9880056FFD1 /* NSString+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TumblKitAdditions.m"; sourceTree = "<group>"; };
-		58620CD51041CB780056FFD1 /* TKCommonAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCommonAdditions.h; sourceTree = "<group>"; };
+		58620CD51041CB780056FFD1 /* CommonAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonAdditions.h; sourceTree = "<group>"; };
 		58620CD61041CBCC0056FFD1 /* NSURL+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+TumblKitAdditions.h"; sourceTree = "<group>"; };
 		58620CD71041CBCC0056FFD1 /* NSURL+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+TumblKitAdditions.m"; sourceTree = "<group>"; };
 		586214FD104510760056FFD1 /* TKTagTokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTagTokenField.h; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 		58620CD41041CB580056FFD1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				58620CD51041CB780056FFD1 /* TKCommonAdditions.h */,
+				58620CD51041CB780056FFD1 /* CommonAdditions.h */,
 				5850C66A0FE402320083E931 /* NSDictionary+TumblKitAdditions.h */,
 				5850C66B0FE402320083E931 /* NSDictionary+TumblKitAdditions.m */,
 				58620CD11041C9880056FFD1 /* NSString+TumblKitAdditions.h */,

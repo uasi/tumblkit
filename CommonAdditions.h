@@ -1,5 +1,5 @@
 /*
- *  TKCommonAdditions.h
+ *  CommonAdditions.h
  *  TumblKitNG
  *
  *  Created by uasi on 09/08/24.
