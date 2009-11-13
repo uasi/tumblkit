@@ -23,6 +23,12 @@
             [[[source URL] path] hasPrefix:@"/video/"]);
 }
 
+static void *extractEmbedCode(DOMNode *node)
+{
+    NSString *xpath = @"//input[@id=\"video_player_embed_code_text\"]/@value";
+    return [[[node ownerDocument] tk_nodeForXPath:xpath] nodeValue];
+}
+
 - (TKPost *)postFromSource:(TKSource *)source
 {
     TKPost *post = [[TKPost alloc] initWithType:TKPostVideoType
@@ -31,8 +37,8 @@
     [post setTitle:[source title]];
     [post setBody:[source text]];
     
-    NSString *xpath = @"//input[@id=\"video_player_embed_code_text\"]/@value";
-    NSString *embedCode = [[[source node] tk_nodeForXPath:xpath] value];
+    NSString *embedCode = [TKDOMManipulator manipulateDOMNode:[source node]
+                                                usingFunction:extractEmbedCode];
     [post setObject:embedCode];
     
     return post;

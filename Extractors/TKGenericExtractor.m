@@ -9,6 +9,7 @@
 #import <WebKit/WebKit.h>
 
 #import "TKGenericExtractor.h"
+#import "DOM.h"
 
 
 @implementation TKGenericVideoExtractor
@@ -23,6 +24,11 @@
             [[[source URL] path] isEqualTo:@"/watch"]);
 }
 
+static void *extractTitle(DOMNode *node)
+{
+    return [[[node ownerDocument] tk_nodeForXPath:@"//h1/text()"] nodeValue];
+}
+
 - (TKPost *)postFromSource:(TKSource *)source
 {
     TKPost *post = [[TKPost alloc] initWithType:TKPostVideoType
@@ -31,13 +37,8 @@
     [post setURL:[source URL]];
     [post setBody:[source text]];
     
-    DOMDocument *doc =[[source node] ownerDocument];
-    DOMXPathResult *res = [doc evaluate:@"//h1/text()"
-                            contextNode:doc
-                               resolver:nil
-                                   type:DOM_FIRST_ORDERED_NODE_TYPE
-                               inResult:NULL];
-    NSString *title = [(DOMText *)[res singleNodeValue] nodeValue];
+    NSString *title = [TKDOMManipulator manipulateDOMNode:[source node]
+                                            usingFunction:extractTitle];
     [post setTitle:title];
     
     return [post autorelease];
