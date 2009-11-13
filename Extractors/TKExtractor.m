@@ -12,6 +12,14 @@
 #import "TKDailymotionExtractor.h"
 
 
+@interface TKExtraction ()
+
+- (id)initWithExtractor:(TKExtractor *)extractor
+                 source:(TKSource *)source;
+
+@end
+
+
 @implementation TKExtractor
 
 + (NSArray *)extractors
@@ -60,9 +68,37 @@
     return [[[TKPost alloc] init] autorelease];
 }
 
-- (TKDeferredPost *)deferredPostFromSource:(TKSource *)source
+- (TKExtraction *)extractionForSource:(TKSource *)source
 {
-    return [TKDeferredPost deferredPostWithSource:source extractor:self];
+    TKExtraction *extraction = [[TKExtraction alloc] initWithExtractor:self
+                                                                source:source];
+    return [extraction autorelease];
+}
+
+@end
+
+
+@implementation TKExtraction
+
+- (id)initWithExtractor:(TKExtractor *)extractor
+                 source:(TKSource *)source
+{
+    [self init];
+    extractor_ = [extractor retain];
+    source_ = [source retain];
+    return self;
+}
+
+- (TKPost *)postByInvokingExtraction
+{
+    return [extractor_ postFromSource:source_];
+}
+
+- (void)dealloc
+{
+    [extractor_ release];
+    [source_ release];
+    [super dealloc];
 }
 
 @end

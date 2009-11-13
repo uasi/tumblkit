@@ -10,21 +10,40 @@
 
 #import "TKWebService.h"
 #import "TKPost.h"
-#import "TKPostingNotification.h"
+
+#import "TKTumblrWebService.h"
 
 
 @implementation TKWebService
 
-+ (void)registerAsObserver
++ (NSArray *)webServiceClasses
 {
-    [[NSNotificationCenter defaultCenter] addObserver:[self class]
-                                             selector:@selector(postWithNotification:)
-                                                 name:TKPostingNotification
-                                               object:nil];
+    static id webServiceClasses = nil;
+    if (webServiceClasses == nil) {
+        webServiceClasses = [[NSArray alloc] initWithObjects:
+                       [TKTumblrWebService class],
+                       nil];
+    }
+    return webServiceClasses;
 }
 
-+ (void)postWithNotification:(NSNotification *)notification
++ (void)postToWebServices:(TKPost *)post
 {
+    for (Class webServiceClass in [[self class] webServiceClasses]) {
+        [webServiceClass postInBackground:post];
+    }
+}
+
++ (void)postInBackground:(TKPost *)post
+{
+    id webService = [[[[self class] alloc] init] autorelease];
+    [webService performSelectorInBackground:@selector(post:)
+                                 withObject:post];
+}
+
+- (void)post:(TKPost *)post
+{
+    NSLog(@"TumblKit: Abstract method -[TKWebService post:] called");
 }
 
 @end

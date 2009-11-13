@@ -8,8 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "TKPost.h"
 
+@class TKPost;
 
 @interface TKEditPanelController : NSWindowController {
     
@@ -22,9 +22,9 @@
 @property(retain) TKPost *post;
 @property(setter=setPreviousPostPrivate:) BOOL isPreviousPostPrivate;
 
+- (void)showWindowWithPost:(TKPost *)aPost;
 - (void)showWindow:(id)sender
           withPost:(TKPost *)post;
-- (void)showWindowWithMenuItem:(NSMenuItem *)item;
 - (IBAction)postWithContent:(id)sender;
 - (void)windowWillClose:(NSNotification *)notification;
 

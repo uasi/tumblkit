@@ -7,8 +7,6 @@
 //
 
 #import "TKPost.h"
-#import "TKExtractor.h"
-#import "TKSource.h"
 
 
 @implementation TKPost
@@ -55,44 +53,4 @@
     [super dealloc];
 }
 
-@end
-
-
-@implementation TKDeferredPost
-
-@dynamic post;
-
-- (id)initWithSource:(TKSource *)source
-           extractor:(TKExtractor *)extractor
-{
-    [self init];
-    source_ = [source retain];
-    extractor_ = [extractor retain];
-    return self;
-}
-
-+ (id)deferredPostWithSource:(TKSource *)source
-                   extractor:(TKExtractor *)extractor
-{
-    return [[[TKDeferredPost alloc] initWithSource:source extractor:extractor] autorelease];
-}
-
-- (void)dealloc
-{
-    [source_ release];
-    [extractor_ release];
-    if (post_ != nil) {
-        [post_ release];
-    }
-    [super dealloc];
-}
-
-- (TKPost *)post
-{
-    if (post_ == nil) {
-        post_ = [[extractor_ postFromSource:source_] retain];
-    }
-    return post_;
-}
-        
 @end

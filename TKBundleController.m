@@ -12,7 +12,6 @@
 #import "SUUpdateAlert+TumblKitAdditions.h"
 #import <Sparkle/Sparkle.h>
 
-#import "TKMenuBuilder.h"
 #import "TKBundleController.h"
 #import "WebHTMLView+TumblKitAdditions.h"
 #import "TKTumblrWebService.h"
@@ -34,8 +33,6 @@ NSBundle *TKBundle; /* Shared bundle instance */
     
     [TKGrowlHelper loadGrowlForBundle:TKBundle];
     [SUUpdater updaterForBundle:TKBundle];
-    
-    [TKTumblrWebService registerAsObserver];
     
     NSLog(@"TumblKit loaded");    
 }

@@ -7,14 +7,12 @@
 //
 
 #import "WebHTMLView+TumblKitAdditions.h"
-#import "TKSource.h"
-#import "TKMenuBuilder.h"
-#import "TKPost.h"
-#import "TKExtractor.h"
 #import "TKBundleController.h"
+#import "TKMenuController.h"
+#import "TKExtractor.h"
+#import "TKPost.h"
+#import "TKSource.h"
 
-
-#define TK_L(str) NSLocalizedStringFromTableInBundle(str, @"", TKBundle, @"")
 
 @interface WebHTMLView (TumblKitPrivateMethods)
 
@@ -47,10 +45,9 @@
     TKSource *source = [self tk_sourceForEvent:event];
     
     NSMenu *menu = [self tk_menuForEvent:event];
-    TKMenuBuilder *builder = [[TKMenuBuilder alloc] initWithMenu:menu source:source];
-    [builder insertItemsToMenu];
-    
-    return [builder menu];
+    [[TKMenuController sharedMenuController] insertItemsToMenu:menu
+                                                     forSource:source];
+    return menu;
 }
 
 @end

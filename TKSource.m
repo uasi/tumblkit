@@ -10,7 +10,7 @@
 #import "WebHTMLView+TumblKitAdditions.h"
 
 
-@interface TKSource () // Private Methods
+@interface TKSource ()
 
 - (id)initWithDOMNode:(DOMNode *)node
                  text:(NSString *)text

@@ -35,8 +35,6 @@ typedef enum TKPostType {
     id object_;
     NSURL *URL_;
     NSURL *linkURL_;
-
-
 }
 
 @property TKPostType type;
@@ -59,20 +57,3 @@ typedef enum TKPostType {
 
 @end
 
-
-@class TKSource;
-@class TKExtractor;
-@interface TKDeferredPost : NSObject {
-    TKPost *post_;
-    TKSource *source_;
-    TKExtractor *extractor_;
-}
-
-@property(readonly) TKPost *post;
-
-- (id)initWithSource:(TKSource *)source
-           extractor:(TKExtractor *)extractor;
-+ (id)deferredPostWithSource:(TKSource *)source
-                   extractor:(TKExtractor *)extractor;
-
-@end

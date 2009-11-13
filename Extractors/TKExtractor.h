@@ -11,6 +11,9 @@
 #import "TKSource.h"
 #import "TKPost.h"
 
+
+@class TKExtraction;
+
 @interface TKExtractor : NSObject {
 }
 
@@ -20,12 +23,23 @@
 + (NSArray *)extractorsForSource:(TKSource *)source;
 
 - (TKPost *)postFromSource:(TKSource *)source;
-- (TKDeferredPost *)deferredPostFromSource:(TKSource *)source;
 
 - (BOOL)acceptsSource:(TKSource *)source;
+- (TKExtraction *)extractionForSource:(TKSource *)source;
 - (TKPost *)postFromSource:(TKSource *)source;
 
 @end
+
+
+@interface TKExtraction : NSObject {
+    TKExtractor *extractor_;
+    TKSource *source_;
+}
+
+- (TKPost *)postByInvokingExtraction;
+
+@end
+
 
 
 

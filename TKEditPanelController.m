@@ -7,7 +7,8 @@
 //
 
 #import "TKEditPanelController.h"
-#import "TKPostingNotification.h"
+#import "TKPostController.h"
+#import "TKPost.h"
 
 
 @implementation TKEditPanelController
@@ -18,6 +19,11 @@
 - (void)awakeFromNib
 {
     [[self window] setDelegate:self];
+}
+
+- (void)showWindowWithPost:(TKPost *)aPost
+{
+    [self showWindow:nil withPost:aPost];
 }
 
 - (void)showWindow:(id)sender
@@ -45,17 +51,12 @@
     [self showWindow:sender];
 }
 
-- (void)showWindowWithMenuItem:(NSMenuItem *)item
-{
-    TKPost *post = [(TKDeferredPost *)[item representedObject] post];
-    [self showWindow:self withPost:post];   
-}
-
 - (IBAction)postWithContent:(id)sender
 {
-    [[TKPostingNotifier sharedNotifier] notifyWithPost:post_];
+    [[TKPostController sharedPostController] post:post_];
     [[self window] performClose:sender];
 }
+
 
 /****************
  delegate methods

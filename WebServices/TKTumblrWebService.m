@@ -13,33 +13,26 @@
 #import "TKBundleController.h"
 #import "TKCommonAdditions.h"
 #import "TKPost.h"
-#import "TKPostingNotification.h"
 #import "TKGrowlHelper.h"
 #import "DOM.h"
 
 
-@interface TKTumblrWebService () // Priavte Methods
-- (void)postWithPost:(TKPost *)post;
+@interface TKTumblrWebService ()
+
+- (void)post:(TKPost *)post;
 - (void)abortPosting;
 - (void)finishPosting;
 - (void)updateQuery:(NSMutableDictionary *)query
            withPost:(TKPost *)post;
 - (NSString *)postTypeStringForPost:(TKPost *)post;
 static void *queryFromDOMNode(DOMNode *node);
+
 @end
 
 
 @implementation TKTumblrWebService
 
-+ (void)postWithNotification:(NSNotification *)notification
-{
-    TKPost *post = [[notification userInfo] objectForKey:@"post"];
-    [PLActorKit spawnWithTarget:[[[[self class] alloc] init] autorelease]
-                       selector:@selector(postWithPost:)
-                         object:post];
-}
-
-- (void)postWithPost:(TKPost *)post
+- (void)post:(TKPost *)post
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSString *postTypeString = [self postTypeStringForPost:post];

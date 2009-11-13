@@ -8,6 +8,7 @@
 
 #import "TKMenuController.h"
 #import "TKBundleController.h"
+#import "TKPostController.h"
 #import "TKExtractor.h"
 #import "TKPost.h"
 #import "TKSource.h"
@@ -70,6 +71,8 @@
     }
 }
 
+#pragma mark -
+
 - (NSMenuItem *)itemForExtractor:(TKExtractor *)extractor
                       withSource:(TKSource *)source
 {
@@ -77,7 +80,7 @@
                                                   action:@selector(post:)
                                            keyEquivalent:@""];
     [item setTarget:[[self class] sharedMenuController]];
-    [item setRepresentedObject:[extractor deferredPostFromSource:source]];
+    [item setRepresentedObject:[extractor extractionForSource:source]];
     return [item autorelease];
 }
 
@@ -91,16 +94,20 @@
     [item setTarget:[[self class] sharedMenuController]];
     [item setKeyEquivalentModifierMask:NSAlternateKeyMask];
     [item setAlternate:YES];
-    [item setRepresentedObject:[extractor deferredPostFromSource:source]];
+    [item setRepresentedObject:[extractor extractionForSource:source]];
     return [item autorelease];
 }
 
 - (void)post:(NSMenuItem *)item
 {
+    TKExtraction *extraction = [item representedObject];
+    [[TKPostController sharedPostController] postWithExtraction:extraction];
 }
 
 - (void)edit:(NSMenuItem *)item
 {
+    TKExtraction *extraction = [item representedObject];
+    [[TKPostController sharedPostController] editWithExtraction:extraction];
 }
 
 @end

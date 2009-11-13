@@ -9,10 +9,15 @@
 #import <Cocoa/Cocoa.h>
 
 
+@class TKPost;
+
 @interface TKWebService : NSObject {
 }
 
-+ (void)registerAsObserver;
-+ (void)postWithNotification:(NSNotification *)notification;
++ (NSArray *)webServiceClasses;
++ (void)postToWebServices:(TKPost *)post;
++ (void)postInBackground:(TKPost *)post;
+
+- (void)post:(TKPost *)post;
 
 @end
