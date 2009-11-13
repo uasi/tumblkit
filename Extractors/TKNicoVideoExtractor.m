@@ -26,10 +26,9 @@
 
 - (TKPost *)postFromSource:(TKSource *)source
 {
-    TKPost *post = [[TKPost alloc] initWithType:TKPostVideoType];
+    TKPost *post = [[TKPost alloc] initWithType:TKPostVideoType
+                                         source:source];
     [post autorelease];
-    [post setPageURL:[source URL]];
-    [post setPageTitle:[source title]];
     [post setTitle:[source title]];
     [post setBody:[source text]];
     

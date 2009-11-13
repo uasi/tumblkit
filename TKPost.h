@@ -19,6 +19,8 @@ typedef enum TKPostType {
 } TKPostType;
 
 
+@class TKSource;
+
 @interface TKPost : NSObject {
     TKPostType type_;
     BOOL isPrivate_;    
@@ -54,6 +56,8 @@ typedef enum TKPostType {
 @property(copy) NSURL *linkURL;
 
 - (id)initWithType:(TKPostType)type;
+- (id)initWithType:(TKPostType)type
+            source:(TKSource *)source;
 
 @end
 

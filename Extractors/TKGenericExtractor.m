@@ -25,9 +25,8 @@
 
 - (TKPost *)postFromSource:(TKSource *)source
 {
-    TKPost *post = [[TKPost alloc] initWithType:TKPostVideoType];
-    [post setPageURL:[source URL]];
-    [post setPageTitle:[source title]];
+    TKPost *post = [[TKPost alloc] initWithType:TKPostVideoType
+                                         source:source];
     [post setTitle:[source title]];
     [post setURL:[source URL]];
     [post setBody:[source text]];
@@ -60,10 +59,10 @@
 
 - (TKPost *)postFromSource:(TKSource *)source
 {
-    TKPost *post = [[TKPost alloc] initWithType:TKPostImageType];
+    TKPost *post = [[TKPost alloc] initWithType:TKPostImageType
+                                         source:source];
     [post setTitle:[source title]];
     [post setBody:[source text]];
-    [post setPageURL:[source URL]];
     [post setLinkURL:[source linkURL]];
     [post setURL:[source sourceURL]];
     return [post autorelease];
@@ -85,10 +84,10 @@
 
 - (TKPost *)postFromSource:(TKSource *)source
 {
-    TKPost *post = [[TKPost alloc] initWithType:TKPostQuoteType];
+    TKPost *post = [[TKPost alloc] initWithType:TKPostQuoteType
+                                         source:source];
     [post setTitle:[source title]];
     [post setBody:[source text]];
-    [post setPageURL:[source URL]];
     return [post autorelease];
 }
 
@@ -108,7 +107,8 @@
 
 - (TKPost *)postFromSource:(TKSource *)source
 {
-    TKPost *post = [[TKPost alloc] initWithType:TKPostLinkType];
+    TKPost *post = [[TKPost alloc] initWithType:TKPostLinkType
+                                         source:source];
     
     /* This behavior may be confusing... */
     

@@ -7,6 +7,7 @@
 //
 
 #import "TKPost.h"
+#import "TKSource.h"
 
 
 @implementation TKPost
@@ -29,8 +30,17 @@
 
 - (id)initWithType:(TKPostType)type
 {
-    [self init];
+    self = [super init];
     type_ = type;
+    return self;
+}
+
+- (id)initWithType:(TKPostType)type
+            source:(TKSource *)source
+{
+    [self initWithType:type];
+    [self setPageURL:[source URL]];
+    [self setPageTitle:[source title]];
     return self;
 }
 
