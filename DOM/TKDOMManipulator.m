@@ -39,12 +39,13 @@ static void *ownerDocumentOfNode(DOMNode *node)
     [self performSelectorOnMainThread:@selector(manipulateUsingBlock)
                            withObject:nil
                         waitUntilDone:YES];
-    return result_;    
+    return [result_ autorelease];
 }
 
 - (void)manipulateUsingBlock
 {
     result_ = block_(node_);
+    [result_ retain];
 }
 
 #endif /* MAC_OS_X_VERSION_10_6 */
@@ -64,12 +65,18 @@ static void *ownerDocumentOfNode(DOMNode *node)
     [self performSelectorOnMainThread:@selector(manipulateUsingFunction)
                            withObject:nil
                         waitUntilDone:YES];
-    return result_;    
+    // autorelease の理由は manipulateUsingFunction のコメントを参照
+    return [result_ autorelease];
 }
 
 - (void)manipulateUsingFunction
 {
     result_ = function_(node_);
+    // result_ メインスレッドの autorelease pool に登録されているかもしれない。
+    // しかし result_ はメインスレッド以外のスレッドに渡されるので、
+    // 予期せぬ時点でメインスレッドの pool に解放されうる。
+    // そこで一旦 retain しておき、後で改めて別の pool に登録する。
+    [result_ retain];
 }
 
 @end
