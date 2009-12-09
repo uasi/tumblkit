@@ -23,6 +23,7 @@
     id result_;
 }
 
++ (DOMDocument *)ownerDocumentOfNode:(DOMNode *)node;
 #ifdef MAC_OS_X_VERSION_10_6
 + (id)manipulateDOMNode:(DOMNode *)node
              usingBlock:(void *(^)(DOMNode *))block;

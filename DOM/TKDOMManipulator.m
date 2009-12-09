@@ -11,6 +11,17 @@
 
 @implementation TKDOMManipulator
 
+static void *ownerDocumentOfNode(DOMNode *node)
+{
+    return [node ownerDocument];
+}
+
++ (DOMDocument *)ownerDocumentOfNode:(DOMNode *)node
+{
+    return [[self class] manipulateDOMNode:node
+                             usingFunction:ownerDocumentOfNode];
+}
+            
 #ifdef MAC_OS_X_VERSION_10_6
 
 + (id)manipulateDOMNode:(DOMNode *)node
@@ -60,6 +71,5 @@
 {
     result_ = function_(node_);
 }
-
 
 @end

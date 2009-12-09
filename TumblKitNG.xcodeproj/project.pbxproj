@@ -42,6 +42,7 @@
 		58E134D50FDBDF9C0042663C /* TKExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134D40FDBDF9C0042663C /* TKExtractor.m */; };
 		58E134FB0FDBF0F10042663C /* TKGenericExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134FA0FDBF0F10042663C /* TKGenericExtractor.m */; };
 		58E134FE0FDBF1680042663C /* TKPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134FD0FDBF1680042663C /* TKPost.m */; };
+		58E5465810ADB0E600AA00A3 /* TKTwitterExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5465710ADB0E600AA00A3 /* TKTwitterExtractor.m */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,8 @@
 		58E134FA0FDBF0F10042663C /* TKGenericExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKGenericExtractor.m; path = Extractors/TKGenericExtractor.m; sourceTree = "<group>"; };
 		58E134FC0FDBF1680042663C /* TKPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPost.h; sourceTree = "<group>"; };
 		58E134FD0FDBF1680042663C /* TKPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPost.m; sourceTree = "<group>"; };
+		58E5465610ADB0E600AA00A3 /* TKTwitterExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKTwitterExtractor.h; path = Extractors/TKTwitterExtractor.h; sourceTree = "<group>"; };
+		58E5465710ADB0E600AA00A3 /* TKTwitterExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKTwitterExtractor.m; path = Extractors/TKTwitterExtractor.m; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* TumblKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TumblKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -315,6 +318,8 @@
 		58E134D60FDBDFA30042663C /* Extractors */ = {
 			isa = PBXGroup;
 			children = (
+				58E5465610ADB0E600AA00A3 /* TKTwitterExtractor.h */,
+				58E5465710ADB0E600AA00A3 /* TKTwitterExtractor.m */,
 				58E134D30FDBDF9C0042663C /* TKExtractor.h */,
 				58E134D40FDBDF9C0042663C /* TKExtractor.m */,
 				58E134F90FDBF0F10042663C /* TKGenericExtractor.h */,
@@ -417,6 +422,7 @@
 				5874860B10A1C8AD00F61554 /* TKDailymotionExtractor.m in Sources */,
 				58742C2810AC922C00C63320 /* TKMenuController.m in Sources */,
 				58637B7F10A7287100742276 /* TKPostController.m in Sources */,
+				58E5465810ADB0E600AA00A3 /* TKTwitterExtractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

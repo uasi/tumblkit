@@ -8,8 +8,9 @@
 
 #import "TKExtractor.h"
 #import "TKGenericExtractor.h"
-#import "TKNicoVideoExtractor.h"
 #import "TKDailymotionExtractor.h"
+#import "TKNicoVideoExtractor.h"
+#import "TKTwitterExtractor.h"
 
 
 @interface TKExtraction ()
@@ -27,8 +28,9 @@
     static NSArray *extractorClasses;
     if (extractorClasses == nil) {
         extractorClasses = [[NSArray alloc] initWithObjects:
-                            [TKNicoVideoExtractor class],
                             [TKDailymotionExtractor class],
+                            [TKNicoVideoExtractor class],
+                            [TKTwitterExtractor class],
                             [TKGenericVideoExtractor class],
                             [TKGenericQuoteExtractor class],
                             [TKGenericImageExtractor class],
