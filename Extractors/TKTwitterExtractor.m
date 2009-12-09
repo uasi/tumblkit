@@ -38,28 +38,6 @@ static void *extractStatus(DOMNode *doc);
 
 - (TKPost *)postFromSource:(TKSource *)source
 {
-    NSString *statusURLString;
-    
-    statusURLString = [[source URL] absoluteString];
-    
-    NSString *title = [TKDOMManipulator manipulateDOMNode:[source node]                                                    
-                                            usingFunction:extractTitle];
-    NSString *status = [TKDOMManipulator manipulateDOMNode:[source node]
-                                             usingFunction:extractStatus];
-
-    TKPost *post = [[TKPost alloc] initWithType:TKPostQuoteType
-                                         source:source];
-    [post autorelease];
-    [post setPageURL:[NSURL URLWithString:statusURLString]];
-    [post setTitle:title];
-    [post setBody:status];
-        
-    return post;
-}
-
-/*
-- (TKPost *)postFromSource:(TKSource *)source
-{
     DOMDocument *doc;
     NSString *statusURLString;
     if ([[[source URL] path] rangeOfString:@"/status/"].location != NSNotFound) {
@@ -90,7 +68,7 @@ static void *extractStatus(DOMNode *doc);
     
     return post;
 }
- */
+ 
  
 static void *extractStatusURL(DOMNode *node)
 {
