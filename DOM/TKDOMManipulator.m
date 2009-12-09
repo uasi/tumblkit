@@ -72,7 +72,7 @@
 - (void)manipulateUsingFunction
 {
     result_ = function_(node_);
-    // result_ メインスレッドの autorelease pool に登録されているかもしれない。
+    // result_ はメインスレッドの autorelease pool に登録されているかもしれない。
     // しかし result_ はメインスレッド以外のスレッドに渡されるので、
     // 予期せぬ時点でメインスレッドの pool に解放されうる。
     // そこで一旦 retain しておき、後で改めて別の pool に登録する。
