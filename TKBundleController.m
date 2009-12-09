@@ -16,6 +16,7 @@
 #import "WebHTMLView+TumblKitAdditions.h"
 #import "TKTumblrWebService.h"
 #import "TKGrowlHelper.h"
+#import "TKPreferencesModule.h"
 
 
 NSBundle *TKBundle; /* Shared bundle instance */
@@ -34,6 +35,11 @@ NSBundle *TKBundle; /* Shared bundle instance */
     [TKGrowlHelper loadGrowlForBundle:TKBundle];
     [SUUpdater updaterForBundle:TKBundle];
     
+    [NSPreferences setDefaultPreferencesClass:NSClassFromString(@"WBPreferences")];
+    NSPreferences *prefs = [NSPreferences sharedPreferences];
+    [prefs addPreferenceNamed:@"TumblKit"
+                        owner:[TKPreferencesModule sharedInstance]];
+
     NSLog(@"TumblKit loaded");    
 }
 

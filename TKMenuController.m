@@ -12,6 +12,7 @@
 #import "TKExtractor.h"
 #import "TKPost.h"
 #import "TKSource.h"
+#import "TKPreferencesModule.h"
 
 
 #define L(str) NSLocalizedStringFromTableInBundle(str, @"", TKBundle, @"")
@@ -50,20 +51,26 @@
     }
     TKExtractor *firstExtractor = [extractors objectAtIndex:0];
     
+    BOOL insertsOnBottom = [[[[TKPreferencesModule sharedInstance] preferences]
+                             valueForKey:@"MenuItemsOnBottom"] boolValue];
+    NSUInteger baseIndex = insertsOnBottom ? [menu numberOfItems] - 1 : 0;
+    
     NSMenuItem *firstItem = [self itemForExtractor:firstExtractor withSource:source];
     [firstItem setTitle:[NSString stringWithFormat:L(@"Share %@"), [firstItem title]]];
-    [menu insertItem:firstItem atIndex:0];
+    [menu insertItem:firstItem atIndex:(baseIndex + 0)];
     
     NSMenuItem *firstAltItem = [self alternateItemForExtractor:firstExtractor withSource:source];
     [firstAltItem setTitle:[[firstItem title] stringByAppendingString:@"..."]];
-    [menu insertItem:firstAltItem atIndex:1];
+    [menu insertItem:firstAltItem atIndex:(baseIndex + 1)];
     
     NSMenu *submenu = [[NSMenu alloc] init];
     NSMenuItem *submenuItem = [[NSMenuItem alloc] init];
     [submenuItem setTitle:L(@"Share As...")];
     [submenuItem setSubmenu:submenu];
-    [menu insertItem:[submenuItem autorelease] atIndex:2];
-    [menu insertItem:[NSMenuItem separatorItem] atIndex:3];
+    [menu insertItem:[submenuItem autorelease] atIndex:(baseIndex + 2)];
+    if (!insertsOnBottom) {
+        [menu insertItem:[NSMenuItem separatorItem] atIndex:(baseIndex + 3)];
+    }
     
     for (TKExtractor *extractor in extractors) {
         [submenu addItem:[self itemForExtractor:extractor withSource:source]];

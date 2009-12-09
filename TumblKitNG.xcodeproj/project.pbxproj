@@ -23,10 +23,13 @@
 		58620CD81041CBCC0056FFD1 /* NSURL+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58620CD71041CBCC0056FFD1 /* NSURL+TumblKitAdditions.m */; };
 		586214FF104510760056FFD1 /* TKTagTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 586214FE104510760056FFD1 /* TKTagTokenField.m */; };
 		586219E8104E5D8F0056FFD1 /* TKURLTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 586219E7104E5D8F0056FFD1 /* TKURLTransformer.m */; };
+		58637AF610A4AA8E00742276 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58637AF510A4AA8E00742276 /* UserDefaults.plist */; };
 		58637B7F10A7287100742276 /* TKPostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58637B7E10A7287100742276 /* TKPostController.m */; };
 		58742C2810AC922C00C63320 /* TKMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58742C2710AC922C00C63320 /* TKMenuController.m */; };
 		58747E91109C5E5400F61554 /* ActorKit.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 58332939109C3A5500005271 /* ActorKit.framework */; };
 		58747FED109C935900F61554 /* TKDOMManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 58747FEC109C935900F61554 /* TKDOMManipulator.m */; };
+		587483FB10A18B8E00F61554 /* TKPreferencesModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 587483FA10A18B8E00F61554 /* TKPreferencesModule.m */; };
+		587483FF10A18DD500F61554 /* TKPreferencesModule.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587483FE10A18DD500F61554 /* TKPreferencesModule.xib */; };
 		587485DF10A1C50300F61554 /* DOMNode+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 587485DE10A1C50300F61554 /* DOMNode+TumblKitAdditions.m */; };
 		5874860B10A1C8AD00F61554 /* TKDailymotionExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874860A10A1C8AD00F61554 /* TKDailymotionExtractor.m */; };
 		587BEB5F0FE8E1EE00DDC3A1 /* Growl.framework in フレームワークをコピー */ = {isa = PBXBuildFile; fileRef = 58C9428D0FD6C5E100D2C4BE /* Growl.framework */; };
@@ -96,6 +99,7 @@
 		586214FE104510760056FFD1 /* TKTagTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTagTokenField.m; sourceTree = "<group>"; };
 		586219E6104E5D8F0056FFD1 /* TKURLTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKURLTransformer.h; sourceTree = "<group>"; };
 		586219E7104E5D8F0056FFD1 /* TKURLTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKURLTransformer.m; sourceTree = "<group>"; };
+		58637AF510A4AA8E00742276 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
 		58637B7D10A7287100742276 /* TKPostController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPostController.h; sourceTree = "<group>"; };
 		58637B7E10A7287100742276 /* TKPostController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPostController.m; sourceTree = "<group>"; };
 		58742C2610AC922C00C63320 /* TKMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMenuController.h; sourceTree = "<group>"; };
@@ -103,6 +107,10 @@
 		58747FEB109C935900F61554 /* TKDOMManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDOMManipulator.h; sourceTree = "<group>"; };
 		58747FEC109C935900F61554 /* TKDOMManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDOMManipulator.m; sourceTree = "<group>"; };
 		587480C0109CA79C00F61554 /* DOM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOM.h; sourceTree = "<group>"; };
+		587483F810A188AA00F61554 /* NSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferences.h; sourceTree = "<group>"; };
+		587483F910A18B8E00F61554 /* TKPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPreferencesModule.h; sourceTree = "<group>"; };
+		587483FA10A18B8E00F61554 /* TKPreferencesModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPreferencesModule.m; sourceTree = "<group>"; };
+		587483FE10A18DD500F61554 /* TKPreferencesModule.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKPreferencesModule.xib; sourceTree = "<group>"; };
 		587485DD10A1C50300F61554 /* DOMNode+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DOMNode+TumblKitAdditions.h"; sourceTree = "<group>"; };
 		587485DE10A1C50300F61554 /* DOMNode+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DOMNode+TumblKitAdditions.m"; sourceTree = "<group>"; };
 		5874860910A1C8AD00F61554 /* TKDailymotionExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKDailymotionExtractor.h; path = Extractors/TKDailymotionExtractor.h; sourceTree = "<group>"; };
@@ -181,6 +189,8 @@
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 				5850C75D0FE63B500083E931 /* TKEditPanel.xib */,
+				587483FE10A18DD500F61554 /* TKPreferencesModule.xib */,
+				58637AF510A4AA8E00742276 /* UserDefaults.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -193,6 +203,7 @@
 				58747FE4109C926300F61554 /* DOM */,
 				58E134D60FDBDFA30042663C /* Extractors */,
 				5850C6680FE401B90083E931 /* WebServices */,
+				587483F810A188AA00F61554 /* NSPreferences.h */,
 				58E134FC0FDBF1680042663C /* TKPost.h */,
 				58E134FD0FDBF1680042663C /* TKPost.m */,
 				58C941D80FD6A01B00D2C4BE /* TKSource.h */,
@@ -205,6 +216,8 @@
 				58637B7E10A7287100742276 /* TKPostController.m */,
 				58C9427A0FD6C43A00D2C4BE /* TKGrowlHelper.h */,
 				58C9427B0FD6C43A00D2C4BE /* TKGrowlHelper.m */,
+				587483F910A18B8E00F61554 /* TKPreferencesModule.h */,
+				587483FA10A18B8E00F61554 /* TKPreferencesModule.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -387,6 +400,8 @@
 				58C9449D0FD6F0BF00D2C4BE /* Localizable.strings in Resources */,
 				5850C75E0FE63B500083E931 /* TKEditPanel.xib in Resources */,
 				5805EEA80FED6EAB00F7FAEA /* dsa_pub.pem in Resources */,
+				587483FF10A18DD500F61554 /* TKPreferencesModule.xib in Resources */,
+				58637AF610A4AA8E00742276 /* UserDefaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +438,7 @@
 				58742C2810AC922C00C63320 /* TKMenuController.m in Sources */,
 				58637B7F10A7287100742276 /* TKPostController.m in Sources */,
 				58E5465810ADB0E600AA00A3 /* TKTwitterExtractor.m in Sources */,
+				587483FB10A18B8E00F61554 /* TKPreferencesModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
