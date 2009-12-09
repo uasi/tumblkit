@@ -30,7 +30,7 @@
         extractorClasses = [[NSArray alloc] initWithObjects:
                             [TKDailymotionExtractor class],
                             [TKNicoVideoExtractor class],
-                            [TKTwitterExtractor class],
+                            //[TKTwitterExtractor class],
                             [TKGenericVideoExtractor class],
                             [TKGenericQuoteExtractor class],
                             [TKGenericImageExtractor class],
