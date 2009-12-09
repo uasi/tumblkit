@@ -77,7 +77,7 @@ didFailLoadWithError:(NSError *)error
 
 @interface TKDOMMaker ()
 
-- (DOMDocument *)makeDOMDocumentWithURLString:(NSString *)URLString;
+- (DOMDocument *)makeDocumentWithURLString:(NSString *)URLString;
 
 @end
 
@@ -85,10 +85,10 @@ didFailLoadWithError:(NSError *)error
 @implementation TKDOMMaker
 
 
-+ (DOMDocument *)makeDOMDocumentWithURLString:(NSString *)URLString
++ (DOMDocument *)makeDocumentWithContentsOfURLString:(NSString *)URLString
 {
     TKDOMMaker *maker = [[[[self class] alloc] init] autorelease];
-    return [maker makeDOMDocumentWithURLString:URLString];
+    return [maker makeDocumentWithURLString:URLString];
 }
 
 static void *ownerDocumentOfNode(DOMNode *node)
@@ -99,20 +99,20 @@ static void *ownerDocumentOfNode(DOMNode *node)
 + (DOMDocument *)makeOwnerDocumentOfNode:(DOMNode *)node
 {
     TKDOMManipulator *manip = [[[TKDOMManipulator alloc] init] autorelease];
-    return [manip manipulateDOMNode:node
-                      usingFunction:ownerDocumentOfNode
-                        autorelease:NO];
+    return [manip manipulateNode:node
+                   usingFunction:ownerDocumentOfNode
+                     autorelease:NO];
 }
 
 
-+ (void)destroyDOMDocument:(DOMDocument *)doc
++ (void)destroyDocument:(DOMDocument *)doc
 {
     [doc performSelectorOnMainThread:@selector(release)
                           withObject:nil
                        waitUntilDone:YES];
 }
 
-- (DOMDocument *)makeDOMDocumentWithURLString:(NSString *)URLString
+- (DOMDocument *)makeDocumentWithURLString:(NSString *)URLString
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     TKDOMMaker_Worker *worker;

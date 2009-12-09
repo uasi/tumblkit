@@ -45,15 +45,15 @@ static void *extractStatus(DOMNode *doc);
         statusURLString = [[source URL] absoluteString];
     }
     else {
-        statusURLString = [TKDOMManipulator manipulateDOMNode:[source node]
-                                                usingFunction:extractStatusURL];
-        doc = [TKDOMMaker makeDOMDocumentWithURLString:statusURLString];
+        statusURLString = [TKDOMManipulator manipulateNode:[source node]
+                                             usingFunction:extractStatusURL];
+        doc = [TKDOMMaker makeDocumentWithContentsOfURLString:statusURLString];
     }
-
-    NSString *title = [TKDOMManipulator manipulateDOMNode:doc
-                                            usingFunction:extractTitle]; 
-    NSString *status = [TKDOMManipulator manipulateDOMNode:doc
-                                             usingFunction:extractStatus];
+    
+    NSString *title = [TKDOMManipulator manipulateNode:doc
+                                         usingFunction:extractTitle]; 
+    NSString *status = [TKDOMManipulator manipulateNode:doc
+                                          usingFunction:extractStatus];
     TKPost *post = [[TKPost alloc] initWithType:TKPostQuoteType
                                          source:source];
     [post autorelease];
@@ -61,7 +61,7 @@ static void *extractStatus(DOMNode *doc);
     [post setTitle:title];
     [post setBody:status];
     
-    [TKDOMMaker destroyDOMDocument:doc];
+    [TKDOMMaker destroyDocument:doc];
     
     return post;
 }

@@ -37,7 +37,7 @@ static void *extractTitle(DOMNode *node)
     [post setURL:[source URL]];
     [post setBody:[source text]];
     
-    NSString *title = [TKDOMManipulator manipulateDOMNode:[source node]
+    NSString *title = [TKDOMManipulator manipulateNode:[source node]
                                             usingFunction:extractTitle];
     [post setTitle:title];
     

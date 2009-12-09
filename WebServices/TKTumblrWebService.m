@@ -26,7 +26,7 @@
 - (void)updateQuery:(NSMutableDictionary *)query
            withPost:(TKPost *)post;
 - (NSString *)postTypeStringForPost:(TKPost *)post;
-static void *queryFromDOMNode(DOMNode *node);
+static void *queryFromNode(DOMNode *node);
 
 @end
 
@@ -39,7 +39,7 @@ static void *queryFromDOMNode(DOMNode *node);
     NSString *postTypeString = [self postTypeStringForPost:post];
     NSString *endpoint = @"http://www.tumblr.com/new/";
     endpoint = [endpoint stringByAppendingString:postTypeString];
-    DOMDocument *doc = [TKDOMMaker makeDOMDocumentWithURLString:endpoint];
+    DOMDocument *doc = [TKDOMMaker makeDocumentWithContentsOfURLString:endpoint];
     if (doc == nil) {
         NSLog(@"TumblKit: post failed: failed to load post form");
         [self abortPosting];
@@ -47,8 +47,8 @@ static void *queryFromDOMNode(DOMNode *node);
     }
     
     NSMutableDictionary *query;
-    query = [TKDOMManipulator manipulateDOMNode:doc
-                                  usingFunction:queryFromDOMNode];
+    query = [TKDOMManipulator manipulateNode:doc
+                               usingFunction:queryFromNode];
     
     [self updateQuery:query withPost:post];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:endpoint]];
@@ -68,7 +68,7 @@ static void *queryFromDOMNode(DOMNode *node);
         [self finishPosting];
     }
     
-    [TKDOMMaker destroyDOMDocument:doc];
+    [TKDOMMaker destroyDocument:doc];
     [pool drain];
 }
 
@@ -170,7 +170,7 @@ static void *queryFromDOMNode(DOMNode *node);
     }
 }
 
-static void *queryFromDOMNode(DOMNode *node)
+static void *queryFromNode(DOMNode *node)
 {
     NSString *xpath = @"//form[@id='edit_post']";
     DOMElement *formElem = (DOMElement *)[node tk_nodeForXPath:xpath];

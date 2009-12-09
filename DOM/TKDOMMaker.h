@@ -22,9 +22,9 @@
 // - Do NOT perform makeDOMDocumentWithURLString on the main thread
 // - Returned DOMDocument MUST be destroyed by performing destroyDOMDocument:
 // 
-+ (DOMDocument *)makeDOMDocumentWithURLString:(NSString *)URLString;
++ (DOMDocument *)makeDocumentWithContentsOfURLString:(NSString *)URLString;
 + (DOMDocument *)makeOwnerDocumentOfNode:(DOMNode *)node;
 
-+ (void)destroyDOMDocument:(DOMDocument *)doc;
++ (void)destroyDocument:(DOMDocument *)doc;
 
 @end

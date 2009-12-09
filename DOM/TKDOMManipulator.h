@@ -24,16 +24,16 @@
 }
 
 #ifdef MAC_OS_X_VERSION_10_6
-+ (id)manipulateDOMNode:(DOMNode *)node
-             usingBlock:(void *(^)(DOMNode *))block;
-- (id)manipulateDOMNode:(DOMNode *)node
-             usingBlock:(void *(^)(DOMNode *))block
-            autorelease:(BOOL)autorelease;
++ (id)manipulateNode:(DOMNode *)node
+          usingBlock:(void *(^)(DOMNode *))block;
+- (id)manipulateNode:(DOMNode *)node
+          usingBlock:(void *(^)(DOMNode *))block
+         autorelease:(BOOL)autorelease;
 #endif
-+ (id)manipulateDOMNode:(DOMNode *)node
-          usingFunction:(void *(*)(DOMNode *))function;
-- (id)manipulateDOMNode:(DOMNode *)node
-          usingFunction:(void *(*)(DOMNode *))function
-            autorelease:(BOOL)autorelease;
++ (id)manipulateNode:(DOMNode *)node
+       usingFunction:(void *(*)(DOMNode *))function;
+- (id)manipulateNode:(DOMNode *)node
+       usingFunction:(void *(*)(DOMNode *))function
+         autorelease:(BOOL)autorelease;
 
 @end

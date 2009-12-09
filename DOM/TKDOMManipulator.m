@@ -10,19 +10,20 @@
 
 
 @implementation TKDOMManipulator
-            
+
 #ifdef MAC_OS_X_VERSION_10_6
 
-+ (id)manipulateDOMNode:(DOMNode *)node
-             usingBlock:(void *(^)(DOMNode *))block
++ (id)manipulateNode:(DOMNode *)node
+          usingBlock:(void *(^)(DOMNode *))block
 {
-    return [[[[[self class] alloc] init] autorelease] manipulateDOMNode:node
-                                                             usingBlock:block];
+    return [[[[[self class] alloc] init] autorelease] manipulateNode:node
+                                                          usingBlock:block
+                                                         autorelease:YES];
 }
 
-- (id)manipulateDOMNode:(DOMNode *)node
-             usingBlock:(void *(^)(DOMNode *))block
-            autorelease:(BOOL)autorelease
+- (id)manipulateNode:(DOMNode *)node
+          usingBlock:(void *(^)(DOMNode *))block
+         autorelease:(BOOL)autorelease
 {
     node_ = node;
     block_ = block;
@@ -44,17 +45,17 @@
 
 #endif /* MAC_OS_X_VERSION_10_6 */
 
-+ (id)manipulateDOMNode:(DOMNode *)node
-             usingFunction:(void *(*)(DOMNode *))function
++ (id)manipulateNode:(DOMNode *)node
+       usingFunction:(void *(*)(DOMNode *))function
 {
-    return [[[[[self class] alloc] init] autorelease] manipulateDOMNode:node
-                                                          usingFunction:function
-                                                            autorelease:YES];
+    return [[[[[self class] alloc] init] autorelease] manipulateNode:node
+                                                       usingFunction:function
+                                                         autorelease:YES];
 }
 
-- (id)manipulateDOMNode:(DOMNode *)node
-          usingFunction:(void *(*)(DOMNode *))function
-            autorelease:(BOOL)autorelease
+- (id)manipulateNode:(DOMNode *)node
+       usingFunction:(void *(*)(DOMNode *))function
+         autorelease:(BOOL)autorelease
 {
     node_ = node;
     function_ = function;

@@ -37,8 +37,8 @@ static void *extractEmbedCode(DOMNode *node)
     [post setTitle:[source title]];
     [post setBody:[source text]];
     
-    NSString *embedCode = [TKDOMManipulator manipulateDOMNode:[source node]
-                                                usingFunction:extractEmbedCode];
+    NSString *embedCode = [TKDOMManipulator manipulateNode:[source node]
+                                             usingFunction:extractEmbedCode];
     [post setObject:embedCode];
     
     return post;
