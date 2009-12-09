@@ -41,16 +41,13 @@ static void *extractStatus(DOMNode *doc);
     DOMDocument *doc;
     NSString *statusURLString;
     if ([[[source URL] path] rangeOfString:@"/status/"].location != NSNotFound) {
-        doc = [TKDOMManipulator ownerDocumentOfNode:[source node]];
-        [doc performSelectorOnMainThread:@selector(retain)
-                              withObject:nil
-                           waitUntilDone:YES];
+        doc = [TKDOMMaker makeOwnerDocumentOfNode:[source node]];
         statusURLString = [[source URL] absoluteString];
     }
     else {
         statusURLString = [TKDOMManipulator manipulateDOMNode:[source node]
                                                 usingFunction:extractStatusURL];
-        doc = [[TKDOMMaker DOMMaker] newDOMDocumentWithURLString:statusURLString];
+        doc = [TKDOMMaker makeDOMDocumentWithURLString:statusURLString];
     }
 
     NSString *title = [TKDOMManipulator manipulateDOMNode:doc
@@ -64,7 +61,7 @@ static void *extractStatus(DOMNode *doc);
     [post setTitle:title];
     [post setBody:status];
     
-    [[TKDOMMaker DOMMaker] releaseDOM:doc];
+    [TKDOMMaker destroyDOMDocument:doc];
     
     return post;
 }
@@ -83,10 +80,22 @@ static void *extractTitle(DOMNode *doc)
     return [(DOMHTMLElement *)[doc tk_nodeForXPath:xpath] innerText];
 }
 
+
 static void *extractStatus(DOMNode *doc)
 {
     NSString *xpath = @"//span[@class=\"entry-content\"]";
-    return [(DOMHTMLElement *)[doc tk_nodeForXPath:xpath] innerHTML];
+    // is cloned node retained?
+    DOMNode *content = [[doc tk_nodeForXPath:xpath] cloneNode:YES];
+    NSArray *anchors = [content tk_nodesForXPath:@".//a"];
+    for (DOMHTMLAnchorElement *a in anchors) {
+        DOMNamedNodeMap *attrs = [a attributes];
+        [attrs removeNamedItem:@"class"];
+        if ([attrs getNamedItem:@"rel"]) { [attrs removeNamedItem:@"rel"]; }
+        if ([attrs getNamedItem:@"target"]) { [attrs removeNamedItem:@"target"]; }
+        // URL canonicalization will happen
+        [a setHref:[a href]];
+    }
+    return [(DOMHTMLElement *)content innerHTML];
 }
 
 @end

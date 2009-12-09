@@ -18,19 +18,13 @@
 @interface TKDOMMaker : NSObject {
 }
 
-+ (id)DOMMaker;
-
 // NOTE:
-// - Do NOT perform newDOMDocumentWithURLString on the main thread
-// - Returned DOMDocument MUST be released with releaseDOM:
+// - Do NOT perform makeDOMDocumentWithURLString on the main thread
+// - Returned DOMDocument MUST be destroyed by performing destroyDOMDocument:
 // 
-- (DOMDocument *)newDOMDocumentWithURLString:(NSString *)URLString;
++ (DOMDocument *)makeDOMDocumentWithURLString:(NSString *)URLString;
++ (DOMDocument *)makeOwnerDocumentOfNode:(DOMNode *)node;
 
-
-// NOTE:
-// DOMDocument MUST be released with relsaseDOM:,
-// since releasing a DOMDocument on a secondary thread causes SIGABRT.
-//
-- (void)releaseDOM:(id)object;
++ (void)destroyDOMDocument:(DOMDocument *)doc;
 
 @end

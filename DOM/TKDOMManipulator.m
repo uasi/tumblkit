@@ -10,17 +10,6 @@
 
 
 @implementation TKDOMManipulator
-
-static void *ownerDocumentOfNode(DOMNode *node)
-{
-    return [node ownerDocument];
-}
-
-+ (DOMDocument *)ownerDocumentOfNode:(DOMNode *)node
-{
-    return [[self class] manipulateDOMNode:node
-                             usingFunction:ownerDocumentOfNode];
-}
             
 #ifdef MAC_OS_X_VERSION_10_6
 
@@ -33,13 +22,18 @@ static void *ownerDocumentOfNode(DOMNode *node)
 
 - (id)manipulateDOMNode:(DOMNode *)node
              usingBlock:(void *(^)(DOMNode *))block
+            autorelease:(BOOL)autorelease
 {
     node_ = node;
     block_ = block;
     [self performSelectorOnMainThread:@selector(manipulateUsingBlock)
                            withObject:nil
                         waitUntilDone:YES];
-    return [result_ autorelease];
+    
+    if (autorelease) {
+        [result_ autorelease];
+    }
+    return result_;
 }
 
 - (void)manipulateUsingBlock
@@ -54,11 +48,13 @@ static void *ownerDocumentOfNode(DOMNode *node)
              usingFunction:(void *(*)(DOMNode *))function
 {
     return [[[[[self class] alloc] init] autorelease] manipulateDOMNode:node
-                                                          usingFunction:function];
+                                                          usingFunction:function
+                                                            autorelease:YES];
 }
 
 - (id)manipulateDOMNode:(DOMNode *)node
           usingFunction:(void *(*)(DOMNode *))function
+            autorelease:(BOOL)autorelease
 {
     node_ = node;
     function_ = function;
@@ -66,7 +62,10 @@ static void *ownerDocumentOfNode(DOMNode *node)
                            withObject:nil
                         waitUntilDone:YES];
     // autorelease の理由は manipulateUsingFunction のコメントを参照
-    return [result_ autorelease];
+    if (autorelease) {
+        [result_ autorelease];
+    }
+    return result_;
 }
 
 - (void)manipulateUsingFunction
