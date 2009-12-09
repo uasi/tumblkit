@@ -12,4 +12,5 @@
 
 @interface DOMNode (TumblKitAdditions)
 - (DOMNode *)tk_nodeForXPath:(NSString *)xpath;
+- (NSArray *)tk_nodesForXPath:(NSString *)xpath;
 @end

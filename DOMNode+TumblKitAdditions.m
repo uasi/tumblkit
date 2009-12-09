@@ -25,4 +25,24 @@
     return [res singleNodeValue];
 }
 
+- (NSArray *)tk_nodesForXPath:(NSString *)xpath
+{
+    DOMDocument *doc = [self ownerDocument];
+    if (doc == nil) {
+        doc = (DOMDocument *)self;
+    }
+    DOMXPathResult *res = [doc evaluate:xpath
+                            contextNode:self
+                               resolver:nil
+                                   type:DOM_ORDERED_NODE_SNAPSHOT_TYPE
+                               inResult:nil];
+    NSMutableArray *nodes = [NSMutableArray array];
+    NSUInteger len = [res snapshotLength];
+    for (NSUInteger i = 0; i < len; i++) {
+        [nodes addObject:[res snapshotItem:i]];
+    }
+    return nodes;
+    
+}
+
 @end
