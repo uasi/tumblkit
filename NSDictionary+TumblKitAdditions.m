@@ -7,6 +7,8 @@
 //
 
 #import "NSDictionary+TumblKitAdditions.h"
+#import "TKMultipartFormDataBuilder.h"
+#import "TKFileData.h"
 
 
 @interface NSDictionary (TumblKitPrivateMethods)
@@ -53,6 +55,52 @@
          NSMakeRange([queryString length] - 1, 1)];
     }
     return [NSString stringWithString:queryString];
+}
+
+- (TKMultipartFormDataBuilder *)tk_multipartFormDataBuilder
+{
+    TKMultipartFormDataBuilder *builder = [TKMultipartFormDataBuilder builder];
+
+    for (NSString *key in self) {
+        NSArray *values;
+        id object = [self objectForKey:key];
+        if ([object isKindOfClass:[NSArray class]]) {
+            values = object;
+        }
+        else {
+            values = [NSArray arrayWithObject:object];
+        }
+        
+        for (id value in values) {
+            if ([value isKindOfClass:[NSString class]]) {
+                [builder appendPartWithString:value
+                                         name:key];
+            }
+            else if ([value isKindOfClass:[NSURL class]]) {
+                [builder appendPartWithString:[(NSURL *)value absoluteString]
+                                         name:key];
+            }
+            else if ([value isKindOfClass:[NSData class]]) {
+                [builder appendFilePartWithData:value
+                                           name:key
+                                       filename:@""
+                                    contentType:@"application/octet-stream"];
+            }
+            else if ([value isKindOfClass:[TKFileData class]]) {
+                TKFileData *fileData = (TKFileData *)value;
+                [builder appendFilePartWithData:[fileData data]
+                                           name:key
+                                       filename:[fileData filename]
+                                    contentType:[fileData contentType]];
+            }
+            else {
+                [builder appendPartWithString:[value description]
+                                         name:key];
+            }
+        }
+    }
+    
+    return builder;
 }
 
 - (NSString *)tk_stringByUnescapingString:(NSString *)string
