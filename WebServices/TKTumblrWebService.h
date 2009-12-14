@@ -1,5 +1,5 @@
 //
-//  TKTumblrWebServiceActor.h
+//  TKTumblrWebService.h
 //  TumblKitNG
 //
 //  Created by uasi on 09/10/31.
