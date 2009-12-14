@@ -9,8 +9,11 @@
 #import <Cocoa/Cocoa.h>
 
 
+@class TKMultipartFormDataBuilder;
+
 @interface NSDictionary (TumblKitAdditions)
 
 - (NSString *)tk_queryString;
+- (TKMultipartFormDataBuilder *)tk_multipartFormDataBuilder;
 
 @end

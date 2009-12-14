@@ -13,6 +13,7 @@
 #import "TKBundleController.h"
 #import "TKPost.h"
 #import "TKGrowlHelper.h"
+#import "TKMultipartFormDataBuilder.h"
 
 #import "CommonAdditions.h"
 #import "DOM.h"
@@ -51,15 +52,19 @@ static void *queryFromNode(DOMNode *node);
                                usingFunction:queryFromNode];
     
     [self updateQuery:query withPost:post];
+
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:endpoint]];
-    [request setHTTPBody:[[query tk_queryString] dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPMethod:@"POST"];
-    NSURLResponse *response;
+    TKMultipartFormDataBuilder *builder = [query tk_multipartFormDataBuilder];
+    [request setValue:[builder HTTPContentTypeHeaderValue]
+   forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:[builder formData]];
+    NSURLResponse *response = nil;
     NSError *error = nil;
     NSData *data = [NSURLConnection sendSynchronousRequest:request
                                          returningResponse:&response
                                                      error:&error];
-    
+
     if (data == nil) {
         NSLog(@"TumblKit: post failed: %@", error);
         [self abortPosting];
@@ -67,7 +72,7 @@ static void *queryFromNode(DOMNode *node);
     else {
         [self finishPosting];
     }
-    
+
     [TKDOMMaker destroyDocument:doc];
     [pool drain];
 }
@@ -119,7 +124,14 @@ static void *queryFromNode(DOMNode *node);
         [query setObject:description forKey:@"post[three]"];
     }
     else if ([post type] == TKPostImageType) {
-        [query setObject:[post URL] forKey:@"photo_src"];
+        if ([post object]) {
+            [query setObject:[post object] forKey:@"images[o1]"];
+        }
+        else {
+            [query setObject:[post URL] forKey:@"photo_src"];
+        }
+        [query setObject:[post pageTitle] forKey:@"t"];
+        [query setObject:[post pageURL] forKey:@"u"];
         NSString *title = [[post title] tk_stringByEscapingTagsAndAmpersands];
         NSString *caption = [[post pageURL] tk_anchorStringWithText:title];
         if ([post body] != nil && ! [[post body] isEqualToString:@""]) {
@@ -134,7 +146,6 @@ static void *queryFromNode(DOMNode *node);
         }
     }
     else if ([post type] == TKPostVideoType) {
-        //[query setObject:[post pageURL] forKey:@"post[one]"];
         if ([post URL]) {
             [query setObject:[post URL] forKey:@"post[one]"];
         }

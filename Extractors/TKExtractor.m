@@ -10,6 +10,7 @@
 #import "TKGenericExtractor.h"
 #import "TKDailymotionExtractor.h"
 #import "TKNicoVideoExtractor.h"
+#import "TKPixivExtractor.h"
 #import "TKTwitterExtractor.h"
 
 
@@ -31,6 +32,7 @@
                             [TKDailymotionExtractor class],
                             [TKNicoVideoExtractor class],
                             //[TKTwitterExtractor class],
+                            [TKPixivExtractor class],
                             [TKGenericVideoExtractor class],
                             [TKGenericQuoteExtractor class],
                             [TKGenericImageExtractor class],
