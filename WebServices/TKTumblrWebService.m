@@ -141,9 +141,7 @@ static void *queryFromNode(DOMNode *node);
         [query setObject:caption forKey:@"post[two]"];
         // Note: post[two] might be
         //     (title ? link(title) : "") + (author ? link(author) : "") + (desc ? "\n\n" + desc : "")
-        if ([post linkURL] != nil) {
-            [query setObject:[post linkURL] forKey:@"post[three]"];
-        }
+        [query setObject:[post pageURL] forKey:@"post[three]"];
     }
     else if ([post type] == TKPostVideoType) {
         if ([post URL]) {
