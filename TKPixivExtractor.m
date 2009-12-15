@@ -19,12 +19,14 @@ static NSString *contentTypeFromFilename(NSString *filename);
 
 - (NSString *)title
 {
-    return @"Photo (pixiv)";
+    return @"Image (pixiv)";
 }
 
 - (BOOL)acceptsSource:(TKSource *)source
 {
-    return YES;
+    return ([source sourceURL] != nil &&
+            [[[source sourceURL] host] hasSuffix:@".pixiv.net"] &&
+            [[[source sourceURL] host] hasPrefix:@"img"]);
 }
 
 - (TKPost *)postFromSource:(TKSource *)source
