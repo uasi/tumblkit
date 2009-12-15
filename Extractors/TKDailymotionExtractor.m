@@ -23,7 +23,7 @@
             [[[source URL] path] hasPrefix:@"/video/"]);
 }
 
-static void *extractEmbedCode(DOMNode *node)
+static id extractEmbedCode(DOMNode *node)
 {
     NSString *xpath = @"//input[@id=\"video_player_embed_code_text\"]/@value";
     return [[[node ownerDocument] tk_nodeForXPath:xpath] nodeValue];

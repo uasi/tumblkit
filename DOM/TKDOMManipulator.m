@@ -14,7 +14,7 @@
 #ifdef MAC_OS_X_VERSION_10_6
 
 + (id)manipulateNode:(DOMNode *)node
-          usingBlock:(void *(^)(DOMNode *))block
+          usingBlock:(id (^)(DOMNode *))block
 {
     return [[[[[self class] alloc] init] autorelease] manipulateNode:node
                                                           usingBlock:block
@@ -22,7 +22,7 @@
 }
 
 - (id)manipulateNode:(DOMNode *)node
-          usingBlock:(void *(^)(DOMNode *))block
+          usingBlock:(id (^)(DOMNode *))block
          autorelease:(BOOL)autorelease
 {
     node_ = node;
@@ -46,7 +46,7 @@
 #endif /* MAC_OS_X_VERSION_10_6 */
 
 + (id)manipulateNode:(DOMNode *)node
-       usingFunction:(void *(*)(DOMNode *))function
+       usingFunction:(id (*)(DOMNode *))function
 {
     return [[[[[self class] alloc] init] autorelease] manipulateNode:node
                                                        usingFunction:function
@@ -54,7 +54,7 @@
 }
 
 - (id)manipulateNode:(DOMNode *)node
-       usingFunction:(void *(*)(DOMNode *))function
+       usingFunction:(id (*)(DOMNode *))function
          autorelease:(BOOL)autorelease
 {
     node_ = node;

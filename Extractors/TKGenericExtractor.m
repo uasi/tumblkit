@@ -24,7 +24,7 @@
             [[[source URL] path] isEqualTo:@"/watch"]);
 }
 
-static void *extractTitle(DOMNode *node)
+static id extractTitle(DOMNode *node)
 {
     return [[[node ownerDocument] tk_nodeForXPath:@"//h1/text()"] nodeValue];
 }
@@ -38,7 +38,7 @@ static void *extractTitle(DOMNode *node)
     [post setBody:[source text]];
     
     NSString *title = [TKDOMManipulator manipulateNode:[source node]
-                                            usingFunction:extractTitle];
+                                         usingFunction:extractTitle];
     [post setTitle:title];
     
     return [post autorelease];

@@ -4,15 +4,15 @@
 //
 //  Created by uasi on 09/11/01.
 //  Copyright 2009 99cm.org. All rights reserved.
-//
+//id 
 
 #import "TKTwitterExtractor.h"
 #import "DOM.h"
 
 
-static void *extractStatusURL(DOMNode *node);
-static void *extractTitle(DOMNode *doc);
-static void *extractStatus(DOMNode *doc);
+static id extractStatusURL(DOMNode *node);
+static id extractTitle(DOMNode *doc);
+static id extractStatus(DOMNode *doc);
 
 
 @implementation TKTwitterExtractor
@@ -67,21 +67,21 @@ static void *extractStatus(DOMNode *doc);
 }
  
  
-static void *extractStatusURL(DOMNode *node)
+static id extractStatusURL(DOMNode *node)
 {
     NSString *xpath = @"./ancestor-or-self::li[contains(@class, \"hentry\")]//"
     @"a[@class=\"entry-date\"]/@href";
     return [[node tk_nodeForXPath:xpath] nodeValue];
 }
 
-static void *extractTitle(DOMNode *doc)
+static id extractTitle(DOMNode *doc)
 {
     NSString *xpath = @"/html/head/title";
     return [(DOMHTMLElement *)[doc tk_nodeForXPath:xpath] innerText];
 }
 
 
-static void *extractStatus(DOMNode *doc)
+static id extractStatus(DOMNode *doc)
 {
     NSString *xpath = @"//span[@class=\"entry-content\"]";
     // is cloned node retained?

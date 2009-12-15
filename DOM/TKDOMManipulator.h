@@ -17,23 +17,23 @@
 @interface TKDOMManipulator : NSObject {
     DOMNode *node_;
 #ifdef MAC_OS_X_VERSION_10_6
-    void *(^block_)(DOMNode *);
+    id (^block_)(DOMNode *);
 #endif
-    void *(*function_)(DOMNode *);
+    id (*function_)(DOMNode *);
     id result_;
 }
 
 #ifdef MAC_OS_X_VERSION_10_6
 + (id)manipulateNode:(DOMNode *)node
-          usingBlock:(void *(^)(DOMNode *))block;
+          usingBlock:(id (^)(DOMNode *))block;
 - (id)manipulateNode:(DOMNode *)node
-          usingBlock:(void *(^)(DOMNode *))block
+          usingBlock:(id (^)(DOMNode *))block
          autorelease:(BOOL)autorelease;
 #endif
 + (id)manipulateNode:(DOMNode *)node
-       usingFunction:(void *(*)(DOMNode *))function;
+       usingFunction:(id (*)(DOMNode *))function;
 - (id)manipulateNode:(DOMNode *)node
-       usingFunction:(void *(*)(DOMNode *))function
+       usingFunction:(id (*)(DOMNode *))function
          autorelease:(BOOL)autorelease;
 
 @end
