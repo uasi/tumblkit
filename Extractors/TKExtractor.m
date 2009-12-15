@@ -12,6 +12,7 @@
 #import "TKNicoVideoExtractor.h"
 #import "TKPixivExtractor.h"
 #import "TKTwitterExtractor.h"
+#import "TKGoogleReaderExtractor.h"
 
 
 @interface TKExtraction ()
@@ -33,6 +34,7 @@
                             [TKNicoVideoExtractor class],
                             //[TKTwitterExtractor class],
                             [TKPixivExtractor class],
+                            [TKGoogleReaderExtractor class],
                             [TKGenericVideoExtractor class],
                             [TKGenericQuoteExtractor class],
                             [TKGenericImageExtractor class],

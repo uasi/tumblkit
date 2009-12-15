@@ -49,6 +49,7 @@
 		58E134FB0FDBF0F10042663C /* TKGenericExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134FA0FDBF0F10042663C /* TKGenericExtractor.m */; };
 		58E134FE0FDBF1680042663C /* TKPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E134FD0FDBF1680042663C /* TKPost.m */; };
 		58E5465810ADB0E600AA00A3 /* TKTwitterExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5465710ADB0E600AA00A3 /* TKTwitterExtractor.m */; };
+		58E7F02E10D7A05C003D9C6A /* TKGoogleReaderExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E7F02D10D7A05C003D9C6A /* TKGoogleReaderExtractor.m */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -148,6 +149,8 @@
 		58E134FD0FDBF1680042663C /* TKPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPost.m; sourceTree = "<group>"; };
 		58E5465610ADB0E600AA00A3 /* TKTwitterExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKTwitterExtractor.h; path = Extractors/TKTwitterExtractor.h; sourceTree = "<group>"; };
 		58E5465710ADB0E600AA00A3 /* TKTwitterExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKTwitterExtractor.m; path = Extractors/TKTwitterExtractor.m; sourceTree = "<group>"; };
+		58E7F02C10D7A05C003D9C6A /* TKGoogleReaderExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKGoogleReaderExtractor.h; path = Extractors/TKGoogleReaderExtractor.h; sourceTree = "<group>"; };
+		58E7F02D10D7A05C003D9C6A /* TKGoogleReaderExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKGoogleReaderExtractor.m; path = Extractors/TKGoogleReaderExtractor.m; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* TumblKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TumblKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -356,6 +359,8 @@
 				584FBB081094CE6300007E1B /* TKNicoVideoExtractor.m */,
 				58645F2710D2E444005F1459 /* TKPixivExtractor.h */,
 				58645F2810D2E444005F1459 /* TKPixivExtractor.m */,
+				58E7F02C10D7A05C003D9C6A /* TKGoogleReaderExtractor.h */,
+				58E7F02D10D7A05C003D9C6A /* TKGoogleReaderExtractor.m */,
 			);
 			name = Extractors;
 			sourceTree = "<group>";
@@ -457,6 +462,7 @@
 				58645F2910D2E444005F1459 /* TKPixivExtractor.m in Sources */,
 				58645FFD10D391C7005F1459 /* TKMultipartFormDataBuilder.m in Sources */,
 				5864608D10D66A3A005F1459 /* TKFileData.m in Sources */,
+				58E7F02E10D7A05C003D9C6A /* TKGoogleReaderExtractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
