@@ -12,6 +12,8 @@
 #import "DOM.h"
 
 
+static NSURL *originalImageURLFromImageURL(NSURL *imageURL);
+static NSURL *illustPageURLFromImageURL(NSURL *imageURL);
 static NSString *contentTypeFromFilename(NSString *filename);
 
 
@@ -35,17 +37,20 @@ static NSString *contentTypeFromFilename(NSString *filename);
                                          source:source];
     [post setTitle:[source title]];
     [post setBody:[source text]];
-    [post setLinkURL:[source URL]];
+    
+    NSURL *illustPageURL = illustPageURLFromImageURL([source sourceURL]);
+    [post setPageURL:illustPageURL];
 
+    NSURL *originalImageURL = originalImageURLFromImageURL([source sourceURL]);
     NSMutableURLRequest *request;
-    request = [NSMutableURLRequest requestWithURL:[source sourceURL]];
-    [request addValue:[[source URL] absoluteString]
+    request = [NSMutableURLRequest requestWithURL:originalImageURL];
+    [request addValue:[illustPageURL absoluteString]
    forHTTPHeaderField:@"Referer"];
     NSURLResponse *response;
     NSData *imageData = [NSURLConnection sendSynchronousRequest:request
                                               returningResponse:&response
                                                           error:NULL];
-    NSString *filename = [[[source sourceURL] absoluteString] lastPathComponent];
+    NSString *filename = [[originalImageURL absoluteString] lastPathComponent];
     NSString *contentType = contentTypeFromFilename(filename);
     TKFileData *fileData = [[TKFileData alloc] initWithData:imageData
                                                 contentType:contentType
@@ -56,6 +61,46 @@ static NSString *contentTypeFromFilename(NSString *filename);
     return [post autorelease];
 }
 
+
+static NSURL *originalImageURLFromImageURL(NSURL *imageURL)
+{
+    // imageURL is http://img<num>.pixiv.net/<userID>/<imageID><size>.<ext>
+    // where
+    //     <num>     =~ /\d+/
+    //     <userID>  =~ /\w+/
+    //     <imageID> =~ /\d+/
+    //     <size>    =~ /|_s|_m/  # original, small or medium
+    //     <ext>     =~ /jpg|jpeg|gif|png/ 
+
+    NSString *URLString = [imageURL absoluteString];
+    NSUInteger length = [URLString length];
+    NSRange range = [URLString rangeOfString:@"_"
+                                     options:NSBackwardsSearch];
+    
+    if (range.location != NSNotFound && range.location >= length - 7) {
+        NSString *originalURLString;
+        originalURLString = [NSString stringWithFormat:
+                             @"%@%@",
+                             [URLString substringToIndex:range.location],
+                             [URLString substringFromIndex:range.location + 2]];
+        return [NSURL URLWithString:originalURLString];
+    }
+    else {
+        return [[imageURL copy] autorelease];
+    }
+}
+
+static NSURL *illustPageURLFromImageURL(NSURL *imageURL)
+{
+    NSURL *originalImageURL = originalImageURLFromImageURL(imageURL);
+    NSString *filename = [[originalImageURL absoluteString] lastPathComponent];
+    NSRange range = [filename rangeOfString:@"."];
+    NSString *imageID = [filename substringToIndex:range.location];
+    return [NSURL URLWithString:
+            [NSString stringWithFormat:
+             @"http://www.pixiv.net/member_illust.php?mode=medium&illust_id=%@",
+             imageID]];
+}
 
 static NSString *contentTypeFromFilename(NSString *filename)
 {
