@@ -106,8 +106,8 @@
 		58637AF510A4AA8E00742276 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
 		58637B7D10A7287100742276 /* TKPostController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPostController.h; sourceTree = "<group>"; };
 		58637B7E10A7287100742276 /* TKPostController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPostController.m; sourceTree = "<group>"; };
-		58645F2710D2E444005F1459 /* TKPixivExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPixivExtractor.h; sourceTree = "<group>"; };
-		58645F2810D2E444005F1459 /* TKPixivExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPixivExtractor.m; sourceTree = "<group>"; };
+		58645F2710D2E444005F1459 /* TKPixivExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKPixivExtractor.h; path = Extractors/TKPixivExtractor.h; sourceTree = "<group>"; };
+		58645F2810D2E444005F1459 /* TKPixivExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKPixivExtractor.m; path = Extractors/TKPixivExtractor.m; sourceTree = "<group>"; };
 		58645FFB10D391C7005F1459 /* TKMultipartFormDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMultipartFormDataBuilder.h; sourceTree = "<group>"; };
 		58645FFC10D391C7005F1459 /* TKMultipartFormDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMultipartFormDataBuilder.m; sourceTree = "<group>"; };
 		5864608B10D66A3A005F1459 /* TKFileData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFileData.h; sourceTree = "<group>"; };
