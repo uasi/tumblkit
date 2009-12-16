@@ -27,7 +27,7 @@
 - (void)updateQuery:(NSMutableDictionary *)query
            withPost:(TKPost *)post;
 - (NSString *)postTypeStringForPost:(TKPost *)post;
-static void *queryFromNode(DOMNode *node);
+static id queryFromNode(DOMNode *node);
 
 @end
 
@@ -179,14 +179,14 @@ static void *queryFromNode(DOMNode *node);
     }
 }
 
-static void *queryFromNode(DOMNode *node)
+static id queryFromNode(DOMNode *node)
 {
     NSString *xpath = @"//form[@id='edit_post']";
     DOMElement *formElem = (DOMElement *)[node tk_nodeForXPath:xpath];
     if (formElem == nil) {
         return NULL;
     }
-    return (void *)TKCreateDictionaryWithForm(formElem);
+    return TKCreateDictionaryWithForm(formElem);
 }
 
 @end

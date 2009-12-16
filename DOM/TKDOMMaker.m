@@ -91,7 +91,7 @@ didFailLoadWithError:(NSError *)error
     return [maker makeDocumentWithURLString:URLString];
 }
 
-static void *ownerDocumentOfNode(DOMNode *node)
+static id ownerDocumentOfNode(DOMNode *node)
 {
     return [node ownerDocument];
 }
