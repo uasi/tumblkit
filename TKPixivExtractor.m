@@ -15,6 +15,7 @@
 static NSURL *originalImageURLFromImageURL(NSURL *imageURL);
 static NSURL *illustPageURLFromImageURL(NSURL *imageURL);
 static NSString *contentTypeFromFilename(NSString *filename);
+static id extractTitle(DOMNode *node);
 
 
 @implementation TKPixivExtractor
@@ -35,11 +36,22 @@ static NSString *contentTypeFromFilename(NSString *filename);
 {
     TKPost *post = [[TKPost alloc] initWithType:TKPostImageType
                                          source:source];
-    [post setTitle:[source title]];
     [post setBody:[source text]];
     
     NSURL *illustPageURL = illustPageURLFromImageURL([source sourceURL]);
     [post setPageURL:illustPageURL];
+    
+    if ([illustPageURL isEqual:[source sourceURL]]) {
+        [post setTitle:[source title]];
+    }
+    else {
+        DOMDocument *doc = [TKDOMMaker makeDocumentWithContentsOfURLString:
+                            [illustPageURL absoluteString]];
+        NSString *title = [TKDOMManipulator manipulateNode:doc
+                                             usingFunction:extractTitle];
+        [post setTitle:title];
+        [TKDOMMaker destroyDocument:doc];
+    }
 
     NSURL *originalImageURL = originalImageURLFromImageURL([source sourceURL]);
     NSMutableURLRequest *request;
@@ -120,6 +132,12 @@ static NSString *contentTypeFromFilename(NSString *filename)
     NSString *extension = [filename pathExtension];
     NSString *contentType = [contentTypeDictionary objectForKey:extension];
     return contentType != nil ? contentType : @"application/octet-stream";
+}
+
+static id extractTitle(DOMNode *doc)
+{
+    NSString *xpath = @"/html/head/title";
+    return [(DOMHTMLElement *)[doc tk_nodeForXPath:xpath] innerText];
 }
 
 @end
