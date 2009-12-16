@@ -54,26 +54,28 @@ static id extractBody(DOMNode *node);
 
 static DOMNode *entryNode(DOMNode *node)
 {
-    NSString *xpath = @"./ancestor-or-self::div[starts-with(@class, \"entry \")]";
+    NSString *xpath = @"ancestor-or-self::div[starts-with(@class, \"entry \")]";
     return [node tk_nodeForXPath:xpath];
 }
 
 static id extractURL(DOMNode *node)
 {
-    NSString *xpath = @"//a[@class=\"entry-original\"]/@href";
+    NSString *xpath = @".//a[@class=\"entry-original\" or"
+                      @"     @class=\"entry-title-link\"]/@href";
     NSString *URLString = [[entryNode(node) tk_nodeForXPath:xpath] nodeValue];
     return [NSURL URLWithString:URLString];
 }
 
 static id extractTitle(DOMNode *node)
 {
-    NSString *xpath = @"//h2[@class=\"entry-title\"]";
+    NSString *xpath = @".//h2[@class=\"entry-title\"]";
     return [(DOMHTMLElement *)[entryNode(node) tk_nodeForXPath:xpath] innerText]; 
 }
 
 static id extractBody(DOMNode *node)
 {
-    NSString *xpath = @"//span[@class=\"snippet\"]";
+    NSString *xpath = @".//span[@class=\"snippet\"] |"
+                      @".//div[@class=\"item-body\"]/div";
     return [(DOMHTMLElement *)[entryNode(node) tk_nodeForXPath:xpath] innerText];
 }
 
