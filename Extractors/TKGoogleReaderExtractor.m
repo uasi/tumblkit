@@ -15,7 +15,6 @@
 static DOMNode *entryNode(DOMNode *node);
 static id extractURL(DOMNode *node);
 static id extractTitle(DOMNode *node);
-static id extractBody(DOMNode *node);
 
 
 @implementation TKGoogleReaderExtractor
@@ -45,9 +44,7 @@ static id extractBody(DOMNode *node);
                                         usingFunction:extractURL];
     [post setPageURL:pageURL];
     [post setURL:pageURL];
-    NSString *body = [TKDOMManipulator manipulateNode:[source node]
-                                        usingFunction:extractBody];
-    [post setBody:body];
+    [post setBody:@""];
     return [post autorelease];
 }
 
@@ -70,13 +67,6 @@ static id extractTitle(DOMNode *node)
 {
     NSString *xpath = @".//h2[@class=\"entry-title\"]";
     return [(DOMHTMLElement *)[entryNode(node) tk_nodeForXPath:xpath] innerText]; 
-}
-
-static id extractBody(DOMNode *node)
-{
-    NSString *xpath = @".//span[@class=\"snippet\"] |"
-                      @".//div[@class=\"item-body\"]/div";
-    return [(DOMHTMLElement *)[entryNode(node) tk_nodeForXPath:xpath] innerText];
 }
 
 @end
