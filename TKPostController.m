@@ -61,7 +61,12 @@
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     TKPost *post = [extraction postByInvokingExtraction];
-    [TKWebService postToWebServices:post];
+    if (post != nil) {
+        [TKWebService postToWebServices:post];
+    }
+    else {
+        NSLog(@"TumblKit: extraction failed");
+    }
     [pool drain];
 }
 
@@ -69,9 +74,14 @@
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     TKPost *post = [extraction postByInvokingExtraction];
-    [self performSelectorOnMainThread:@selector(edit:)
-                           withObject:post
-                        waitUntilDone:NO];
+    if (post != nil) {
+        [self performSelectorOnMainThread:@selector(edit:)
+                               withObject:post
+                            waitUntilDone:NO];
+    }
+    else {
+        NSLog(@"TumblKit: extraction failed");
+    }
     [pool drain];
 }
 

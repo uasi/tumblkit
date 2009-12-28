@@ -39,7 +39,12 @@ static id extractEmbedCode(DOMNode *node)
     
     NSString *embedCode = [TKDOMManipulator manipulateNode:[source node]
                                              usingFunction:extractEmbedCode];
-    [post setObject:embedCode];
+    if (embedCode != nil) {
+        [post setObject:embedCode];
+    }
+    else {
+        return nil;
+    }
     
     return post;
 }

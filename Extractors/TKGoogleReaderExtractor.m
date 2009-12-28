@@ -35,20 +35,27 @@ static id extractBody(DOMNode *node);
 }
 
 - (TKPost *)postFromSource:(TKSource *)source
-{
-    TKPost *post = [[TKPost alloc] initWithType:TKPostLinkType
-                                         source:source];
+{    
     NSString *title = [TKDOMManipulator manipulateNode:[source node]
                                          usingFunction:extractTitle];
-    [post setTitle:title];
     NSURL *pageURL = [TKDOMManipulator manipulateNode:[source node]
                                         usingFunction:extractURL];
-    [post setPageURL:pageURL];
-    [post setURL:pageURL];
     NSString *body = [TKDOMManipulator manipulateNode:[source node]
                                         usingFunction:extractBody];
+    
+    if (title == nil || pageURL == nil || body == nil) {
+        return nil;
+    }
+    
+    TKPost *post = [[TKPost alloc] initWithType:TKPostLinkType
+                                         source:source];
+    [post autorelease];
+    [post setTitle:title];
+    [post setPageURL:pageURL];
+    [post setURL:pageURL];
     [post setBody:body];
-    return [post autorelease];
+    
+    return post;
 }
 
 

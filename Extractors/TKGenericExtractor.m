@@ -39,7 +39,7 @@ static id extractTitle(DOMNode *node)
     
     NSString *title = [TKDOMManipulator manipulateNode:[source node]
                                          usingFunction:extractTitle];
-    [post setTitle:title];
+    [post setTitle:(title != nil ? title : @"")];
     
     return [post autorelease];
 }

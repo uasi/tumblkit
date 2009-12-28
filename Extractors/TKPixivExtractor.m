@@ -47,9 +47,14 @@ static id extractTitle(DOMNode *node);
     else {
         DOMDocument *doc = [TKDOMMaker makeDocumentWithContentsOfURLString:
                             [illustPageURL absoluteString]];
-        NSString *title = [TKDOMManipulator manipulateNode:doc
-                                             usingFunction:extractTitle];
-        [post setTitle:title];
+        if (doc != nil) {
+            NSString *title = [TKDOMManipulator manipulateNode:doc
+                                                 usingFunction:extractTitle];
+            [post setTitle:title];
+        }
+        else {
+            return nil;
+        }
         [TKDOMMaker destroyDocument:doc];
     }
 
@@ -58,10 +63,14 @@ static id extractTitle(DOMNode *node);
     request = [NSMutableURLRequest requestWithURL:originalImageURL];
     [request addValue:[illustPageURL absoluteString]
    forHTTPHeaderField:@"Referer"];
-    NSURLResponse *response;
+    NSURLResponse *response = nil;
+    NSError *error = nil;
     NSData *imageData = [NSURLConnection sendSynchronousRequest:request
                                               returningResponse:&response
-                                                          error:NULL];
+                                                          error:&error];
+    if (error != nil || imageData == nil) {
+        return nil;
+    }
     NSString *filename = [[originalImageURL absoluteString] lastPathComponent];
     NSString *contentType = contentTypeFromFilename(filename);
     TKFileData *fileData = [[TKFileData alloc] initWithData:imageData
