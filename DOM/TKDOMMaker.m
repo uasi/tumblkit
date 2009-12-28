@@ -49,7 +49,6 @@
     webView_ = [[WebView alloc] initWithFrame:NSMakeRect(0, 0, 0, 0)
                                     frameName:nil
                                     groupName:nil];
-    [webView_ retain];
     [webView_ setFrameLoadDelegate:self];
     [webView_ setMainFrameURL:URLString_];
 }
