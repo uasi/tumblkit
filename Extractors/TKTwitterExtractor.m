@@ -50,10 +50,19 @@ static id extractStatus(DOMNode *doc);
         doc = [TKDOMMaker makeDocumentWithContentsOfURLString:statusURLString];
     }
     
+    if (doc == nil) {
+        return nil;
+    }
+    
     NSString *title = [TKDOMManipulator manipulateNode:doc
                                          usingFunction:extractTitle]; 
     NSString *status = [TKDOMManipulator manipulateNode:doc
                                           usingFunction:extractStatus];
+    
+    if (title == nil || status == nil) {
+        return nil;
+    }
+    
     TKPost *post = [[TKPost alloc] initWithType:TKPostQuoteType
                                          source:source];
     [post autorelease];
@@ -79,7 +88,6 @@ static id extractTitle(DOMNode *doc)
     NSString *xpath = @"/html/head/title";
     return [(DOMHTMLElement *)[doc tk_nodeForXPath:xpath] innerText];
 }
-
 
 static id extractStatus(DOMNode *doc)
 {

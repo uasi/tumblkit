@@ -31,7 +31,23 @@
 - (id)initWithType:(TKPostType)type
 {
     self = [super init];
+    
     type_ = type;
+    isPrivate_ = NO;
+    tags_ = [[NSArray alloc] init];
+    
+    pageTitle_ = @"";
+    pageURL_ = nil;
+    
+    authorName_ = @"";
+    authorURL_ = nil;
+    
+    title_ = @"";
+    body_ = @"";
+    object_ = nil;
+    URL_ = nil;
+    linkURL_ = nil;
+    
     return self;
 }
 
