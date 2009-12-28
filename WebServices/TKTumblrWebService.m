@@ -105,7 +105,7 @@ static id queryFromNode(DOMNode *node);
     }
     [query removeObjectForKey:@"preview_post"];    
     [query setObject:[self postTypeStringForPost:post] forKey:@"post[type]"];
-    if ([post tags] != nil && [[post tags] lastObject] != nil) {
+    if ([[post tags] lastObject] != nil) {
         NSString *tags = [[post tags] componentsJoinedByString:@","];
         [query setObject:tags forKey:@"post[tags]"];
     }
@@ -134,7 +134,7 @@ static id queryFromNode(DOMNode *node);
         [query setObject:[post pageURL] forKey:@"u"];
         NSString *title = [[post title] tk_stringByEscapingTagsAndAmpersands];
         NSString *caption = [[post pageURL] tk_anchorStringWithText:title];
-        if ([post body] != nil && ! [[post body] isEqualToString:@""]) {
+        if (![[post body] isEqualToString:@""]) {
             NSString *body = [[post body] tk_stringByEscapingTagsAndAmpersands];
             caption = [body stringByAppendingFormat:@" (via %@)", caption];
         }
@@ -144,10 +144,10 @@ static id queryFromNode(DOMNode *node);
         [query setObject:[post pageURL] forKey:@"post[three]"];
     }
     else if ([post type] == TKPostVideoType) {
-        if ([post URL]) {
+        if ([post URL] != nil) {
             [query setObject:[post URL] forKey:@"post[one]"];
         }
-        else if ([post object]) {
+        else if ([post object] != nil) {
             [query setObject:[post object] forKey:@"post[one]"];
         }
         else {
@@ -155,7 +155,7 @@ static id queryFromNode(DOMNode *node);
         }
         NSString *title = [[post title] tk_stringByEscapingTagsAndAmpersands];
         NSString *caption = [[post pageURL] tk_anchorStringWithText:title];
-        if ([post body] != nil && ! [[post body] isEqualToString:@""]) {
+        if (![[post body] isEqualToString:@""]) {
             NSString *body = [[post body] tk_stringByEscapingTagsAndAmpersands];
             caption = [body stringByAppendingFormat:@" (via %@)", caption];
         }
