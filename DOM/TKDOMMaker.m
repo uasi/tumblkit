@@ -56,7 +56,7 @@
 - (void)webView:(WebView *)sender 
 didFinishLoadForFrame:(WebFrame *)frame
 {
-    if (frame != [webView_ mainFrame]) {
+    if (frame != [sender mainFrame]) {
         return;
     }
     DOMDocument *doc = [frame DOMDocument];
