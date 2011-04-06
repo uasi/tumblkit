@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5801463E1344CBEF00731CFC /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5801463B1344CBEF00731CFC /* Growl.framework */; };
+		5801463F1344CBEF00731CFC /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5801463C1344CBEF00731CFC /* Sparkle.framework */; };
+		580146411344CC0A00731CFC /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5801463B1344CBEF00731CFC /* Growl.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		580146421344CC0A00731CFC /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5801463C1344CBEF00731CFC /* Sparkle.framework */; };
+		5856462A1344D3CC005E527F /* ActorKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 585646291344D3CC005E527F /* ActorKit.framework */; };
+		5856462C1344D3DA005E527F /* ActorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585646291344D3CC005E527F /* ActorKit.framework */; };
+		58637E351344B03E001F2CA3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58637E341344B03E001F2CA3 /* Cocoa.framework */; };
+		58637E3F1344B03E001F2CA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58637E3D1344B03E001F2CA3 /* InfoPlist.strings */; };
+		58637E4B1344B060001F2CA3 /* TKBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58637E481344B060001F2CA3 /* TKBundleController.m */; };
+		58637E4C1344B060001F2CA3 /* TKGrowlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58637E4A1344B060001F2CA3 /* TKGrowlHelper.m */; };
+		58637E4E1344B091001F2CA3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58637E4D1344B091001F2CA3 /* WebKit.framework */; };
+		5863E8A31349779200377B93 /* TKVimeoExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5863E8A21349779200377B93 /* TKVimeoExtractor.m */; };
+		58B1AE901344D9FF00090867 /* TKDOMMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE531344D9FF00090867 /* TKDOMMaker.m */; };
+		58B1AE911344D9FF00090867 /* TKDOMManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE551344D9FF00090867 /* TKDOMManipulator.m */; };
+		58B1AE921344D9FF00090867 /* TKDOMUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE571344D9FF00090867 /* TKDOMUtil.m */; };
+		58B1AE931344D9FF00090867 /* DOMNode+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE591344D9FF00090867 /* DOMNode+TumblKitAdditions.m */; };
+		58B1AE941344D9FF00090867 /* TKDailymotionExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE5C1344D9FF00090867 /* TKDailymotionExtractor.m */; };
+		58B1AE951344D9FF00090867 /* TKExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE5E1344D9FF00090867 /* TKExtractor.m */; };
+		58B1AE961344D9FF00090867 /* TKGenericExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE601344D9FF00090867 /* TKGenericExtractor.m */; };
+		58B1AE971344D9FF00090867 /* TKGoogleReaderExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE621344D9FF00090867 /* TKGoogleReaderExtractor.m */; };
+		58B1AE981344D9FF00090867 /* TKNicoVideoExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE641344D9FF00090867 /* TKNicoVideoExtractor.m */; };
+		58B1AE991344D9FF00090867 /* TKPixivExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE661344D9FF00090867 /* TKPixivExtractor.m */; };
+		58B1AE9A1344D9FF00090867 /* TKTwitterExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE681344D9FF00090867 /* TKTwitterExtractor.m */; };
+		58B1AE9B1344D9FF00090867 /* NSDictionary+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE6A1344D9FF00090867 /* NSDictionary+TumblKitAdditions.m */; };
+		58B1AE9C1344D9FF00090867 /* NSString+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE6D1344D9FF00090867 /* NSString+TumblKitAdditions.m */; };
+		58B1AE9D1344D9FF00090867 /* NSURL+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE6F1344D9FF00090867 /* NSURL+TumblKitAdditions.m */; };
+		58B1AE9E1344D9FF00090867 /* NSURLCredentialStorage+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE711344D9FF00090867 /* NSURLCredentialStorage+TumblKitAdditions.m */; };
+		58B1AE9F1344D9FF00090867 /* SUUpdateAlert+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE731344D9FF00090867 /* SUUpdateAlert+TumblKitAdditions.m */; };
+		58B1AEA01344D9FF00090867 /* TKEditPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE751344D9FF00090867 /* TKEditPanelController.m */; };
+		58B1AEA11344D9FF00090867 /* TKFileData.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE771344D9FF00090867 /* TKFileData.m */; };
+		58B1AEA21344D9FF00090867 /* TKMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE791344D9FF00090867 /* TKMenuController.m */; };
+		58B1AEA31344D9FF00090867 /* TKMultipartFormDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE7B1344D9FF00090867 /* TKMultipartFormDataBuilder.m */; };
+		58B1AEA41344D9FF00090867 /* TKPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE7D1344D9FF00090867 /* TKPost.m */; };
+		58B1AEA51344D9FF00090867 /* TKPostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE7F1344D9FF00090867 /* TKPostController.m */; };
+		58B1AEA61344D9FF00090867 /* TKPreferencesModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE811344D9FF00090867 /* TKPreferencesModule.m */; };
+		58B1AEA71344D9FF00090867 /* TKSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE831344D9FF00090867 /* TKSource.m */; };
+		58B1AEA81344D9FF00090867 /* TKTagTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE851344D9FF00090867 /* TKTagTokenField.m */; };
+		58B1AEA91344D9FF00090867 /* TKURLTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE871344D9FF00090867 /* TKURLTransformer.m */; };
+		58B1AEAA1344D9FF00090867 /* WebHTMLView+TumblKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE8A1344D9FF00090867 /* WebHTMLView+TumblKitAdditions.m */; };
+		58B1AEAB1344D9FF00090867 /* TKTumblrWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE8D1344D9FF00090867 /* TKTumblrWebService.m */; };
+		58B1AEAC1344D9FF00090867 /* TKWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B1AE8F1344D9FF00090867 /* TKWebService.m */; };
+		58B1AEB41344DACD00090867 /* EditWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B1AEAE1344DACD00090867 /* EditWindow.xib */; };
+		58B1AEB51344DACD00090867 /* TKEditPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B1AEB01344DACD00090867 /* TKEditPanel.xib */; };
+		58B1AEB61344DACD00090867 /* TKPreferencesModule.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B1AEB21344DACD00090867 /* TKPreferencesModule.xib */; };
+		58B1AEB91344DE9900090867 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58B1AEB71344DE9900090867 /* Localizable.strings */; };
+		58B1AEBB1344DEA300090867 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58B1AEB71344DE9900090867 /* Localizable.strings */; };
+		58B1AEBD1344DEAE00090867 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B1AEBC1344DEAE00090867 /* UserDefaults.plist */; };
+		58B1AEBF1344DEBE00090867 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 58B1AEBE1344DEBE00090867 /* dsa_pub.pem */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		580146381344CBCF00731CFC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5856462A1344D3CC005E527F /* ActorKit.framework in CopyFiles */,
+				5801463E1344CBEF00731CFC /* Growl.framework in CopyFiles */,
+				5801463F1344CBEF00731CFC /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5801463B1344CBEF00731CFC /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
+		5801463C1344CBEF00731CFC /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
+		585646291344D3CC005E527F /* ActorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActorKit.framework; path = Frameworks/ActorKit.framework; sourceTree = "<group>"; };
+		58637E311344B03E001F2CA3 /* TumblKit-Debug.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TumblKit-Debug.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58637E341344B03E001F2CA3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		58637E371344B03E001F2CA3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		58637E381344B03E001F2CA3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		58637E391344B03E001F2CA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		58637E3C1344B03E001F2CA3 /* TumblKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TumblKit-Info.plist"; sourceTree = "<group>"; };
+		58637E3E1344B03E001F2CA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		58637E401344B03E001F2CA3 /* TumblKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TumblKit-Prefix.pch"; sourceTree = "<group>"; };
+		58637E471344B060001F2CA3 /* TKBundleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBundleController.h; sourceTree = "<group>"; };
+		58637E481344B060001F2CA3 /* TKBundleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TKBundleController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		58637E491344B060001F2CA3 /* TKGrowlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGrowlHelper.h; sourceTree = "<group>"; };
+		58637E4A1344B060001F2CA3 /* TKGrowlHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGrowlHelper.m; sourceTree = "<group>"; };
+		58637E4D1344B091001F2CA3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5863E8A11349779200377B93 /* TKVimeoExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKVimeoExtractor.h; sourceTree = "<group>"; };
+		5863E8A21349779200377B93 /* TKVimeoExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKVimeoExtractor.m; sourceTree = "<group>"; };
+		58B1AE4F1344D9FF00090867 /* CommonAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonAdditions.h; sourceTree = "<group>"; };
+		58B1AE511344D9FF00090867 /* DOM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOM.h; sourceTree = "<group>"; };
+		58B1AE521344D9FF00090867 /* TKDOMMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDOMMaker.h; sourceTree = "<group>"; };
+		58B1AE531344D9FF00090867 /* TKDOMMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDOMMaker.m; sourceTree = "<group>"; };
+		58B1AE541344D9FF00090867 /* TKDOMManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDOMManipulator.h; sourceTree = "<group>"; };
+		58B1AE551344D9FF00090867 /* TKDOMManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDOMManipulator.m; sourceTree = "<group>"; };
+		58B1AE561344D9FF00090867 /* TKDOMUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDOMUtil.h; sourceTree = "<group>"; };
+		58B1AE571344D9FF00090867 /* TKDOMUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDOMUtil.m; sourceTree = "<group>"; };
+		58B1AE581344D9FF00090867 /* DOMNode+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DOMNode+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		58B1AE591344D9FF00090867 /* DOMNode+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DOMNode+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		58B1AE5B1344D9FF00090867 /* TKDailymotionExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDailymotionExtractor.h; sourceTree = "<group>"; };
+		58B1AE5C1344D9FF00090867 /* TKDailymotionExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDailymotionExtractor.m; sourceTree = "<group>"; };
+		58B1AE5D1344D9FF00090867 /* TKExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKExtractor.h; sourceTree = "<group>"; };
+		58B1AE5E1344D9FF00090867 /* TKExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKExtractor.m; sourceTree = "<group>"; };
+		58B1AE5F1344D9FF00090867 /* TKGenericExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGenericExtractor.h; sourceTree = "<group>"; };
+		58B1AE601344D9FF00090867 /* TKGenericExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGenericExtractor.m; sourceTree = "<group>"; };
+		58B1AE611344D9FF00090867 /* TKGoogleReaderExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGoogleReaderExtractor.h; sourceTree = "<group>"; };
+		58B1AE621344D9FF00090867 /* TKGoogleReaderExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGoogleReaderExtractor.m; sourceTree = "<group>"; };
+		58B1AE631344D9FF00090867 /* TKNicoVideoExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNicoVideoExtractor.h; sourceTree = "<group>"; };
+		58B1AE641344D9FF00090867 /* TKNicoVideoExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNicoVideoExtractor.m; sourceTree = "<group>"; };
+		58B1AE651344D9FF00090867 /* TKPixivExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPixivExtractor.h; sourceTree = "<group>"; };
+		58B1AE661344D9FF00090867 /* TKPixivExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPixivExtractor.m; sourceTree = "<group>"; };
+		58B1AE671344D9FF00090867 /* TKTwitterExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTwitterExtractor.h; sourceTree = "<group>"; };
+		58B1AE681344D9FF00090867 /* TKTwitterExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTwitterExtractor.m; sourceTree = "<group>"; };
+		58B1AE691344D9FF00090867 /* NSDictionary+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		58B1AE6A1344D9FF00090867 /* NSDictionary+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		58B1AE6B1344D9FF00090867 /* NSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferences.h; sourceTree = "<group>"; };
+		58B1AE6C1344D9FF00090867 /* NSString+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		58B1AE6D1344D9FF00090867 /* NSString+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		58B1AE6E1344D9FF00090867 /* NSURL+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		58B1AE6F1344D9FF00090867 /* NSURL+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		58B1AE701344D9FF00090867 /* NSURLCredentialStorage+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLCredentialStorage+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		58B1AE711344D9FF00090867 /* NSURLCredentialStorage+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLCredentialStorage+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		58B1AE721344D9FF00090867 /* SUUpdateAlert+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUUpdateAlert+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		58B1AE731344D9FF00090867 /* SUUpdateAlert+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SUUpdateAlert+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		58B1AE741344D9FF00090867 /* TKEditPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKEditPanelController.h; sourceTree = "<group>"; };
+		58B1AE751344D9FF00090867 /* TKEditPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEditPanelController.m; sourceTree = "<group>"; };
+		58B1AE761344D9FF00090867 /* TKFileData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFileData.h; sourceTree = "<group>"; };
+		58B1AE771344D9FF00090867 /* TKFileData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFileData.m; sourceTree = "<group>"; };
+		58B1AE781344D9FF00090867 /* TKMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMenuController.h; sourceTree = "<group>"; };
+		58B1AE791344D9FF00090867 /* TKMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMenuController.m; sourceTree = "<group>"; };
+		58B1AE7A1344D9FF00090867 /* TKMultipartFormDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMultipartFormDataBuilder.h; sourceTree = "<group>"; };
+		58B1AE7B1344D9FF00090867 /* TKMultipartFormDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMultipartFormDataBuilder.m; sourceTree = "<group>"; };
+		58B1AE7C1344D9FF00090867 /* TKPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPost.h; sourceTree = "<group>"; };
+		58B1AE7D1344D9FF00090867 /* TKPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPost.m; sourceTree = "<group>"; };
+		58B1AE7E1344D9FF00090867 /* TKPostController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPostController.h; sourceTree = "<group>"; };
+		58B1AE7F1344D9FF00090867 /* TKPostController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPostController.m; sourceTree = "<group>"; };
+		58B1AE801344D9FF00090867 /* TKPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPreferencesModule.h; sourceTree = "<group>"; };
+		58B1AE811344D9FF00090867 /* TKPreferencesModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPreferencesModule.m; sourceTree = "<group>"; };
+		58B1AE821344D9FF00090867 /* TKSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSource.h; sourceTree = "<group>"; };
+		58B1AE831344D9FF00090867 /* TKSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSource.m; sourceTree = "<group>"; };
+		58B1AE841344D9FF00090867 /* TKTagTokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTagTokenField.h; sourceTree = "<group>"; };
+		58B1AE851344D9FF00090867 /* TKTagTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTagTokenField.m; sourceTree = "<group>"; };
+		58B1AE861344D9FF00090867 /* TKURLTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKURLTransformer.h; sourceTree = "<group>"; };
+		58B1AE871344D9FF00090867 /* TKURLTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKURLTransformer.m; sourceTree = "<group>"; };
+		58B1AE891344D9FF00090867 /* WebHTMLView+TumblKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebHTMLView+TumblKitAdditions.h"; sourceTree = "<group>"; };
+		58B1AE8A1344D9FF00090867 /* WebHTMLView+TumblKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebHTMLView+TumblKitAdditions.m"; sourceTree = "<group>"; };
+		58B1AE8C1344D9FF00090867 /* TKTumblrWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTumblrWebService.h; sourceTree = "<group>"; };
+		58B1AE8D1344D9FF00090867 /* TKTumblrWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTumblrWebService.m; sourceTree = "<group>"; };
+		58B1AE8E1344D9FF00090867 /* TKWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWebService.h; sourceTree = "<group>"; };
+		58B1AE8F1344D9FF00090867 /* TKWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWebService.m; sourceTree = "<group>"; };
+		58B1AEAF1344DACD00090867 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EditWindow.xib; sourceTree = "<group>"; };
+		58B1AEB11344DACD00090867 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TKEditPanel.xib; sourceTree = "<group>"; };
+		58B1AEB31344DACD00090867 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TKPreferencesModule.xib; sourceTree = "<group>"; };
+		58B1AEB81344DE9900090867 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58B1AEBA1344DEA300090867 /* ja_JP */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja_JP; path = ja_JP.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58B1AEBC1344DEAE00090867 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
+		58B1AEBE1344DEBE00090867 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58637E2E1344B03E001F2CA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58637E351344B03E001F2CA3 /* Cocoa.framework in Frameworks */,
+				58637E4E1344B091001F2CA3 /* WebKit.framework in Frameworks */,
+				5856462C1344D3DA005E527F /* ActorKit.framework in Frameworks */,
+				580146411344CC0A00731CFC /* Growl.framework in Frameworks */,
+				580146421344CC0A00731CFC /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		58637E261344B03E001F2CA3 = {
+			isa = PBXGroup;
+			children = (
+				58637E3A1344B03E001F2CA3 /* TumblKit */,
+				58637E331344B03E001F2CA3 /* Frameworks */,
+				58637E321344B03E001F2CA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		58637E321344B03E001F2CA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58637E311344B03E001F2CA3 /* TumblKit-Debug.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58637E331344B03E001F2CA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				585646291344D3CC005E527F /* ActorKit.framework */,
+				5801463B1344CBEF00731CFC /* Growl.framework */,
+				5801463C1344CBEF00731CFC /* Sparkle.framework */,
+				58637E341344B03E001F2CA3 /* Cocoa.framework */,
+				58637E4D1344B091001F2CA3 /* WebKit.framework */,
+				58637E361344B03E001F2CA3 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58637E361344B03E001F2CA3 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58637E371344B03E001F2CA3 /* AppKit.framework */,
+				58637E381344B03E001F2CA3 /* CoreData.framework */,
+				58637E391344B03E001F2CA3 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		58637E3A1344B03E001F2CA3 /* TumblKit */ = {
+			isa = PBXGroup;
+			children = (
+				58637E461344B060001F2CA3 /* Sources */,
+				58637E3B1344B03E001F2CA3 /* Supporting Files */,
+			);
+			path = TumblKit;
+			sourceTree = "<group>";
+		};
+		58637E3B1344B03E001F2CA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58B1AEBE1344DEBE00090867 /* dsa_pub.pem */,
+				58B1AEBC1344DEAE00090867 /* UserDefaults.plist */,
+				58B1AEB71344DE9900090867 /* Localizable.strings */,
+				58B1AEAE1344DACD00090867 /* EditWindow.xib */,
+				58B1AEB01344DACD00090867 /* TKEditPanel.xib */,
+				58B1AEB21344DACD00090867 /* TKPreferencesModule.xib */,
+				58637E3C1344B03E001F2CA3 /* TumblKit-Info.plist */,
+				58637E3D1344B03E001F2CA3 /* InfoPlist.strings */,
+				58637E401344B03E001F2CA3 /* TumblKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58637E461344B060001F2CA3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				58B1AE4F1344D9FF00090867 /* CommonAdditions.h */,
+				58B1AE501344D9FF00090867 /* DOM */,
+				58B1AE581344D9FF00090867 /* DOMNode+TumblKitAdditions.h */,
+				58B1AE591344D9FF00090867 /* DOMNode+TumblKitAdditions.m */,
+				58B1AE5A1344D9FF00090867 /* Extractors */,
+				58B1AE691344D9FF00090867 /* NSDictionary+TumblKitAdditions.h */,
+				58B1AE6A1344D9FF00090867 /* NSDictionary+TumblKitAdditions.m */,
+				58B1AE6B1344D9FF00090867 /* NSPreferences.h */,
+				58B1AE6C1344D9FF00090867 /* NSString+TumblKitAdditions.h */,
+				58B1AE6D1344D9FF00090867 /* NSString+TumblKitAdditions.m */,
+				58B1AE6E1344D9FF00090867 /* NSURL+TumblKitAdditions.h */,
+				58B1AE6F1344D9FF00090867 /* NSURL+TumblKitAdditions.m */,
+				58B1AE701344D9FF00090867 /* NSURLCredentialStorage+TumblKitAdditions.h */,
+				58B1AE711344D9FF00090867 /* NSURLCredentialStorage+TumblKitAdditions.m */,
+				58B1AE721344D9FF00090867 /* SUUpdateAlert+TumblKitAdditions.h */,
+				58B1AE731344D9FF00090867 /* SUUpdateAlert+TumblKitAdditions.m */,
+				58B1AE741344D9FF00090867 /* TKEditPanelController.h */,
+				58B1AE751344D9FF00090867 /* TKEditPanelController.m */,
+				58B1AE761344D9FF00090867 /* TKFileData.h */,
+				58B1AE771344D9FF00090867 /* TKFileData.m */,
+				58B1AE781344D9FF00090867 /* TKMenuController.h */,
+				58B1AE791344D9FF00090867 /* TKMenuController.m */,
+				58B1AE7A1344D9FF00090867 /* TKMultipartFormDataBuilder.h */,
+				58B1AE7B1344D9FF00090867 /* TKMultipartFormDataBuilder.m */,
+				58B1AE7C1344D9FF00090867 /* TKPost.h */,
+				58B1AE7D1344D9FF00090867 /* TKPost.m */,
+				58B1AE7E1344D9FF00090867 /* TKPostController.h */,
+				58B1AE7F1344D9FF00090867 /* TKPostController.m */,
+				58B1AE801344D9FF00090867 /* TKPreferencesModule.h */,
+				58B1AE811344D9FF00090867 /* TKPreferencesModule.m */,
+				58B1AE821344D9FF00090867 /* TKSource.h */,
+				58B1AE831344D9FF00090867 /* TKSource.m */,
+				58B1AE841344D9FF00090867 /* TKTagTokenField.h */,
+				58B1AE851344D9FF00090867 /* TKTagTokenField.m */,
+				58B1AE861344D9FF00090867 /* TKURLTransformer.h */,
+				58B1AE871344D9FF00090867 /* TKURLTransformer.m */,
+				58B1AE891344D9FF00090867 /* WebHTMLView+TumblKitAdditions.h */,
+				58B1AE8A1344D9FF00090867 /* WebHTMLView+TumblKitAdditions.m */,
+				58B1AE8B1344D9FF00090867 /* WebServices */,
+				58637E471344B060001F2CA3 /* TKBundleController.h */,
+				58637E481344B060001F2CA3 /* TKBundleController.m */,
+				58637E491344B060001F2CA3 /* TKGrowlHelper.h */,
+				58637E4A1344B060001F2CA3 /* TKGrowlHelper.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		58B1AE501344D9FF00090867 /* DOM */ = {
+			isa = PBXGroup;
+			children = (
+				58B1AE511344D9FF00090867 /* DOM.h */,
+				58B1AE521344D9FF00090867 /* TKDOMMaker.h */,
+				58B1AE531344D9FF00090867 /* TKDOMMaker.m */,
+				58B1AE541344D9FF00090867 /* TKDOMManipulator.h */,
+				58B1AE551344D9FF00090867 /* TKDOMManipulator.m */,
+				58B1AE561344D9FF00090867 /* TKDOMUtil.h */,
+				58B1AE571344D9FF00090867 /* TKDOMUtil.m */,
+			);
+			path = DOM;
+			sourceTree = "<group>";
+		};
+		58B1AE5A1344D9FF00090867 /* Extractors */ = {
+			isa = PBXGroup;
+			children = (
+				58B1AE5B1344D9FF00090867 /* TKDailymotionExtractor.h */,
+				58B1AE5C1344D9FF00090867 /* TKDailymotionExtractor.m */,
+				58B1AE5D1344D9FF00090867 /* TKExtractor.h */,
+				58B1AE5E1344D9FF00090867 /* TKExtractor.m */,
+				58B1AE5F1344D9FF00090867 /* TKGenericExtractor.h */,
+				58B1AE601344D9FF00090867 /* TKGenericExtractor.m */,
+				58B1AE611344D9FF00090867 /* TKGoogleReaderExtractor.h */,
+				58B1AE621344D9FF00090867 /* TKGoogleReaderExtractor.m */,
+				58B1AE631344D9FF00090867 /* TKNicoVideoExtractor.h */,
+				58B1AE641344D9FF00090867 /* TKNicoVideoExtractor.m */,
+				58B1AE651344D9FF00090867 /* TKPixivExtractor.h */,
+				58B1AE661344D9FF00090867 /* TKPixivExtractor.m */,
+				58B1AE671344D9FF00090867 /* TKTwitterExtractor.h */,
+				58B1AE681344D9FF00090867 /* TKTwitterExtractor.m */,
+				5863E8A11349779200377B93 /* TKVimeoExtractor.h */,
+				5863E8A21349779200377B93 /* TKVimeoExtractor.m */,
+			);
+			path = Extractors;
+			sourceTree = "<group>";
+		};
+		58B1AE8B1344D9FF00090867 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				58B1AE8C1344D9FF00090867 /* TKTumblrWebService.h */,
+				58B1AE8D1344D9FF00090867 /* TKTumblrWebService.m */,
+				58B1AE8E1344D9FF00090867 /* TKWebService.h */,
+				58B1AE8F1344D9FF00090867 /* TKWebService.m */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58637E301344B03E001F2CA3 /* TumblKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58637E431344B03E001F2CA3 /* Build configuration list for PBXNativeTarget "TumblKit" */;
+			buildPhases = (
+				58637E2D1344B03E001F2CA3 /* Sources */,
+				58637E2E1344B03E001F2CA3 /* Frameworks */,
+				58637E2F1344B03E001F2CA3 /* Resources */,
+				580146381344CBCF00731CFC /* CopyFiles */,
+				580146491344D00300731CFC /* ShellScript */,
+				58DC270D134C54EA00D41420 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TumblKit;
+			productName = TumblKit;
+			productReference = 58637E311344B03E001F2CA3 /* TumblKit-Debug.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58637E281344B03E001F2CA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = isdead.info;
+			};
+			buildConfigurationList = 58637E2B1344B03E001F2CA3 /* Build configuration list for PBXProject "TumblKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				ja_JP,
+			);
+			mainGroup = 58637E261344B03E001F2CA3;
+			productRefGroup = 58637E321344B03E001F2CA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58637E301344B03E001F2CA3 /* TumblKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58637E2F1344B03E001F2CA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58637E3F1344B03E001F2CA3 /* InfoPlist.strings in Resources */,
+				58B1AEB41344DACD00090867 /* EditWindow.xib in Resources */,
+				58B1AEB51344DACD00090867 /* TKEditPanel.xib in Resources */,
+				58B1AEB61344DACD00090867 /* TKPreferencesModule.xib in Resources */,
+				58B1AEB91344DE9900090867 /* Localizable.strings in Resources */,
+				58B1AEBB1344DEA300090867 /* Localizable.strings in Resources */,
+				58B1AEBD1344DEAE00090867 /* UserDefaults.plist in Resources */,
+				58B1AEBF1344DEBE00090867 /* dsa_pub.pem in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		580146491344D00300731CFC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh \"$SRCROOT/Tools/change_growl_install_name.sh\"";
+		};
+		58DC270D134C54EA00D41420 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$CONFIGURATION\" == \"Release\" ]; then\n    sh \"$SRCROOT/Tools/create_dmg.sh\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58637E2D1344B03E001F2CA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58637E4B1344B060001F2CA3 /* TKBundleController.m in Sources */,
+				58637E4C1344B060001F2CA3 /* TKGrowlHelper.m in Sources */,
+				58B1AE901344D9FF00090867 /* TKDOMMaker.m in Sources */,
+				58B1AE911344D9FF00090867 /* TKDOMManipulator.m in Sources */,
+				58B1AE921344D9FF00090867 /* TKDOMUtil.m in Sources */,
+				58B1AE931344D9FF00090867 /* DOMNode+TumblKitAdditions.m in Sources */,
+				58B1AE941344D9FF00090867 /* TKDailymotionExtractor.m in Sources */,
+				58B1AE951344D9FF00090867 /* TKExtractor.m in Sources */,
+				58B1AE961344D9FF00090867 /* TKGenericExtractor.m in Sources */,
+				58B1AE971344D9FF00090867 /* TKGoogleReaderExtractor.m in Sources */,
+				58B1AE981344D9FF00090867 /* TKNicoVideoExtractor.m in Sources */,
+				58B1AE991344D9FF00090867 /* TKPixivExtractor.m in Sources */,
+				58B1AE9A1344D9FF00090867 /* TKTwitterExtractor.m in Sources */,
+				58B1AE9B1344D9FF00090867 /* NSDictionary+TumblKitAdditions.m in Sources */,
+				58B1AE9C1344D9FF00090867 /* NSString+TumblKitAdditions.m in Sources */,
+				58B1AE9D1344D9FF00090867 /* NSURL+TumblKitAdditions.m in Sources */,
+				58B1AE9E1344D9FF00090867 /* NSURLCredentialStorage+TumblKitAdditions.m in Sources */,
+				58B1AE9F1344D9FF00090867 /* SUUpdateAlert+TumblKitAdditions.m in Sources */,
+				58B1AEA01344D9FF00090867 /* TKEditPanelController.m in Sources */,
+				58B1AEA11344D9FF00090867 /* TKFileData.m in Sources */,
+				58B1AEA21344D9FF00090867 /* TKMenuController.m in Sources */,
+				58B1AEA31344D9FF00090867 /* TKMultipartFormDataBuilder.m in Sources */,
+				58B1AEA41344D9FF00090867 /* TKPost.m in Sources */,
+				58B1AEA51344D9FF00090867 /* TKPostController.m in Sources */,
+				58B1AEA61344D9FF00090867 /* TKPreferencesModule.m in Sources */,
+				58B1AEA71344D9FF00090867 /* TKSource.m in Sources */,
+				58B1AEA81344D9FF00090867 /* TKTagTokenField.m in Sources */,
+				58B1AEA91344D9FF00090867 /* TKURLTransformer.m in Sources */,
+				58B1AEAA1344D9FF00090867 /* WebHTMLView+TumblKitAdditions.m in Sources */,
+				58B1AEAB1344D9FF00090867 /* TKTumblrWebService.m in Sources */,
+				58B1AEAC1344D9FF00090867 /* TKWebService.m in Sources */,
+				5863E8A31349779200377B93 /* TKVimeoExtractor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		58637E3D1344B03E001F2CA3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58637E3E1344B03E001F2CA3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		58B1AEAE1344DACD00090867 /* EditWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58B1AEAF1344DACD00090867 /* en */,
+			);
+			name = EditWindow.xib;
+			sourceTree = "<group>";
+		};
+		58B1AEB01344DACD00090867 /* TKEditPanel.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58B1AEB11344DACD00090867 /* en */,
+			);
+			name = TKEditPanel.xib;
+			sourceTree = "<group>";
+		};
+		58B1AEB21344DACD00090867 /* TKPreferencesModule.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58B1AEB31344DACD00090867 /* en */,
+			);
+			name = TKPreferencesModule.xib;
+			sourceTree = "<group>";
+		};
+		58B1AEB71344DE9900090867 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58B1AEB81344DE9900090867 /* en */,
+				58B1AEBA1344DEA300090867 /* ja_JP */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		58637E411344B03E001F2CA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		58637E421344B03E001F2CA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		58637E441344B03E001F2CA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TumblKit/TumblKit-Prefix.pch";
+				INFOPLIST_FILE = "TumblKit/TumblKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)-Debug";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		58637E451344B03E001F2CA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TumblKit/TumblKit-Prefix.pch";
+				INFOPLIST_FILE = "TumblKit/TumblKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58637E2B1344B03E001F2CA3 /* Build configuration list for PBXProject "TumblKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58637E411344B03E001F2CA3 /* Debug */,
+				58637E421344B03E001F2CA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58637E431344B03E001F2CA3 /* Build configuration list for PBXNativeTarget "TumblKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58637E441344B03E001F2CA3 /* Debug */,
+				58637E451344B03E001F2CA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58637E281344B03E001F2CA3 /* Project object */;
+}
