@@ -76,6 +76,7 @@
 		5801463B1344CBEF00731CFC /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
 		5801463C1344CBEF00731CFC /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		585646291344D3CC005E527F /* ActorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActorKit.framework; path = Frameworks/ActorKit.framework; sourceTree = "<group>"; };
+		58583DC8134EAD6300EA9743 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Header.h; path = TumblKit.xcodeproj/Header.h; sourceTree = "<group>"; };
 		58637E311344B03E001F2CA3 /* TumblKit-Debug.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TumblKit-Debug.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58637E341344B03E001F2CA3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		58637E371344B03E001F2CA3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -180,6 +181,7 @@
 		58637E261344B03E001F2CA3 = {
 			isa = PBXGroup;
 			children = (
+				58583DC8134EAD6300EA9743 /* Header.h */,
 				58637E3A1344B03E001F2CA3 /* TumblKit */,
 				58637E331344B03E001F2CA3 /* Frameworks */,
 				58637E321344B03E001F2CA3 /* Products */,

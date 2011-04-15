@@ -117,6 +117,10 @@ static NSURL *illustPageURLFromImageURL(NSURL *imageURL)
     NSString *filename = [[originalImageURL absoluteString] lastPathComponent];
     NSRange range = [filename rangeOfString:@"."];
     NSString *imageID = [filename substringToIndex:range.location];
+    range = [imageID rangeOfString:@"_"];
+    if (range.location != NSNotFound) {
+        imageID = [imageID substringToIndex:range.location];
+    }
     return [NSURL URLWithString:
             [NSString stringWithFormat:
              @"http://www.pixiv.net/member_illust.php?mode=medium&illust_id=%@",
